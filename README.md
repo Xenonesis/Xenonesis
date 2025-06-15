@@ -339,18 +339,33 @@
 
     <!-- Enhanced Snake Animation with Cyberpunk Styling -->
     <div align="center">
-      <!-- Primary Snake Animation (Your Profile) -->
+      <!-- Working Snake Animation -->
       <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake-dark.svg">
-        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg">
-        <img alt="🐍 Cyberpunk Snake Game - GitHub Contribution Matrix Infiltration 🐍" src="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg" width="100%">
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/xenonesis/xenonesis/output/github-contribution-grid-snake-dark.svg">
+        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/xenonesis/xenonesis/output/github-contribution-grid-snake.svg">
+        <img alt="🐍 Cyberpunk Snake Game - GitHub Contribution Matrix Infiltration 🐍" src="https://raw.githubusercontent.com/xenonesis/xenonesis/output/github-contribution-grid-snake.svg" width="100%">
       </picture>
 
-      <!-- Demo Snake Animation (Fallback for visibility) -->
-      <div style="margin-top: 15px; opacity: 0.8;">
-        <img src="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake-dark.svg" alt="🐍 Demo Snake Animation - Cyberpunk Matrix Style 🐍" width="100%" />
-        <p align="center" style="font-size: 12px; color: #666; margin-top: 5px;">
-          <em>🔮 Demo Animation - Your personal snake will grow as you contribute more to GitHub! 🔮</em>
+      <!-- Alternative Working Snake Animation -->
+      <div style="margin-top: 20px;">
+        <img src="https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg" alt="🐍 Snake Animation - Contribution Graph 🐍" width="100%" />
+      </div>
+
+      <!-- Cyberpunk Snake Game Simulation -->
+      <div style="margin-top: 20px; padding: 20px; background: linear-gradient(45deg, #0D1117, #1a1a2e); border: 2px solid #00FF41; border-radius: 10px;">
+        <h4 style="color: #00FF41; text-align: center; margin: 0;">🐍 CYBERPUNK SNAKE MATRIX 🐍</h4>
+        <div style="display: flex; justify-content: center; align-items: center; height: 100px; background: #000; border-radius: 5px; margin-top: 10px; position: relative; overflow: hidden;">
+          <div style="color: #00FF41; font-family: 'Courier New', monospace; font-size: 12px; animation: matrix 2s infinite;">
+            ████████████████████████████████<br>
+            █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█<br>
+            █░██░░░░░░░░░░░░░░░░░░░░░░░██░█<br>
+            █░░░░░░░░░░░░██████░░░░░░░░░░░█<br>
+            █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█<br>
+            ████████████████████████████████
+          </div>
+        </div>
+        <p style="color: #00FF41; text-align: center; font-size: 12px; margin: 10px 0 0 0;">
+          <em>🔮 Snake grows with your GitHub contributions! Keep coding to see it evolve! 🔮</em>
         </p>
       </div>
     </div>
@@ -2099,18 +2114,18 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
 
   <!-- Primary Stats Row -->
   <p>
-    <img src="https://github-readme-stats.vercel.app/api?username=Xenonesis&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF41&icon_color=FF69B4&text_color=FFFFFF&count_private=true" alt="GitHub Stats" width="48%" />
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Xenonesis&theme=radical&hide_border=true&background=0D1117&stroke=00FF41&ring=FF69B4&fire=FFD700&currStreakLabel=00FF41" alt="GitHub Streak" width="48%" />
+    <img src="https://github-readme-stats.vercel.app/api?username=xenonesis&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF41&icon_color=FF69B4&text_color=FFFFFF&count_private=true" alt="GitHub Stats" width="48%" />
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=xenonesis&theme=radical&hide_border=true&background=0D1117&stroke=00FF41&ring=FF69B4&fire=FFD700&currStreakLabel=00FF41" alt="GitHub Streak" width="48%" />
   </p>
 
   <!-- Languages & Activity -->
   <p>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xenonesis&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF41&text_color=FFFFFF&langs_count=8" alt="Top Languages" width="48%" />
-    <img src="https://github-readme-stats.vercel.app/api/wakatime?username=Xenonesis&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF41&text_color=FFFFFF" alt="Coding Activity" width="48%" />
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=xenonesis&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF41&text_color=FFFFFF&langs_count=8" alt="Top Languages" width="48%" />
+    <img src="https://github-readme-stats.vercel.app/api/wakatime?username=xenonesis&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF41&text_color=FFFFFF" alt="Coding Activity" width="48%" />
   </p>
 
   <!-- Activity Graph -->
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Xenonesis&bg_color=0D1117&color=00FF41&line=00FF41&point=FFFFFF&area=true&hide_border=true&custom_title=🚀%20Contribution%20Activity%20Graph" width="100%" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=xenonesis&bg_color=0D1117&color=00FF41&line=00FF41&point=FFFFFF&area=true&hide_border=true&custom_title=🚀%20Contribution%20Activity%20Graph" width="100%" />
 
   <!-- Footer -->
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=120&section=footer&text=STAY%20SECURE%20•%20STAY%20INNOVATIVE&fontSize=24&fontColor=fff&animation=twinkling&fontAlignY=65" width="100%" />
