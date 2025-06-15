@@ -325,69 +325,42 @@
   </details>
   
   <!-- 🐍 Enhanced Cyberpunk Snake Game with Advanced UI/UX -->
-  <div style="margin: 30px 0; padding: 25px; background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,20,0,0.9) 50%, rgba(0,40,0,0.9) 100%); border-radius: 20px; border: 3px solid #00FF41; box-shadow: 0 0 40px rgba(0,255,65,0.4), inset 0 0 30px rgba(0,255,65,0.1);">
+  <div align="center">
 
-    <!-- Game Header with Hacker Theme -->
-    <div style="text-align: center; margin-bottom: 20px;">
-      <div style="color: #00FF41; font-family: 'Fira Code', monospace; font-size: 20px; font-weight: bold; text-shadow: 0 0 15px #00FF41; margin-bottom: 10px;">
-        🐍 CYBER SNAKE: CONTRIBUTION MATRIX INFILTRATION 🐍
-      </div>
-      <div style="color: #4ECDC4; font-family: 'Fira Code', monospace; font-size: 12px; margin-bottom: 15px;">
-        [ MISSION: Consume all contribution data while avoiding detection ]
-      </div>
+    <h2>🐍 CYBER SNAKE: CONTRIBUTION MATRIX INFILTRATION 🐍</h2>
+    <p><em>[ MISSION: Consume all contribution data while avoiding detection ]</em></p>
 
-      <!-- Game Stats Dashboard -->
-      <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px; flex-wrap: wrap;">
-        <div style="background: rgba(0,255,65,0.1); padding: 8px 15px; border-radius: 8px; border: 1px solid #00FF41;">
-          <span style="color: #FFD700; font-family: 'Fira Code', monospace; font-size: 10px;">🎯 TARGET:</span>
-          <span style="color: #00FF41; font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold;">365 COMMITS</span>
-        </div>
-        <div style="background: rgba(255,107,107,0.1); padding: 8px 15px; border-radius: 8px; border: 1px solid #FF6B6B;">
-          <span style="color: #FFD700; font-family: 'Fira Code', monospace; font-size: 10px;">⚡ STATUS:</span>
-          <span style="color: #FF6B6B; font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold;">INFILTRATING</span>
-        </div>
-        <div style="background: rgba(153,50,204,0.1); padding: 8px 15px; border-radius: 8px; border: 1px solid #9932CC;">
-          <span style="color: #FFD700; font-family: 'Fira Code', monospace; font-size: 10px;">🔒 SECURITY:</span>
-          <span style="color: #9932CC; font-family: 'Fira Code', monospace; font-size: 10px; font-weight: bold;">BYPASSED</span>
-        </div>
-      </div>
-    </div>
+    <!-- Game Stats Dashboard -->
+    <p>
+      <img src="https://img.shields.io/badge/🎯_TARGET-365_COMMITS-00FF41?style=for-the-badge&labelColor=0D1117" alt="Target" />
+      <img src="https://img.shields.io/badge/⚡_STATUS-INFILTRATING-FF6B6B?style=for-the-badge&labelColor=0D1117" alt="Status" />
+      <img src="https://img.shields.io/badge/🔒_SECURITY-BYPASSED-9932CC?style=for-the-badge&labelColor=0D1117" alt="Security" />
+    </p>
 
     <!-- Enhanced Snake Animation with Cyberpunk Styling -->
-    <div style="position: relative; border-radius: 15px; overflow: hidden; border: 2px solid #00FF41; box-shadow: inset 0 0 20px rgba(0,255,65,0.2);">
+    <div align="center">
       <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake-dark.svg">
-        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg">
-        <img alt="Cyberpunk Snake Game - GitHub Contribution Matrix Infiltration" src="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg" style="width: 100%; height: auto; filter: drop-shadow(0 0 10px #00FF41);">
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake-dark.svg">
+        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg">
+        <img alt="🐍 Cyberpunk Snake Game - GitHub Contribution Matrix Infiltration 🐍" src="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg" width="100%">
       </picture>
-
-      <!-- Overlay Effects -->
-      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent 48%, rgba(0,255,65,0.1) 49%, rgba(0,255,65,0.1) 51%, transparent 52%); pointer-events: none;"></div>
     </div>
 
     <!-- Game Controls & Instructions -->
-    <div style="margin-top: 20px; text-align: center;">
-      <div style="color: #8B949E; font-family: 'Fira Code', monospace; font-size: 11px; margin-bottom: 10px;">
-        🎮 HACKER CONTROLS: Watch the snake consume GitHub contribution data in real-time
-      </div>
-      <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-        <div style="background: rgba(0,255,65,0.1); padding: 5px 10px; border-radius: 5px; border: 1px solid #00FF41;">
-          <span style="color: #00FF41; font-family: 'Fira Code', monospace; font-size: 9px;">🟢 ACTIVE COMMITS</span>
-        </div>
-        <div style="background: rgba(128,128,128,0.1); padding: 5px 10px; border-radius: 5px; border: 1px solid #808080;">
-          <span style="color: #808080; font-family: 'Fira Code', monospace; font-size: 9px;">⚫ INACTIVE DAYS</span>
-        </div>
-        <div style="background: rgba(255,215,0,0.1); padding: 5px 10px; border-radius: 5px; border: 1px solid #FFD700;">
-          <span style="color: #FFD700; font-family: 'Fira Code', monospace; font-size: 9px;">🐍 SNAKE PATH</span>
-        </div>
-      </div>
-    </div>
+    <p><em>🎮 HACKER CONTROLS: Watch the snake consume GitHub contribution data in real-time</em></p>
+
+    <p>
+      <img src="https://img.shields.io/badge/🟢_ACTIVE-COMMITS-00FF41?style=flat&labelColor=0D1117" alt="Active Commits" />
+      <img src="https://img.shields.io/badge/⚫_INACTIVE-DAYS-808080?style=flat&labelColor=0D1117" alt="Inactive Days" />
+      <img src="https://img.shields.io/badge/🐍_SNAKE-PATH-FFD700?style=flat&labelColor=0D1117" alt="Snake Path" />
+    </p>
+
   </div>
 
   <!-- 🎌 Anime-Themed Terminal Section -->
   <details>
   <summary>
-    <img src="https://img.shields.io/badge/🎌_ANIME_TERMINAL-Kawaii_Hacking_Mode-FF69B4?style=for-the-badge&labelColor=0D1117&logo=heart&logoColor=white" />
+    <img src="https://img.shields.io/badge/🎌_ANIME_TERMINAL-Kawaii_Hacking_Mode-FF69B4?style=for-the-badge&labelColor=0D1117&logo=heart&logoColor=white" alt="Anime Terminal" />
   </summary>
   <br>
 
@@ -2110,7 +2083,27 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
 <!-- Hidden Matrix Animation Effect -->
 <img width="0" height="0" src="https://svgshare.com/i/hYM.svg" />
 
-<!-- GitHub Activity Graph -->
+<!-- 📊 Enhanced GitHub Stats Section -->
 <div align="center">
+
+  <h2>📊 GitHub Analytics & Performance Metrics</h2>
+
+  <!-- Primary Stats Row -->
+  <p>
+    <img src="https://github-readme-stats.vercel.app/api?username=Xenonesis&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF41&icon_color=FF69B4&text_color=FFFFFF&count_private=true" alt="GitHub Stats" width="48%" />
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Xenonesis&theme=radical&hide_border=true&background=0D1117&stroke=00FF41&ring=FF69B4&fire=FFD700&currStreakLabel=00FF41" alt="GitHub Streak" width="48%" />
+  </p>
+
+  <!-- Languages & Activity -->
+  <p>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xenonesis&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF41&text_color=FFFFFF&langs_count=8" alt="Top Languages" width="48%" />
+    <img src="https://github-readme-stats.vercel.app/api/wakatime?username=Xenonesis&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF41&text_color=FFFFFF" alt="Coding Activity" width="48%" />
+  </p>
+
+  <!-- Activity Graph -->
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Xenonesis&bg_color=0D1117&color=00FF41&line=00FF41&point=FFFFFF&area=true&hide_border=true&custom_title=🚀%20Contribution%20Activity%20Graph" width="100%" />
+
+  <!-- Footer -->
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=120&section=footer&text=STAY%20SECURE%20•%20STAY%20INNOVATIVE&fontSize=24&fontColor=fff&animation=twinkling&fontAlignY=65" width="100%" />
+
 </div>
