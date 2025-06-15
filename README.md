@@ -8,33 +8,257 @@
 
   <br>
   
-  <!-- Interactive Terminal Window -->
+  <!-- 🚀 Enhanced Interactive Terminal Lab with Real-time Functionality -->
   <details>
   <summary>
-    <img src="https://img.shields.io/badge/🖥️_Click_to_Open_Terminal-000000?style=for-the-badge&logo=windows-terminal&logoColor=00FF41" />
+    <img src="https://img.shields.io/badge/🖥️_INTERACTIVE_TERMINAL_LAB-Click_to_Execute-000000?style=for-the-badge&logo=gnome-terminal&logoColor=00FF41&labelColor=1a1a1a&animation=pulse" />
   </summary>
-  
+
+  <div align="center">
+
+  <!-- Enhanced Terminal Mode Selector with Status Indicators -->
+  <div style="margin: 20px 0;">
+    <img src="https://img.shields.io/badge/🔍_RECONNAISSANCE-🟢_Active-FF6B6B?style=for-the-badge&labelColor=0D1117&logo=search&logoColor=white" />
+    <img src="https://img.shields.io/badge/🛡️_DEFENSE-🟡_Monitoring-4ECDC4?style=for-the-badge&labelColor=0D1117&logo=shield&logoColor=white" />
+    <img src="https://img.shields.io/badge/🤖_AI_ANALYSIS-🔵_Running-9B59B6?style=for-the-badge&labelColor=0D1117&logo=brain&logoColor=white" />
+    <img src="https://img.shields.io/badge/🔬_FORENSICS-🟠_Standby-FF8C00?style=for-the-badge&labelColor=0D1117&logo=microscope&logoColor=white" />
+  </div>
+
+  <!-- Enhanced Terminal with Improved UX and Real-time Simulation -->
+  <div style="background: linear-gradient(135deg, #0d1117 0%, #161b22 100%); border-radius: 15px; padding: 25px; border: 2px solid #30363d; box-shadow: 0 12px 40px rgba(0,255,65,0.15); margin: 20px 0; position: relative;">
+
+  <!-- Improved Terminal Header with Window Controls -->
+  <div align="left" style="margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between;">
+    <div>
+      <span style="color: #ff5f56; font-size: 14px;">●</span>
+      <span style="color: #ffbd2e; font-size: 14px;">●</span>
+      <span style="color: #27ca3f; font-size: 14px;">●</span>
+      <span style="color: #8b949e; font-family: 'Fira Code', monospace; font-size: 12px; margin-left: 15px;">xenonesis@security-lab: ~/cyber-ops</span>
+    </div>
+    <div style="color: #8b949e; font-family: 'Fira Code', monospace; font-size: 10px;">
+      <span>🔴 LIVE</span> | <span>⚡ CPU: 15%</span> | <span>💾 RAM: 8.2GB</span>
+    </div>
+  </div>
+
+  <!-- Interactive Terminal Tabs -->
+  <div style="margin-bottom: 15px;">
+    <img src="https://img.shields.io/badge/📟_Terminal_1-Active-00FF41?style=flat&labelColor=0D1117&color=00FF41" />
+    <img src="https://img.shields.io/badge/🔍_Scan_Results-Ready-FFD700?style=flat&labelColor=0D1117&color=FFD700" />
+    <img src="https://img.shields.io/badge/🛡️_Defense_Log-Monitoring-FF4500?style=flat&labelColor=0D1117&color=FF4500" />
+    <img src="https://img.shields.io/badge/🤖_AI_Console-Processing-9932CC?style=flat&labelColor=0D1117&color=9932CC" />
+  </div>
+
   ```bash
-  ┌──(xenonesis㉿kali)-[~]
-  └─$ neofetch
-  
-         ,.=:!!t3Z3z.,                    xenonesis@github
-        :tt:::tt333EE3                   ──────────────────
-        Et:::ztt33EEEL @Ee.,      ..,    OS: Kali GNU/Linux
-       ;tt:::tt333EE7 ;EEEEEEttttt33#    Host: Cybersecurity Specialist
-      :Et:::zt333EEQ. $EEEEEttttt33QL    Kernel: Penetration Testing
-      it::::tt333EEF @EEEEEEttttt33F     Uptime: 24/7 Security Mode
-     ;3=*^```"*4EEV :EEEEEEttttt33@.     Shell: bash 5.1.16
-     ,.=::::!t=., ` @EEEEEEtttz33QF      Terminal: Secure Shell
-    ;::::::::zt33)   "4EEEtttji3P*       CPU: Intel i7 (Overclocked)
-   :t::::::::tt33.:Z3z..  `` ,..g.       Memory: 32GB DDR4
-   i::::::::zt33F AEEEtttt::::ztF        GPU: NVIDIA RTX 4080
-  ;:::::::::t33V ;EEEttttt::::t3         Storage: 2TB NVMe SSD
-  E::::::::zt33L @EEEtttt::::z3F         Network: Gigabit Ethernet
- {3=*^```"*4E3) ;EEEtttt:::::tZ`         
-             ` :EEEEtttt::::z7            Current Mission: Securing Digital Assets
-                 "VEzjt:;;z>*`            Status: Online & Monitoring
+  ┌──(xenonesis㉿security-lab)-[~/cyber-ops]
+  └─$ neofetch --ascii_distro kali
+
+         ,.=:!!t3Z3z.,                    xenonesis@security-lab
+        :tt:::tt333EE3                   ──────────────────────────
+        Et:::ztt33EEEL @Ee.,      ..,    OS: Kali GNU/Linux Rolling
+       ;tt:::tt333EE7 ;EEEEEEttttt33#    Host: Cybersecurity Workstation
+      :Et:::zt333EEQ. $EEEEEttttt33QL    Kernel: 6.3.0-kali1-amd64
+      it::::tt333EEF @EEEEEEttttt33F     Uptime: 24/7 Security Operations
+     ;3=*^```"*4EEV :EEEEEEttttt33@.     Packages: 3247 (dpkg), 327 (flatpak)
+     ,.=::::!t=., ` @EEEEEEtttz33QF      Shell: zsh 5.9 (with oh-my-zsh)
+    ;::::::::zt33)   "4EEEtttji3P*       Resolution: 3840x2160 @ 144Hz
+   :t::::::::tt33.:Z3z..  `` ,..g.       DE: GNOME 44.2 (Wayland)
+   i::::::::zt33F AEEEtttt::::ztF        WM: Mutter (Wayland)
+  ;:::::::::t33V ;EEEttttt::::t3         Theme: Kali-Dark [GTK3/4]
+  E::::::::zt33L @EEEtttt::::z3F         Icons: Flat-Remix-Blue-Dark
+ {3=*^```"*4E3) ;EEEtttt:::::tZ`         Terminal: gnome-terminal 3.48.2
+             ` :EEEEtttt::::z7            CPU: Intel i7-13700K (16) @ 5.4GHz
+                 "VEzjt:;;z>*`            GPU: NVIDIA GeForce RTX 4080 16GB
+                                          Memory: 32GB DDR5-5600 CL36
+                                          Storage: 2TB NVMe SSD (Samsung 980 PRO)
+                                          Network: Intel I225-V 2.5GbE
+
+  ┌──(xenonesis㉿security-lab)-[~/cyber-ops]
+  └─$ whoami && id
+  xenonesis
+  uid=1000(xenonesis) gid=1000(xenonesis) groups=1000(xenonesis),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),108(netdev),119(bluetooth),137(scanner),142(kaboxer)
+
+  ┌──(xenonesis㉿security-lab)-[~/cyber-ops]
+  └─$ ls -la
+  total 48
+  drwxr-xr-x  8 xenonesis xenonesis 4096 Jun 15 14:30 .
+  drwxr-xr-x 25 xenonesis xenonesis 4096 Jun 15 14:25 ..
+  drwxr-xr-x  3 xenonesis xenonesis 4096 Jun 15 14:20 ai-threat-detection/
+  drwxr-xr-x  2 xenonesis xenonesis 4096 Jun 15 14:18 blockchain-security/
+  drwxr-xr-x  4 xenonesis xenonesis 4096 Jun 15 14:22 digital-forensics/
+  drwxr-xr-x  3 xenonesis xenonesis 4096 Jun 15 14:19 penetration-testing/
+  drwxr-xr-x  2 xenonesis xenonesis 4096 Jun 15 14:21 vulnerability-research/
+  -rwxr-xr-x  1 xenonesis xenonesis 2048 Jun 15 14:30 security-toolkit.sh
+  -rw-r--r--  1 xenonesis xenonesis 1024 Jun 15 14:29 README.md
+
+  ┌──(xenonesis㉿security-lab)-[~/cyber-ops]
+  └─$ ./security-toolkit.sh --status
+  🛡️ XENONESIS SECURITY TOOLKIT v3.0
+  ═══════════════════════════════════════
+  🔴 Status: ONLINE & MONITORING
+  🎯 Mission: Protect & Secure Digital Assets
+  � Last Scan: 2025-06-15 14:30:00 UTC
+  ⚡ Threat Level: LOW
+  🔍 Active Monitors: 15
+  💻 Systems Protected: MULTIPLE
   ```
+
+  </div>
+
+  <!-- Interactive Command Buttons -->
+  <div style="margin: 20px 0;">
+    <img src="https://img.shields.io/badge/🔍_nmap-Network_Scan-FF4500?style=for-the-badge&labelColor=0D1117&logo=target&logoColor=white" />
+    <img src="https://img.shields.io/badge/🛡️_metasploit-Exploit_Framework-DC143C?style=for-the-badge&labelColor=0D1117&logo=hack-the-box&logoColor=white" /<img src="https://img.shields.io/badge/🔬_volatility-Memory_Analysis-9932CC?style=for-the-badge&labelColor=0D1117&logo=microscope&logoColor=white" />
+    <img src="https://img.shields.io/badge/🤖_ai--detector-Threat_Analysis-00FF41?style=for-the-badge&labelColor=0D1117&logo=brain&logoColor=white" />
+  </div>
+
+  <!-- Enhanced Terminal Interface with Better UX -->
+  <details>
+  <summary>
+    <img src="https://img.shields.io/badge/⚡_ENHANCED_TERMINAL-Advanced_Interface-FFD700?style=for-the-badge&labelColor=0D1117&logo=terminal&logoColor=white" />
+  </summary>
+  <br>
+
+  <!-- Advanced Terminal with Multiple Tabs and Real-time Features -->
+  <div style="background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%); border-radius: 15px; padding: 25px; border: 2px solid #30363d; box-shadow: 0 12px 40px rgba(0,255,65,0.15); margin: 20px 0; position: relative;">
+
+  <!-- Terminal Header with Enhanced Controls -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #30363d;">
+    <div style="display: flex; align-items: center;">
+      <span style="color: #ff5f56; font-size: 16px; margin-right: 8px;">●</span>
+      <span style="color: #ffbd2e; font-size: 16px; margin-right: 8px;">●</span>
+      <span style="color: #27ca3f; font-size: 16px; margin-right: 15px;">●</span>
+      <span style="color: #8b949e; font-family: 'Fira Code', monospace; font-size: 13px;">xenonesis@security-lab: ~/cyber-ops</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 15px; font-family: 'Fira Code', monospace; font-size: 10px; color: #8b949e;">
+      <span style="color: #FF0000;">🔴 LIVE</span>
+      <span style="color: #FFD700;">⚡ CPU: 15%</span>
+      <span style="color: #4ECDC4;">💾 RAM: 8.2GB</span>
+      <span style="color: #00FF41;">🌐 Connected</span>
+    </div>
+  </div>
+
+  <!-- Interactive Terminal Tabs with Status -->
+  <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+    <img src="https://img.shields.io/badge/📟_Main_Terminal-🟢_Active-00FF41?style=flat&labelColor=0D1117&color=00FF41" />
+    <img src="https://img.shields.io/badge/🔍_Scan_Results-🟡_Ready-FFD700?style=flat&labelColor=0D1117&color=FFD700" />
+    <img src="https://img.shields.io/badge/🛡️_Defense_Log-🔵_Monitoring-4ECDC4?style=flat&labelColor=0D1117&color=4ECDC4" />
+    <img src="https://img.shields.io/badge/🤖_AI_Console-🟠_Processing-FF8C00?style=flat&labelColor=0D1117&color=FF8C00" />
+    <img src="https://img.shields.io/badge/🔬_Forensics-⚪_Standby-9932CC?style=flat&labelColor=0D1117&color=9932CC" />
+  </div>
+
+  <!-- Enhanced Terminal Output with Improved Styling -->
+  <div style="font-family: 'Fira Code', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #00FF41; background: rgba(0,0,0,0.8); padding: 20px; border-radius: 10px; border: 1px solid #30363d; max-height: 500px; overflow-y: auto;">
+
+  <!-- Live Security Monitoring Session -->
+  <div style="margin-bottom: 25px;">
+  <div style="color: #00FF41; margin-bottom: 10px;">
+  <span style="color: #FF6B6B;">┌──(</span><span style="color: #4ECDC4;">xenonesis㉿security-lab</span><span style="color: #FF6B6B;">)-[</span><span style="color: #FFD700;">~/cyber-ops</span><span style="color: #FF6B6B;">]</span><br>
+  <span style="color: #FF6B6B;">└─</span><span style="color: #00FF41;">$ </span><span style="color: #FFFFFF;">python3 ai_threat_detector.py --mode=realtime --verbose</span>
+  </div>
+  
+  <div style="margin: 15px 0; padding: 15px; background: linear-gradient(135deg, rgba(0,255,65,0.1) 0%, rgba(0,255,65,0.05) 100%); border-left: 4px solid #00FF41; border-radius: 8px;">
+  <div style="color: #00FF41; font-weight: bold; margin-bottom: 8px;">[🤖] AI Threat Detection System v3.0 Initialized</div>
+  <div style="color: #4ECDC4; margin-bottom: 5px;">[🔍] Loading neural network models... ✓</div>
+  <div style="color: #FFD700; margin-bottom: 5px;">[📊] Analyzing network traffic patterns...</div>
+  <div style="color: #FF4500; margin-bottom: 5px;">[⚠️] ALERT: Suspicious activity detected from 10.0.1.50</div>
+  <div style="color: #9B59B6; margin-bottom: 5px;">[🛡️] Deploying automated countermeasures...</div>
+  <div style="color: #00FF41; margin-bottom: 5px;">[✅] Threat neutralized successfully</div>
+  <div style="color: #4ECDC4; margin-bottom: 5px;">[📈] Updating threat intelligence database...</div>
+  <div style="color: #FFD700;">[🎯] Security posture enhanced by 15%</div>
+  </div>
+  </div>
+
+  <!-- Real-time Network Scan -->
+  <div style="margin-bottom: 25px;">
+  <div style="color: #00FF41; margin-bottom: 10px;">
+  <span style="color: #FF6B6B;">┌──(</span><span style="color: #4ECDC4;">xenonesis㉿security-lab</span><span style="color: #FF6B6B;">)-[</span><span style="color: #FFD700;">~/cyber-ops</span><span style="color: #FF6B6B;">]</span><br>
+  <span style="color: #FF6B6B;">└─</span><span style="color: #00FF41;">$ </span><span style="color: #FFFFFF;">sudo nmap -sS -sV -A --script=vuln target-network.com</span>
+  </div>
+  
+  <div style="margin: 15px 0; padding: 15px; background: linear-gradient(135deg, rgba(255,107,107,0.1) 0%, rgba(255,107,107,0.05) 100%); border-left: 4px solid #FF6B6B; border-radius: 8px; font-size: 11px;">
+  <div style="color: #FFD700; margin-bottom: 5px;">Starting Nmap 7.94 (https://nmap.org) at 2025-06-15 14:30 UTC</div>
+  <div style="color: #4ECDC4; margin-bottom: 5px;">Nmap scan report for target-network.com (10.0.1.100)</div>
+  <div style="color: #00FF41; margin-bottom: 5px;">Host is up (0.023s latency)</div>
+  <div style="color: #8B949E; margin-bottom: 8px;">Not shown: 997 closed ports</div>
+  <div style="color: #FFFFFF; margin-bottom: 5px; font-weight: bold;">PORT    STATE SERVICE  VERSION</div>
+  <div style="color: #00FF41; margin-bottom: 3px;">22/tcp  open  ssh      OpenSSH 8.9p1 Ubuntu</div>
+  <div style="color: #FFD700; margin-bottom: 3px;">80/tcp  open  http     Apache httpd 2.4.52</div>
+  <div style="color: #FF4500; margin-bottom: 3px;">443/tcp open  https    Apache httpd 2.4.52</div>
+  <div style="color: #9B59B6; margin-bottom: 3px;">| ssl-cert: Subject: CN=target-network.com</div>
+  <div style="color: #4ECDC4;">| http-enum: Potentially interesting directories</div>
+  </div>
+  </div>
+
+  <!-- Digital Forensics Analysis -->
+  <div style="margin-bottom: 25px;">
+  <div style="color: #00FF41; margin-bottom: 10px;">
+  <span style="color: #FF6B6B;">┌──(</span><span style="color: #4ECDC4;">xenonesis㉿security-lab</span><span style="color: #FF6B6B;">)-[</span><span style="color: #FFD700;">~/cyber-ops</span><span style="color: #FF6B6B;">]</span><br>
+  <span style="color: #FF6B6B;">└─</span><span style="color: #00FF41;">$ </span><span style="color: #FFFFFF;">volatility -f memory.dump --profile=Win10x64 pslist</span>
+  </div>
+  
+  <div style="margin: 15px 0; padding: 15px; background: linear-gradient(135deg, rgba(153,50,204,0.1) 0%, rgba(153,50,204,0.05) 100%); border-left: 4px solid #9932CC; border-radius: 8px;">
+  <div style="color: #9932CC; font-weight: bold; margin-bottom: 5px;">[🔬] Digital Forensics Analysis Started</div>
+  <div style="color: #4ECDC4; margin-bottom: 5px;">[📋] Process List Extraction Complete</div>
+  <div style="color: #FFD700; margin-bottom: 5px;">[🔍] Analyzing 247 running processes...</div>
+  <div style="color: #FF4500; margin-bottom: 5px;">[🚨] Suspicious process detected: malware.exe</div>
+  <div style="color: #00FF41; margin-bottom: 5px;">[📊] Memory artifacts extracted successfully</div>
+  <div style="color: #4ECDC4;">[✅] Forensic analysis complete - Report generated</div>
+  </div>
+  </div>
+
+  <!-- Interactive Command Prompt with Enhanced Features -->
+  <div style="margin-top: 30px; padding-top: 15px; border-top: 2px solid #30363d;">
+  <div style="color: #00FF41; margin-bottom: 10px;">
+  <span style="color: #FF6B6B;">┌──(</span><span style="color: #4ECDC4;">xenonesis㉿security-lab</span><span style="color: #FF6B6B;">)-[</span><span style="color: #FFD700;">~/cyber-ops</span><span style="color: #FF6B6B;">]</span><br>
+  <span style="color: #FF6B6B;">└─</span><span style="color: #00FF41;">$ </span><span style="color: #FFFFFF;">█</span>
+  </div>
+  
+  <!-- Command Suggestions -->
+  <div style="margin-top: 15px; padding: 10px; background: rgba(48, 54, 61, 0.3); border-radius: 8px; font-size: 10px;">
+  <div style="color: #8B949E; margin-bottom: 8px;">💡 Quick Commands:</div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
+  <div style="color: #4ECDC4;">• htop - System monitor</div>
+  <div style="color: #FFD700;">• netstat -tulpn - Network status</div>
+  <div style="color: #FF6B6B;">• fail2ban-client status - Security status</div>
+  <div style="color: #9B59B6;">• docker ps - Container status</div>
+  <div style="color: #00FF41;">• git status - Repository status</div>
+  <div style="color: #FF4500;">• systemctl status - Service status</div>
+  </div>
+  </div>
+  </div>
+
+  </div>
+
+  <!-- Terminal Status Dashboard -->
+  <div style="margin-top: 20px; padding: 15px; background: rgba(48, 54, 61, 0.2); border-radius: 10px; border: 1px solid #30363d;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; font-family: 'Fira Code', monospace; font-size: 11px;">
+  <div style="text-align: center;">
+    <div style="color: #00FF41; font-weight: bold;">🟢 System Status</div>
+    <div style="color: #FFFFFF;">OPERATIONAL</div>
+  </div>
+  <div style="text-align: center;">
+    <div style="color: #FFD700; font-weight: bold;">⚡ Performance</div>
+    <div style="color: #FFFFFF;">OPTIMAL</div>
+  </div>
+  <div style="text-align: center;">
+    <div style="color: #FF4500; font-weight: bold;">🔒 Security</div>
+    <div style="color: #FFFFFF;">HIGH</div>
+  </div>
+  <div style="text-align: center;">
+    <div style="color: #4ECDC4; font-weight: bold;">🌐 Network</div>
+    <div style="color: #FFFFFF;">CONNECTED</div>
+  </div>
+  <div style="text-align: center;">
+    <div style="color: #9B59B6; font-weight: bold;">🤖 AI Systems</div>
+    <div style="color: #FFFFFF;">ACTIVE</div>
+  </div>
+  </div>
+  </div>
+
+  </div>
+  </details>
+
+  </div>
   </details>
   
   <!-- Enhanced Snake Animation with Custom Styling -->
@@ -1082,15 +1306,87 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
   <!-- Spectacular Enhanced Footer Section -->
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=250&section=footer&text=XENONESIS&fontSize=60&fontColor=fff&animation=twinkling&fontAlignY=55&desc=🛡️%20SECURING%20THE%20DIGITAL%20FRONTIER%20🚀&descAlignY=75&descAlign=50&descSize=18" width="100%" />
 
-  <!-- Advanced Interactive Terminal Simulation -->
+  <!-- 🚀 Advanced Multi-Terminal Security Lab -->
   <details>
   <summary>
-    <img src="https://img.shields.io/badge/🖥️_ADVANCED_TERMINAL-Execute_Security_Commands-000000?style=for-the-badge&logo=windows-terminal&logoColor=00FF41" />
+    <img src="https://img.shields.io/badge/�_SECURITY_LAB_TERMINAL-Live_Penetration_Testing-000000?style=for-the-badge&logo=gnome-terminal&logoColor=00FF41&labelColor=0d1117" />
   </summary>
   <br>
 
-  <!-- Multi-stage Terminal Animation -->
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=1200&pause=300&color=00FF41&center=true&vCenter=true&multiline=true&width=900&height=280&lines=xenonesis@kali:~$+sudo+nmap+-sS+-sV+-O+--script=vuln+target.com;Starting+Nmap+7.94+(https://nmap.org)+at+2025-06-15+14:30+UTC;Nmap+scan+report+for+target.com+(192.168.1.100);Host+is+up+(0.045s+latency);PORT++++STATE++SERVICE+++VERSION;22/tcp++open+++ssh+++++++OpenSSH+8.9p1;80/tcp++open+++http++++++Apache+httpd+2.4.52;443/tcp+open+++https+++++Apache+httpd+2.4.52;|+ssl-cert:+Subject:+commonName=target.com;|+ssl-enum-ciphers:+TLSv1.2;xenonesis@kali:~$+python3+ai_threat_detector.py+--mode=realtime;[🤖]+AI+Threat+Detection+System+v2.0+Initialized;[🔍]+Analyzing+network+traffic+patterns...;[⚠️]+Suspicious+activity+detected+from+192.168.1.50;[🛡️]+Deploying+countermeasures...;[✅]+Threat+neutralized+successfully;[📊]+Generating+security+report...;xenonesis@kali:~$+echo+'Mission+Accomplished+🎯'" alt="Advanced Terminal Simulation" />
+  <!-- Terminal Scenario Selector -->
+  <div align="center">
+  <table>
+    <tr>
+      <td align="center" width="25%">
+        <img src="https://img.shields.io/badge/🔍_RECONNAISSANCE-Network_Scanning-FF0000?style=for-the-badge&labelColor=0D1117&logo=radar&logoColor=white" />
+      </td>
+      <td align="center" width="25%">
+        <img src="https://img.shields.io/badge/🛡️_DEFENSE-Threat_Detection-00FF00?style=for-the-badge&labelColor=0D1117&logo=shield&logoColor=white" />
+      </td>
+      <td align="center" width="25%">
+        <img src="https://img.shields.io/badge/🤖_AI_SECURITY-ML_Analysis-0080FF?style=for-the-badge&labelColor=0D1117&logo=brain&logoColor=white" />
+      </td>
+      <td align="center" width="25%">
+        <img src="https://img.shields.io/badge/📊_FORENSICS-Digital_Investigation-9932CC?style=for-the-badge&labelColor=0D1117&logo=magnifying-glass&logoColor=white" />
+      </td>
+    </tr>
+  </table>
+  </div>
+
+  <br>
+
+  <!-- Live Terminal Simulation with Enhanced UX -->
+  <div style="background: linear-gradient(135deg, #0d1117 0%, #161b22 100%); border-radius: 12px; padding: 20px; border: 2px solid #30363d; box-shadow: 0 8px 32px rgba(0,255,65,0.1);">
+
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=13&duration=1000&pause=200&color=00FF41&center=true&vCenter=true&multiline=true&width=900&height=350&lines=┌──(xenonesis㉿security-lab)-[~/pentest];└─$+sudo+nmap+-sS+-sV+-A+--script=vuln+target-network.com;Starting+Nmap+7.94+(https://nmap.org)+at+2025-06-15+14:30+UTC;Nmap+scan+report+for+target-network.com+(10.0.1.100);Host+is+up+(0.023s+latency);Not+shown:+997+closed+ports;PORT++++STATE+SERVICE++VERSION;22/tcp++open++ssh++++++OpenSSH+8.9p1+Ubuntu;80/tcp++open++http+++++Apache+httpd+2.4.52;443/tcp+open++https++++Apache+httpd+2.4.52;|+ssl-cert:+Subject:+CN=target-network.com;|+http-enum:+Potentially+interesting+directories;└─$+python3+ai_threat_detector.py+--mode=realtime+--verbose;[🤖]+AI+Threat+Detection+System+v3.0+Initialized;[🔍]+Loading+neural+network+models...+✓;[📊]+Analyzing+network+traffic+patterns...;[⚠️]+ALERT:+Suspicious+activity+detected+from+10.0.1.50;[🛡️]+Deploying+automated+countermeasures...;[✅]+Threat+neutralized+successfully;[�]+Updating+threat+intelligence+database...;[🎯]+Security+posture+enhanced+by+15%;└─$+volatility+-f+memory.dump+--profile=Win10x64+pslist;[🔬]+Digital+Forensics+Analysis+Started;[📋]+Process+List+Extraction+Complete;[🕵️]+Suspicious+process+detected:+malware.exe;└─$+echo+'🎉+Mission+Accomplished!+Digital+fortress+secured+🛡️'" alt="Enhanced Security Terminal" />
+
+  </div>
+
+  <!-- Terminal Command Reference -->
+  <details>
+  <summary>
+    <img src="https://img.shields.io/badge/📚_COMMAND_REFERENCE-Security_Toolkit-FFD700?style=for-the-badge&labelColor=0D1117&logo=book&logoColor=white" />
+  </summary>
+  <br>
+
+  <table>
+    <tr>
+      <td width="50%">
+        <h4>🔍 Reconnaissance Commands</h4>
+        <code>nmap -sS -sV -A target.com</code><br>
+        <code>gobuster dir -u http://target.com -w wordlist.txt</code><br>
+        <code>nikto -h http://target.com</code><br>
+        <code>whatweb target.com</code><br>
+        <code>dig target.com ANY</code>
+      </td>
+      <td width="50%">
+        <h4>🛡️ Defense & Monitoring</h4>
+        <code>fail2ban-client status</code><br>
+        <code>iptables -L -n -v</code><br>
+        <code>netstat -tulpn | grep LISTEN</code><br>
+        <code>ss -tuln</code><br>
+        <code>tcpdump -i eth0 -n</code>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <h4>🤖 AI Security Tools</h4>
+        <code>python3 ai_threat_detector.py --realtime</code><br>
+        <code>tensorflow_malware_classifier.py</code><br>
+        <code>ml_anomaly_detection.py --network</code><br>
+        <code>neural_ids.py --train --dataset logs/</code>
+      </td>
+      <td width="50%">
+        <h4>📊 Digital Forensics</h4>
+        <code>volatility -f memory.dump imageinfo</code><br>
+        <code>autopsy --case-dir /cases/investigation</code><br>
+        <code>binwalk -e firmware.bin</code><br>
+        <code>strings malware.exe | grep -i password</code>
+      </td>
+    </tr>
+  </table>
+  </details>
+
   </details>
 
   <br>
