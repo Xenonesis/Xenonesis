@@ -111,12 +111,54 @@
     <img src="https://img.shields.io/badge/🤖_ai--detector-Threat_Analysis-00FF41?style=for-the-badge&labelColor=0D1117&logo=brain&logoColor=white" />
   </div>
 
-  <!-- Enhanced Terminal Interface with Better UX -->
-  <details>
+  <!-- Enhanced Terminal Interface with Better UX --<details>
   <summary>
-    <img src="https://img.shields.io/badge/⚡_ENHANCED_TERMINAL-Advanced_Interface-FFD700?style=for-the-badge&labelColor=0D1117&logo=terminal&logoColor=white" />
+    <img src="https://img.shields.io/badge/⚡_CYBER_TERMINAL-🎌_Anime_Mode_Active-FFD700?style=for-the-badge&labelColor=0D1117&logo=terminal&logoColor=white" />
   </summary>
   <br>
+
+  <!-- 🎌 Anime Character Selection Panel -->
+  <div style="margin: 20px 0; text-align: center; padding: 15px; background: linear-gradient(135deg, rgba(153,50,204,0.1) 0%, rgba(255,105,180,0.1) 100%); border-radius: 12px; border: 1px solid #9932CC;">
+    <div style="color: #FF69B4; font-family: 'Fira Code', monospace; font-size: 14px; margin-bottom: 10px;">🎌 Select Your Anime Terminal Theme 🎌</div>
+    <img src="https://img.shields.io/badge/🤖_GHOST_IN_SHELL-Motoko_Kusanagi-9932CC?style=for-the-badge&labelColor=0D1117&logo=android&logoColor=white" />
+    <img src="https://img.shields.io/badge/🔥_DEMON_SLAYER-Tanjiro_Mode-FF4500?style=for-the-badge&labelColor=0D1117&logo=fire&logoColor=white" />
+    <img src="https://img.shields.io/badge/⚡_NARUTO-Hokage_Terminal-FFD700?style=for-the-badge&labelColor=0D1117&logo=leaf&logoColor=white" />
+    <img src="https://img.shields.io/badge/🌟_ONE_PIECE-Luffy_Adventure-FF69B4?style=for-the-badge&labelColor=0D1117&logo=anchor&logoColor=white" />
+    <img src="https://img.shields.io/badge/⚔️_ATTACK_TITAN-Eren_Mode-8B0000?style=for-the-badge&labelColor=0D1117&logo=shield&logoColor=white" />
+  </div>
+
+  <!-- 🎮 Animated Terminal with Anime-inspired Features -->
+  <div style="background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%, #1a0033 100%); border-radius: 15px; padding: 25px; border: 2px solid #9932CC; box-shadow: 0 12px 40px rgba(153,50,204,0.3), 0 0 30px rgba(255,105,180,0.2); margin: 20px 0; position: relative; animation: glow 2s ease-in-out infinite alternate;">
+
+  <!-- Anime-style Terminal Header with Character Avatar -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #9932CC; background: linear-gradient(90deg, rgba(153,50,204,0.1) 0%, rgba(255,105,180,0.1) 100%);">
+    <div style="display: flex; align-items: center;">
+      <div style="margin-right: 15px; font-size: 24px;">🤖</div>
+      <div>
+        <span style="color: #ff5f56; font-size: 16px; margin-right: 8px;">●</span>
+        <span style="color: #ffbd2e; font-size: 16px; margin-right: 8px;">●</span>
+        <span style="color: #27ca3f; font-size: 16px; margin-right: 15px;">●</span>
+        <span style="color: #FF69B4; font-family: 'Fira Code', monospace; font-size: 13px; font-weight: bold;">xenonesis@cyber-dojo: ~/anime-hacking</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 15px; font-family: 'Fira Code', monospace; font-size: 10px;">
+      <span style="color: #FF0000; animation: blink 1s infinite;">🔴 LIVE</span>
+      <span style="color: #FFD700;">⚡ Power Level: 9000+</span>
+      <span style="color: #4ECDC4;">💾 Chakra: 8.2GB</span>
+      <span style="color: #00FF41;">🌐 Network Jutsu: Active</span>
+      <span style="color: #FF69B4;">🎌 Anime Mode: ON</span>
+    </div>
+  </div>
+
+  <!-- 🎨 Animated Terminal Tabs with Anime Characters -->
+  <div style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">
+    <img src="https://img.shields.io/badge/📟_Main_Terminal-🟢_Motoko_Active-00FF41?style=flat&labelColor=0D1117&color=00FF41" />
+    <img src="https://img.shields.io/badge/🔍_Scan_Results-🟡_Tanjiro_Ready-FFD700?style=flat&labelColor=0D1117&color=FFD700" />
+    <img src="https://img.shields.io/badge/🛡️_Defense_Log-🔵_Naruto_Monitoring-4ECDC4?style=flat&labelColor=0D1117&color=4ECDC4" />
+    <img src="https://img.shields.io/badge/🤖_AI_Console-🟠_Luffy_Processing-FF8C00?style=flat&labelColor=0D1117&color=FF8C00" />
+    <img src="https://img.shields.io/badge/🔬_Forensics-⚪_Eren_Standby-9932CC?style=flat&labelColor=0D1117&color=9932CC" />
+    <img src="https://img.shields.io/badge/🎮_Game_Mode-🌈_Goku_Training-FF69B4?style=flat&labelColor=0D1117&color=FF69B4" />
+  </div>
 
   <!-- Advanced Terminal with Multiple Tabs and Real-time Features -->
   <div style="background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%); border-radius: 15px; padding: 25px; border: 2px solid #30363d; box-shadow: 0 12px 40px rgba(0,255,65,0.15); margin: 20px 0; position: relative;">
@@ -264,9 +306,166 @@
   <!-- Enhanced Snake Animation with Custom Styling -->
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg">
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg"<img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg">
   </picture>
+
+  <!-- 🎌 Anime-Themed Terminal Section -->
+  <details>
+  <summary>
+    <img src="https://img.shields.io/badge/🎌_ANIME_TERMINAL-Kawaii_Hacking_Mode-FF69B4?style=for-the-badge&labelColor=0D1117&logo=heart&logoColor=white" />
+  </summary>
+  <br>
+
+  <!-- Anime Character Terminal Selector -->
+  <div style="margin: 20px 0; text-align: center; padding: 20px; background: linear-gradient(135deg, rgba(255,105,180,0.1) 0%, rgba(138,43,226,0.1) 50%, rgba(255,20,147,0.1) 100%); border-radius: 15px; border: 2px solid #FF69B4; box-shadow: 0 0 20px rgba(255,105,180,0.3);">
+    
+    <!-- Animated Header -->
+    <div style="margin-bottom: 15px;">
+      <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=2000&pause=1000&color=FF69B4&center=true&vCenter=true&width=600&lines=🎌+Choose+Your+Anime+Hacker+Companion+🎌;✨+Each+Character+Has+Unique+Terminal+Powers+✨" alt="Anime Header" />
+    </div>
+
+    <!-- Character Selection Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+      
+      <!-- Ghost in the Shell - Motoko -->
+      <div style="padding: 15px; background: linear-gradient(135deg, rgba(153,50,204,0.2) 0%, rgba(75,0,130,0.2) 100%); border-radius: 12px; border: 1px solid #9932CC;">
+        <div style="font-size: 24px; margin-bottom: 8px;">🤖</div>
+        <div style="color: #9932CC; font-weight: bold; margin-bottom: 5px;">Major Motoko Kusanagi</div>
+        <div style="color: #FFFFFF; font-size: 12px; margin-bottom: 10px;">Ghost in the Shell</div>
+        <img src="https://img.shields.io/badge/🔮_Cyber_Brain-Neural_Hacking-9932CC?style=for-the-badge&labelColor=0D1117" />
+      </div>
+
+      <!-- Demon Slayer - Tanjiro -->
+      <div style="padding: 15px; background: linear-gradient(135deg, rgba(255,69,0,0.2) 0%, rgba(220,20,60,0.2) 100%); border-radius: 12px; border: 1px solid #FF4500;">
+        <div style="font-size: 24px; margin-bottom: 8px;">🔥</div>
+        <div style="color: #FF4500; font-weight: bold; margin-bottom: 5px;">Tanjiro Kamado</div>
+        <div style="color: #FFFFFF; font-size: 12px; margin-bottom: 10px;">Demon Slayer</div>
+        <img src="https://img.shields.io/badge/⚔️_Water_Breathing-Security_Techniques-FF4500?style=for-the-badge&labelColor=0D1117" />
+      </div>
+
+      <!-- Naruto - Hokage Mode -->
+      <div style="padding: 15px; background: linear-gradient(135deg, rgba(255,215,0,0.2) 0%, rgba(255,140,0,0.2) 100%); border-radius: 12px; border: 1px solid #FFD700;">
+        <div style="font-size: 24px; margin-bottom: 8px;">🍃</div>
+        <div style="color: #FFD700; font-weight: bold; margin-bottom: 5px;">Naruto Uzumaki</div>
+        <div style="color: #FFFFFF; font-size: 12px; margin-bottom: 10px;">Naruto Shippuden</div>
+        <img src="https://img.shields.io/badge/🌪️_Rasengan-Network_Jutsu-FFD700?style=for-the-badge&labelColor=0D1117" />
+      </div>
+
+      <!-- One Piece - Luffy -->
+      <div style="padding: 15px; background: linear-gradient(135deg, rgba(255,105,180,0.2) 0%, rgba(255,20,147,0.2) 100%); border-radius: 12px; border: 1px solid #FF69B4;">
+        <div style="font-size: 24px; margin-bottom: 8px;">🏴‍☠️</div>
+        <div style="color: #FF69B4; font-weight: bold; margin-bottom: 5px;">Monkey D. Luffy</div>
+        <div style="color: #FFFFFF; font-size: 12px; margin-bottom: 10px;">One Piece</div>
+        <img src="https://img.shields.io/badge/🚀_Gear_Fifth-Rubber_Hacking-FF69B4?style=for-the-badge&labelColor=0D1117" />
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Anime-Themed Terminal Interface -->
+  <div style="background: linear-gradient(135deg, #000000 0%, #1a0033 50%, #000000 100%); border-radius: 20px; padding: 30px; border: 3px solid #FF69B4; box-shadow: 0 0 30px rgba(255,105,180,0.4), inset 0 0 20px rgba(138,43,226,0.2); margin: 25px 0; position: relative; overflow: hidden;">
+
+  <!-- Kawaii Terminal Header -->
+  <div style="position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; padding: 20px; background: linear-gradient(90deg, rgba(255,105,180,0.1) 0%, rgba(138,43,226,0.1) 50%, rgba(255,105,180,0.1) 100%); border-radius: 15px; border: 1px solid #FF69B4;">
+    
+    <div style="display: flex; align-items: center;">
+      <div style="margin-right: 20px; font-size: 32px;">🎌</div>
+      <div>
+        <div style="color: #FF69B4; font-family: 'Fira Code', monospace; font-size: 16px; font-weight: bold; margin-bottom: 5px;">
+          ✨ Kawaii Cyber Terminal ✨
+        </div>
+        <div style="color: #FFFFFF; font-family: 'Fira Code', monospace; font-size: 12px;">
+          <span style="color: #ff5f56;">●</span>
+          <span style="color: #ffbd2e;">●</span>
+          <span style="color: #27ca3f;">●</span>
+          <span style="margin-left: 10px;">motoko@anime-dojo: ~/kawaii-hacking</span>
+        </div>
+      </div>
+    </div>
+    
+    <div style="display: flex; flex-direction: column; gap: 8px; font-family: 'Fira Code', monospace; font-size: 10px; text-align: right;">
+      <div><span style="color: #FF69B4;">💖 Kawaii Level:</span> <span style="color: #FFD700;">MAX</span></div>
+      <div><span style="color: #9932CC;">🎌 Anime Power:</span> <span style="color: #00FF41;">OVER 9000!</span></div>
+      <div><span style="color: #FF4500;">⚡ Moe Energy:</span> <span style="color: #4ECDC4;">UNLIMITED</span></div>
+      <div><span style="color: #FFD700;">🌟 Cuteness:</span> <span style="color: #FF69B4;">LEGENDARY</span></div>
+    </div>
+  </div>
+
+  <!-- Anime Terminal Tabs -->
+  <div style="position: relative; z-index: 1; display: flex; gap: 10px; margin-bottom: 25px; flex-wrap: wrap;">
+    <img src="https://img.shields.io/badge/🤖_Motoko_Terminal-🟢_Active-9932CC?style=flat&labelColor=0D1117&color=9932CC" />
+    <img src="https://img.shields.io/badge/🔥_Tanjiro_Scanner-🟡_Ready-FF4500?style=flat&labelColor=0D1117&color=FF4500" />
+    <img src="https://img.shields.io/badge/🍃_Naruto_Jutsu-🔵_Casting-FFD700?style=flat&labelColor=0D1117&color=FFD700" />
+    <img src="https://img.shields.io/badge/🏴‍☠️_Luffy_Adventure-🟠_Exploring-FF69B4?style=flat&labelColor=0D1117&color=FF69B4" />
+    <img src="https://img.shields.io/badge/⚔️_Eren_Titan-🔴_Transforming-8B0000?style=flat&labelColor=0D1117&color=8B0000" />
+    <img src="https://img.shields.io/badge/🌸_Sakura_Healing-💚_Restoring-32CD32?style=flat&labelColor=0D1117&color=32CD32" />
+  </div>
+
+  <!-- Anime-Styled Terminal Output -->
+  <div style="position: relative; z-index: 1; font-family: 'Fira Code', 'Courier New', monospace; font-size: 12px; line-height: 1.6; color: #FF69B4; background: rgba(0,0,0,0.8); padding: 25px; border-radius: 15px; border: 2px solid #9932CC; max-height: 600px; overflow-y: auto; box-shadow: inset 0 0 20px rgba(255,105,180,0.1);">
+
+  <!-- Motoko's Cyber Brain Hacking Session -->
+  <div style="margin-bottom: 30px; padding: 20px; background: linear-gradient(135deg, rgba(153,50,204,0.1) 0%, rgba(75,0,130,0.1) 100%); border-left: 4px solid #9932CC; border-radius: 10px;">
+    <div style="color: #9932CC; margin-bottom: 12px; font-weight: bold;">
+      🤖 [MOTOKO@SECTION9] ~/ghost-in-shell $
+    </div>
+    <div style="color: #FFFFFF; margin-bottom: 8px;">sudo ./cyber-brain-hack.sh --target=criminal-network --mode=stealth</div>
+    
+    <div style="margin: 15px 0; padding: 15px; background: rgba(153,50,204,0.1); border-radius: 8px;">
+      <div style="color: #9932CC; font-weight: bold; margin-bottom: 8px;">[🧠] Cyber Brain Interface v2.0 - Initializing...</div>
+      <div style="color: #4ECDC4; margin-bottom: 5px;">[🔮] Connecting to the Net... ✓</div>
+      <div style="color: #FFD700; margin-bottom: 5px;">[🌐] Ghost-hacking target systems...</div>
+      <div style="color: #FF4500; margin-bottom: 5px;">[⚠️] ALERT: ICE detected! Deploying countermeasures...</div>
+      <div style="color: #00FF41; margin-bottom: 5px;">[✅] Neural firewall bypassed successfully!</div>
+      <div style="color: #FF69B4; margin-bottom: 5px;">[💖] Kawaii virus deployed - targets now love anime!</div>
+      <div style="color: #9932CC;">[🎌] Mission complete! The Major strikes again! (◕‿◕)</div>
+    </div>
+  </div>
+
+  <!-- Tanjiro's Water Breathing Security Scan -->
+  <div style="margin-bottom: 30px; padding: 20px; background: linear-gradient(135deg, rgba(255,69,0,0.1) 0%, rgba(220,20,60,0.1) 100%); border-left: 4px solid #FF4500; border-radius: 10px;">
+    <div style="color: #FF4500; margin-bottom: 12px; font-weight: bold;">
+      🔥 [TANJIRO@DEMON-SLAYER-CORPS] ~/water-breathing $
+    </div>
+    <div style="color: #FFFFFF; margin-bottom: 8px;">./total-concentration.sh --technique="water-breathing" --scan=network</div>
+    
+    <div style="margin: 15px 0; padding: 15px; background: rgba(255,69,0,0.1); border-radius: 8px;">
+      <div style="color: #FF4500; font-weight: bold; margin-bottom: 8px;">[⚔️] Water Breathing - First Form: Network Slice!</div>
+      <div style="color: #4ECDC4; margin-bottom: 5px;">[🌊] Flowing through network topology...</div>
+      <div style="color: #FFD700; margin-bottom: 5px;">[👃] Sniffing for demon (malware) presence...</div>
+      <div style="color: #FF0000; margin-bottom: 5px;">[😈] DEMON DETECTED: Muzan.exe in system!</div>
+      <div style="color: #00FF41; margin-bottom: 5px;">[⚔️] Nichirin Blade activated - slicing malware!</div>
+      <div style="color: #FF69B4; margin-bottom: 5px;">[🌸] Nezuko.dll protected all innocent files!</div>
+      <div style="color: #FF4500;">[🔥] Network purified! No demons remain! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</div>
+    </div>
+  </div>
+
+  <!-- Interactive Kawaii Command Prompt -->
+  <div style="margin-top: 35px; padding-top: 20px; border-top: 2px solid #FF69B4;">
+    <div style="color: #FF69B4; margin-bottom: 15px; display: flex; align-items: center;">
+      <span style="font-size: 20px; margin-right: 10px;">🎌</span>
+      <span style="color: #FF69B4;">✨ [KAWAII-TERMINAL@ANIME-DOJO] ~/moe-hacking $</span>
+      <span style="color: #FFFFFF; margin-left: 10px;">█</span>
+    </div>
+    
+    <!-- Kawaii Command Suggestions -->
+    <div style="margin-top: 20px; padding: 15px; background: rgba(255,105,180,0.1); border-radius: 12px; border: 1px solid #FF69B4;">
+      <div style="color: #FF69B4; margin-bottom: 12px; font-weight: bold;">💖 Kawaii Commands Available:</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; font-size: 11px;">
+        <div style="color: #9932CC;">• ./neko-scan.sh - Cute network scanning</div>
+        <div style="color: #FF4500;">• sudo uwu-firewall - Kawaii protection</div>
+        <div style="color: #FFD700;">• anime-top - Moe system monitor</div>
+        <div style="color: #FF69B4;">• waifu-docker ps - Container waifus</div>
+        <div style="color: #00FF41;">• git-chan status - Version control-chan</div>
+        <div style="color: #4ECDC4;">• sudo systemctl start kawaii.service</div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  </div>
+  </details>
 
 </div>
 
