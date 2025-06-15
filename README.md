@@ -2114,15 +2114,51 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
 
   <!-- Primary Stats Row -->
   <p>
-    <img src="https://github-readme-stats.vercel.app/api?username=Xenonesis&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF41&icon_color=FF69B4&text_color=FFFFFF&count_private=true&cache_seconds=86400" alt="GitHub Stats" width="48%" />
+    <!-- Custom GitHub Stats Display -->
+    <img src="https://img.shields.io/badge/📊_GITHUB_STATS-Live_Analytics-00FF41?style=for-the-badge&labelColor=0D1117&logo=github&logoColor=white" alt="GitHub Stats" width="48%" />
     <img src="https://streak-stats.demolab.com/?user=Xenonesis&theme=radical&hide_border=true&background=0D1117&stroke=00FF41&ring=FF69B4&fire=FFD700&currStreakLabel=00FF41" alt="GitHub Streak" width="48%" />
   </p>
 
-  <!-- Languages & Activity -->
-  <p>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xenonesis&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF41&text_color=FFFFFF&langs_count=8&cache_seconds=86400" alt="Top Languages" width="48%" />
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Xenonesis&theme=radical&utcOffset=8" alt="Productive Time" width="48%" />
-  </p>
+  <!-- Manual Stats Display -->
+  <div style="display: flex; justify-content: center; margin: 20px 0;">
+    <div style="background: linear-gradient(45deg, #0D1117, #1a1a2e); border: 2px solid #00FF41; border-radius: 10px; padding: 20px; margin: 10px; text-align: center; min-width: 200px;">
+      <h3 style="color: #00FF41; margin: 0;">🚀 Repositories</h3>
+      <p style="color: #FFFFFF; font-size: 24px; margin: 10px 0;">2+</p>
+      <p style="color: #FF69B4; font-size: 12px; margin: 0;">Public Projects</p>
+    </div>
+    <div style="background: linear-gradient(45deg, #0D1117, #1a1a2e); border: 2px solid #FF69B4; border-radius: 10px; padding: 20px; margin: 10px; text-align: center; min-width: 200px;">
+      <h3 style="color: #FF69B4; margin: 0;">⭐ Stars Earned</h3>
+      <p style="color: #FFFFFF; font-size: 24px; margin: 10px 0;">Growing</p>
+      <p style="color: #00FF41; font-size: 12px; margin: 0;">Community Support</p>
+    </div>
+    <div style="background: linear-gradient(45deg, #0D1117, #1a1a2e); border: 2px solid #FFD700; border-radius: 10px; padding: 20px; margin: 10px; text-align: center; min-width: 200px;">
+      <h3 style="color: #FFD700; margin: 0;">🔥 Commits</h3>
+      <p style="color: #FFFFFF; font-size: 24px; margin: 10px 0;">Active</p>
+      <p style="color: #00FF41; font-size: 12px; margin: 0;">Daily Contributions</p>
+    </div>
+  </div>
+
+  <!-- Languages & Skills Display -->
+  <div style="display: flex; justify-content: center; margin: 20px 0;">
+    <div style="background: linear-gradient(45deg, #0D1117, #1a1a2e); border: 2px solid #00FF41; border-radius: 10px; padding: 20px; margin: 10px; text-align: center; min-width: 300px;">
+      <h3 style="color: #00FF41; margin: 0;">💻 Top Languages</h3>
+      <div style="margin: 15px 0;">
+        <span style="color: #FFD700; font-size: 14px;">🔥 TypeScript</span><br>
+        <span style="color: #FF69B4; font-size: 14px;">🌐 HTML/CSS</span><br>
+        <span style="color: #00FF41; font-size: 14px;">🐍 Python</span><br>
+        <span style="color: #FFFFFF; font-size: 14px;">⚡ JavaScript</span>
+      </div>
+    </div>
+    <div style="background: linear-gradient(45deg, #0D1117, #1a1a2e); border: 2px solid #FF69B4; border-radius: 10px; padding: 20px; margin: 10px; text-align: center; min-width: 300px;">
+      <h3 style="color: #FF69B4; margin: 0;">🛡️ Security Focus</h3>
+      <div style="margin: 15px 0;">
+        <span style="color: #FFD700; font-size: 14px;">🔐 Cybersecurity</span><br>
+        <span style="color: #00FF41; font-size: 14px;">🤖 AI/ML Security</span><br>
+        <span style="color: #FF69B4; font-size: 14px;">🕵️ Penetration Testing</span><br>
+        <span style="color: #FFFFFF; font-size: 14px;">🔍 Digital Forensics</span>
+      </div>
+    </div>
+  </div>
 
   <!-- Activity Graph -->
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Xenonesis&bg_color=0D1117&color=00FF41&line=00FF41&point=FFFFFF&area=true&hide_border=true&custom_title=🚀%20Contribution%20Activity%20Graph" width="100%" />
