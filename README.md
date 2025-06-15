@@ -339,11 +339,20 @@
 
     <!-- Enhanced Snake Animation with Cyberpunk Styling -->
     <div align="center">
+      <!-- Primary Snake Animation (Your Profile) -->
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake-dark.svg">
         <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg">
         <img alt="🐍 Cyberpunk Snake Game - GitHub Contribution Matrix Infiltration 🐍" src="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg" width="100%">
       </picture>
+
+      <!-- Demo Snake Animation (Fallback for visibility) -->
+      <div style="margin-top: 15px; opacity: 0.8;">
+        <img src="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake-dark.svg" alt="🐍 Demo Snake Animation - Cyberpunk Matrix Style 🐍" width="100%" />
+        <p align="center" style="font-size: 12px; color: #666; margin-top: 5px;">
+          <em>🔮 Demo Animation - Your personal snake will grow as you contribute more to GitHub! 🔮</em>
+        </p>
+      </div>
     </div>
 
     <!-- Game Controls & Instructions -->
