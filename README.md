@@ -191,22 +191,21 @@
   <!-- Enhanced Terminal Output with Improved Styling -->
   <div style="font-family: 'Fira Code', 'Courier New', monospace; font-size: 12px; line-height: 1.5; color: #00FF41; background: rgba(0,0,0,0.8); padding: 20px; border-radius: 10px; border: 1px solid #30363d; max-height: 500px; overflow-y: auto;">
 
-  <!-- Live Security Monitoring Session -->
-  <div style="margin-bottom: 25px;">
+  <!-- Live Security Monitoring Session --<div style="margin-bottom: 25px;">
   <div style="color: #00FF41; margin-bottom: 10px;">
-  <span style="color: #FF6B6B;">┌──(</span><span style="color: #4ECDC4;">xenonesis㉿security-lab</span><span style="color: #FF6B6B;">)-[</span><span style="color: #FFD700;">~/cyber-ops</span><span style="color: #FF6B6B;">]</span><br>
-  <span style="color: #FF6B6B;">└─</span><span style="color: #00FF41;">$ </span><span style="color: #FFFFFF;">python3 ai_threat_detector.py --mode=realtime --verbose</span>
+  <span style="color: #FF6B6B;">┌──(</span><span style="color: #4ECDC4;">xenonesis㉿kali-linux</span><span style="color: #FF6B6B;">)-[</span><span style="color: #FFD700;">~/security-tools</span><span style="color: #FF6B6B;">]</span><br>
+  <span style="color: #FF6B6B;">└─</span><span style="color: #00FF41;">$ </span><span style="color: #FFFFFF;">sudo snort -A console -q -c /etc/snort/snort.conf -i eth0</span>
   </div>
   
-  <div style="margin: 15px 0; padding: 15px; background: linear-gradient(135deg, rgba(0,255,65,0.1) 0%, rgba(0,255,65,0.05) 100%); border-left: 4px solid #00FF41; border-radius: 8px;">
-  <div style="color: #00FF41; font-weight: bold; margin-bottom: 8px;">[🤖] AI Threat Detection System v3.0 Initialized</div>
-  <div style="color: #4ECDC4; margin-bottom: 5px;">[🔍] Loading neural network models... ✓</div>
-  <div style="color: #FFD700; margin-bottom: 5px;">[📊] Analyzing network traffic patterns...</div>
-  <div style="color: #FF4500; margin-bottom: 5px;">[⚠️] ALERT: Suspicious activity detected from 10.0.1.50</div>
-  <div style="color: #9B59B6; margin-bottom: 5px;">[🛡️] Deploying automated countermeasures...</div>
-  <div style="color: #00FF41; margin-bottom: 5px;">[✅] Threat neutralized successfully</div>
-  <div style="color: #4ECDC4; margin-bottom: 5px;">[📈] Updating threat intelligence database...</div>
-  <div style="color: #FFD700;">[🎯] Security posture enhanced by 15%</div>
+  <div style="margin: 15px 0; padding: 15px; background: linear-gradient(135deg, rgba(0,255,65,0.1) 0%, rgba(0,255,65,0.05) 100%); border-left: 4px solid #00FF41; border-radius: 8px;"<div style="color: #00FF41; font-weight: bold; margin-bottom: 8px;">[SNORT] Intrusion Detection System v2.9.20 - Running</div>
+  <div style="color: #4ECDC4; margin-bottom: 5px;">[INFO] Loaded 3247 rules from /etc/snort/rules/</div>
+  <div style="color: #FFD700; margin-bottom: 5px;">[MONITOR] Analyzing packets on interface eth0...</div>
+  <div style="color: #FF4500; margin-bottom: 5px;">[ALERT] [1:2100498:7] GPL ATTACK_RESPONSE id check returned root</div>
+  <div style="color: #FF4500; margin-bottom: 5px;">[ALERT] 192.168.1.100:22 -> 192.168.1.50:54321 TCP TTL:64 TOS:0x0</div>
+  <div style="color: #9B59B6; margin-bottom: 5px;">[ACTION] Blocking suspicious IP 192.168.1.100</div>
+  <div style="color: #00FF41; margin-bottom: 5px;">[SUCCESS] Threat mitigated - SSH brute force attempt blocked</div>
+  <div style="color: #4ECDC4; margin-bottom: 5px;">[UPDATE] Adding IOC to threat intelligence feed</div>
+  <div style="color: #FFD700;">[STATS] Processed 15,847 packets, 12 alerts generated</div>
   </div>
   </div>
 
@@ -255,16 +254,17 @@
   <span style="color: #FF6B6B;">└─</span><span style="color: #00FF41;">$ </span><span style="color: #FFFFFF;">█</span>
   </div>
   
-  <!-- Command Suggestions -->
-  <div style="margin-top: 15px; padding: 10px; background: rgba(48, 54, 61, 0.3); border-radius: 8px; font-size: 10px;">
-  <div style="color: #8B949E; margin-bottom: 8px;">💡 Quick Commands:</div>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
-  <div style="color: #4ECDC4;">• htop - System monitor</div>
-  <div style="color: #FFD700;">• netstat -tulpn - Network status</div>
-  <div style="color: #FF6B6B;">• fail2ban-client status - Security status</div>
-  <div style="color: #9B59B6;">• docker ps - Container status</div>
-  <div style="color: #00FF41;">• git status - Repository status</div>
-  <div style="color: #FF4500;">• systemctl status - Service status</div>
+  <!-- Command Suggestions --<div style="margin-top: 15px; padding: 10px; background: rgba(48, 54, 61, 0.3); border-radius: 8px; font-size: 10px;">
+  <div style="color: #8B949E; margin-bottom: 8px;">🔧 Cybersecurity Commands:</div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 8px;">
+  <div style="color: #4ECDC4;">• nmap -sS -sV target - Port scan</div>
+  <div style="color: #FFD700;">• wireshark -i eth0 - Packet capture</div>
+  <div style="color: #FF6B6B;">• metasploit-framework - Exploit framework</div>
+  <div style="color: #9B59B6;">• burpsuite - Web app testing</div>
+  <div style="color: #00FF41;">• john --wordlist=rockyou.txt - Password crack</div>
+  <div style="color: #FF4500;">• sqlmap -u "url" --dbs - SQL injection</div>
+  <div style="color: #32CD32;">• hashcat -m 0 hash.txt wordlist.txt - Hash crack</div>
+  <div style="color: #FF69B4;">• nikto -h target - Web vulnerability scan</div>
   </div>
   </div>
   </div>
@@ -404,21 +404,20 @@
   <!-- Anime-Styled Terminal Output -->
   <div style="position: relative; z-index: 1; font-family: 'Fira Code', 'Courier New', monospace; font-size: 12px; line-height: 1.6; color: #FF69B4; background: rgba(0,0,0,0.8); padding: 25px; border-radius: 15px; border: 2px solid #9932CC; max-height: 600px; overflow-y: auto; box-shadow: inset 0 0 20px rgba(255,105,180,0.1);">
 
-  <!-- Motoko's Cyber Brain Hacking Session -->
-  <div style="margin-bottom: 30px; padding: 20px; background: linear-gradient(135deg, rgba(153,50,204,0.1) 0%, rgba(75,0,130,0.1) 100%); border-left: 4px solid #9932CC; border-radius: 10px;">
+  <!-- Motoko's Cyber Brain Hacking Session --<div style="margin-bottom: 30px; padding: 20px; background: linear-gradient(135deg, rgba(153,50,204,0.1) 0%, rgba(75,0,130,0.1) 100%); border-left: 4px solid #9932CC; border-radius: 10px;">
     <div style="color: #9932CC; margin-bottom: 12px; font-weight: bold;">
-      🤖 [MOTOKO@SECTION9] ~/ghost-in-shell $
+      🤖 [MOTOKO@KALI-LINUX] ~/penetration-testing $
     </div>
-    <div style="color: #FFFFFF; margin-bottom: 8px;">sudo ./cyber-brain-hack.sh --target=criminal-network --mode=stealth</div>
+    <div style="color: #FFFFFF; margin-bottom: 8px;">sudo msfconsole -q -x "use exploit/multi/handler; set payload windows/meterpreter/reverse_tcp; set LHOST 192.168.1.50; exploit"</div>
     
     <div style="margin: 15px 0; padding: 15px; background: rgba(153,50,204,0.1); border-radius: 8px;">
-      <div style="color: #9932CC; font-weight: bold; margin-bottom: 8px;">[🧠] Cyber Brain Interface v2.0 - Initializing...</div>
-      <div style="color: #4ECDC4; margin-bottom: 5px;">[🔮] Connecting to the Net... ✓</div>
-      <div style="color: #FFD700; margin-bottom: 5px;">[🌐] Ghost-hacking target systems...</div>
-      <div style="color: #FF4500; margin-bottom: 5px;">[⚠️] ALERT: ICE detected! Deploying countermeasures...</div>
-      <div style="color: #00FF41; margin-bottom: 5px;">[✅] Neural firewall bypassed successfully!</div>
-      <div style="color: #FF69B4; margin-bottom: 5px;">[💖] Kawaii virus deployed - targets now love anime!</div>
-      <div style="color: #9932CC;">[🎌] Mission complete! The Major strikes again! (◕‿◕)</div>
+      <div style="color: #9932CC; font-weight: bold; margin-bottom: 8px;">[MSF] Metasploit Framework v6.3.42-dev - Starting...</div>
+      <div style="color: #4ECDC4; margin-bottom: 5px;">[*] Using configured payload generic/shell_reverse_tcp</div>
+      <div style="color: #FFD700; margin-bottom: 5px;">[*] Started reverse TCP handler on 192.168.1.50:4444</div>
+      <div style="color: #FF4500; margin-bottom: 5px;">[*] Sending stage (175686 bytes) to 192.168.1.100</div>
+      <div style="color: #00FF41; margin-bottom: 5px;">[*] Meterpreter session 1 opened (192.168.1.50:4444 -> 192.168.1.100:49157)</div>
+      <div style="color: #FF69B4; margin-bottom: 5px;">[+] Successfully established reverse shell connection</div>
+      <div style="color: #9932CC;">[*] Session 1 created in the background. Use 'sessions -i 1' to interact</div>
     </div>
   </div>
 
@@ -448,16 +447,15 @@
       <span style="color: #FFFFFF; margin-left: 10px;">█</span>
     </div>
     
-    <!-- Kawaii Command Suggestions -->
-    <div style="margin-top: 20px; padding: 15px; background: rgba(255,105,180,0.1); border-radius: 12px; border: 1px solid #FF69B4;">
-      <div style="color: #FF69B4; margin-bottom: 12px; font-weight: bold;">💖 Kawaii Commands Available:</div>
+    <!-- Kawaii Command Suggestions --<div style="margin-top: 20px; padding: 15px; background: rgba(255,105,180,0.1); border-radius: 12px; border: 1px solid #FF69B4;">
+      <div style="color: #FF69B4; margin-bottom: 12px; font-weight: bold;">🔧 Advanced Security Tools:</div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; font-size: 11px;">
-        <div style="color: #9932CC;">• ./neko-scan.sh - Cute network scanning</div>
-        <div style="color: #FF4500;">• sudo uwu-firewall - Kawaii protection</div>
-        <div style="color: #FFD700;">• anime-top - Moe system monitor</div>
-        <div style="color: #FF69B4;">• waifu-docker ps - Container waifus</div>
-        <div style="color: #00FF41;">• git-chan status - Version control-chan</div>
-        <div style="color: #4ECDC4;">• sudo systemctl start kawaii.service</div>
+        <div style="color: #9932CC;">• aircrack-ng -w wordlist.txt capture.cap</div>
+        <div style="color: #FF4500;">• hydra -l admin -P passwords.txt ssh://target</div>
+        <div style="color: #FFD700;">• gobuster dir -u http://target -w /usr/share/wordlists/dirb/common.txt</div>
+        <div style="color: #FF69B4;">• volatility -f memory.dump --profile=Win7SP1x64 pslist</div>
+        <div style="color: #00FF41;">• enum4linux -a target_ip</div>
+        <div style="color: #4ECDC4;">• responder -I eth0 -rdwv</div>
       </div>
     </div>
   </div>
@@ -1358,6 +1356,339 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
   <!-- Live Activity Simulation -->
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=2000&pause=500&color=00FF41&center=true&vCenter=true&multiline=true&width=800&height=150&lines=🔴+LIVE:+Pushed+to+Xenonesis/IDS;⚡+Updated+README.md+with+security+enhancements;🛡️+Added+new+vulnerability+detection+module;🚀+Deployed+latest+changes+to+production;💻+Currently+working+on+AI-powered+threat+analysis;🔍+Analyzing+network+traffic+patterns...;✅+All+systems+operational+and+secure" alt="Live Activity Feed" />
 
+  <!-- Activity Timeline -->
+  <div style="margin: 20px 0; padding: 20px; background: linear-gradient(135deg, rgba(0,255,65,0.1) 0%, rgba(255,75,75,0.1) 100%); border-radius: 15px; border: 1px solid #30363d;">
+    <h5>📅 Recent Activity Timeline</h5>
+    <table style="width: 100%; font-family: 'Fira Code', monospace; font-size: 12px;">
+      <tr>
+        <td style="color: #00FF41;">🟢 2 hours ago</td>
+        <td style="color: #FFFFFF;">Pushed security updates to IDS repository</td>
+      </tr>
+      <tr>
+        <td style="color: #FFD700;">🟡 5 hours ago</td>
+        <td style="color: #FFFFFF;">Merged vulnerability assessment improvements</td>
+      </tr>
+      <tr>
+        <td style="color: #FF4500;">🟠 1 day ago</td>
+        <td style="color: #FFFFFF;">Released new AI-powered threat detection tool</td>
+      </tr>
+      <tr>
+        <td style="color: #9932CC;">🟣 2 days ago</td>
+        <td style="color: #FFFFFF;">Contributed to open-source security framework</td>
+      </tr>
+    </table>
+  </div>
+  </details>
+
+  <br>
+
+  <!-- Performance Insights -->
+  <details>
+  <summary>
+    <img src="https://img.shields.io/badge/🎯_PERFORMANCE_INSIGHTS-Code_Quality_Metrics-4ECDC4?style=for-the-badge&labelColor=0D1117&logo=target&logoColor=white" />
+  </summary>
+  <br>
+
+  <table>
+    <tr>
+      <td width="50%" align="center">
+        <h4>📊 Code Quality Metrics</h4>
+        <img src="https://img.shields.io/badge/Code%20Quality-A+-32CD32?style=for-the-badge&labelColor=0D1117" /><br>
+        <img src="https://img.shields.io/badge/Security%20Score-95%25-00FF41?style=for-the-badge&labelColor=0D1117" /><br>
+        <img src="https://img.shields.io/badge/Documentation-Excellent-FFD700?style=for-the-badge&labelColor=0D1117" /><br>
+        <img src="https://img.shields.io/badge/Test%20Coverage-85%25-4ECDC4?style=for-the-badge&labelColor=0D1117" />
+      </td>
+      <td width="50%" align="center">
+        <h4>🚀 Development Velocity</h4>
+        <img src="https://img.shields.io/badge/Commits%2FWeek-25+-FF4500?style=for-the-badge&labelColor=0D1117" /><br>
+        <img src="https://img.shields.io/badge/Issues%20Resolved-Fast-9932CC?style=for-the-badge&labelColor=0D1117" /><br>
+        <img src="https://img.shields.io/badge/PR%20Review%20Time-Quick-FF69B4?style=for-the-badge&labelColor=0D1117" /><br>
+        <img src="https://img.shields.io/badge/Release%20Frequency-Regular-00BFFF?style=for-the-badge&labelColor=0D1117" />
+      </td>
+    </tr>
+  </table>
+  </details>
+
+</div>
+
+## <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="30"> Connect & Collaborate
+
+<div align="center">
+
+  <!-- Enhanced Contact Section -->
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=FF69B4&center=true&vCenter=true&width=700&lines=🤝+Let's+Connect+%26+Collaborate!;💬+Always+Open+to+Discussions;🚀+Building+the+Future+Together" alt="Connect Header" />
+
+  <br><br>
+
+  <!-- Professional Contact Cards -->
+  <details open>
+  <summary>
+    <img src="https://img.shields.io/badge/📞_PROFESSIONAL_CONTACT-Click_to_Expand-FF1493?style=for-the-badge&labelColor=0D1117&logo=contact&logoColor=white" />
+  </summary>
+  <br>
+
+  <table>
+    <tr>
+      <td width="33%" align="center">
+        <div style="padding: 20px; background: linear-gradient(135deg, rgba(255,20,147,0.1) 0%, rgba(138,43,226,0.1) 100%); border-radius: 15px; border: 2px solid #FF1493;">
+          <h4>🌐 Portfolio & Website</h4>
+          <a href="https://iaddy.netlify.app/" target="_blank">
+            <img src="https://img.shields.io/badge/🚀%20Visit%20Portfolio-Live%20Site-FF1493?style=for-the-badge&labelColor=0D1117&logo=firefox&logoColor=white" />
+          </a>
+          <br><br>
+          <sub>Explore my complete work showcase</sub>
+        </div>
+      </td>
+      <td width="33%" align="center">
+        <div style="padding: 20px; background: linear-gradient(135deg, rgba(0,119,181,0.1) 0%, rgba(0,123,255,0.1) 100%); border-radius: 15px; border: 2px solid #0077B5;">
+          <h4>💼 Professional Network</h4>
+          <a href="https://linkedin.com/in/aditya-kumar-tiwari" target="_blank">
+            <img src="https://img.shields.io/badge/🤝%20Connect%20LinkedIn-Professional-0077B5?style=for-the-badge&labelColor=0D1117&logo=linkedin&logoColor=white" />
+          </a>
+          <br><br>
+          <sub>Let's build professional connections</sub>
+        </div>
+      </td>
+      <td width="33%" align="center">
+        <div style="padding: 20px; background: linear-gradient(135deg, rgba(212,72,54,0.1) 0%, rgba(234,67,53,0.1) 100%); border-radius: 15px; border: 2px solid #D14836;">
+          <h4>📧 Direct Communication</h4>
+          <a href="mailto:contact@xenonesis.dev" target="_blank">
+            <img src="https://img.shields.io/badge/✉️%20Send%20Email-Contact%20Me-D14836?style=for-the-badge&labelColor=0D1117&logo=gmail&logoColor=white" />
+          </a>
+          <br><br>
+          <sub>Reach out for collaborations</sub>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </details>
+
+  <br>
+
+  <!-- Social Media & Community -->
+  <details>
+  <summary>
+    <img src="https://img.shields.io/badge/🌟_SOCIAL_&_COMMUNITY-Platforms_&_Presence-32CD32?style=for-the-badge&labelColor=0D1117&logo=community&logoColor=white" />
+  </summary>
+  <br>
+
+  <!-- Social Media Grid -->
+  <table>
+    <tr>
+      <td width="25%" align="center">
+        <a href="https://github.com/Xenonesis" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" />
+        </a>
+        <br><sub>Code repositories & projects</sub>
+      </td>
+      <td width="25%" align="center">
+        <a href="https://twitter.com/xenonesis_dev" target="_blank">
+          <img src="https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white&labelColor=0D1117" />
+        </a>
+        <br><sub>Tech updates & insights</sub>
+      </td>
+      <td width="25%" align="center">
+        <a href="https://dev.to/xenonesis" target="_blank">
+          <img src="https://img.shields.io/badge/Dev.to-Follow-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white&labelColor=0D1117" />
+        </a>
+        <br><sub>Technical articles & tutorials</sub>
+      </td>
+      <td width="25%" align="center">
+        <a href="https://medium.com/@xenonesis" target="_blank">
+          <img src="https://img.shields.io/badge/Medium-Follow-12100E?style=for-the-badge&logo=medium&logoColor=white&labelColor=0D1117" />
+        </a>
+        <br><sub>In-depth cybersecurity content</sub>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Community Involvement -->
+  <h4>🏆 Community Involvement</h4>
+  <p>
+    <img src="https://img.shields.io/badge/🛡️%20CTF%20Participant-Active-FF0000?style=for-the-badge&labelColor=0D1117" />
+    <img src="https://img.shields.io/badge/🐛%20Bug%20Bounty%20Hunter-Certified-00FF00?style=for-the-badge&labelColor=0D1117" />
+    <img src="https://img.shields.io/badge/📚%20Open%20Source%20Contributor-Regular-0080FF?style=for-the-badge&labelColor=0D1117" />
+    <img src="https://img.shields.io/badge/🎤%20Tech%20Speaker-Emerging-FF8000?style=for-the-badge&labelColor=0D1117" />
+  </p>
+  </details>
+
+  <br>
+
+  <!-- Collaboration Opportunities -->
+  <details>
+  <summary>
+    <img src="https://img.shields.io/badge/🤝_COLLABORATION_OPPORTUNITIES-Let's_Work_Together-FFD700?style=for-the-badge&labelColor=0D1117&logo=handshake&logoColor=white" />
+  </summary>
+  <br>
+
+  <div style="padding: 25px; background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,140,0,0.1) 100%); border-radius: 20px; border: 2px solid #FFD700; margin: 20px 0;">
+    
+    <h4>🎯 I'm Always Interested In:</h4>
+    
+    <table>
+      <tr>
+        <td width="50%">
+          <h5>🛡️ Cybersecurity Projects</h5>
+          <ul style="text-align: left; color: #FFFFFF;">
+            <li>🔍 Vulnerability research & disclosure</li>
+            <li>🛠️ Security tool development</li>
+            <li>🏢 Enterprise security consulting</li>
+            <li>📚 Security awareness training</li>
+          </ul>
+        </td>
+        <td width="50%">
+          <h5>🚀 Development Collaborations</h5>
+          <ul style="text-align: left; color: #FFFFFF;">
+            <li>🤖 AI/ML security applications</li>
+            <li>🌐 Full-stack secure applications</li>
+            <li>☁️ Cloud security implementations</li>
+            <li>📱 Mobile security frameworks</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+
+    <h5>💡 Open to Discussing:</h5>
+    <p>
+      <img src="https://img.shields.io/badge/🎓%20Mentorship-Available-32CD32?style=flat&labelColor=0D1117" />
+      <img src="https://img.shields.io/badge/🏢%20Consulting-Open-FF4500?style=flat&labelColor=0D1117" />
+      <img src="https://img.shields.io/badge/🤝%20Partnerships-Welcome-9932CC?style=flat&labelColor=0D1117" />
+      <img src="https://img.shields.io/badge/📝%20Content%20Creation-Interested-FF69B4?style=flat&labelColor=0D1117" />
+      <img src="https://img.shields.io/badge/🎤%20Speaking%20Opportunities-Available-00BFFF?style=flat&labelColor=0D1117" />
+    </p>
+  </div>
+  </details>
+
+</div>
+
+## <img src="https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif" width="30"> Support & Recognition
+
+<div align="center">
+
+  <!-- Support Section -->
+  <details>
+  <summary>
+    <img src="https://img.shields.io/badge/☕_SUPPORT_MY_WORK-Show_Appreciation-FF6B6B?style=for-the-badge&labelColor=0D1117&logo=heart&logoColor=white" />
+  </summary>
+  <br>
+
+  <div style="padding: 25px; background: linear-gradient(135deg, rgba(255,107,107,0.1) 0%, rgba(255,20,147,0.1) 100%); border-radius: 20px; border: 2px solid #FF6B6B; margin: 20px 0;">
+    
+    <h4>💖 If you find my work valuable:</h4>
+    
+    <table>
+      <tr>
+        <td width="33%" align="center">
+          <a href="https://github.com/Xenonesis" target="_blank">
+            <img src="https://img.shields.io/badge/⭐%20Star%20Repositories-GitHub-FFD700?style=for-the-badge&labelColor=0D1117&logo=star&logoColor=white" />
+          </a>
+          <br><sub>Star my projects to show support</sub>
+        </td>
+        <td width="33%" align="center">
+          <a href="https://github.com/Xenonesis?tab=followers" target="_blank">
+            <img src="https://img.shields.io/badge/👥%20Follow%20Profile-GitHub-32CD32?style=for-the-badge&labelColor=0D1117&logo=github&logoColor=white" />
+          </a>
+          <br><sub>Follow for latest updates</sub>
+        </td>
+        <td width="33%" align="center">
+          <a href="https://linkedin.com/in/aditya-kumar-tiwari" target="_blank">
+            <img src="https://img.shields.io/badge/🤝%20Recommend%20Skills-LinkedIn-0077B5?style=for-the-badge&labelColor=0D1117&logo=linkedin&logoColor=white" />
+          </a>
+          <br><sub>Endorse my professional skills</sub>
+        </td>
+      </tr>
+    </table>
+
+    <br>
+
+    <h5>🎯 Ways to Support:</h5>
+    <p>
+      <img src="https://img.shields.io/badge/🔄%20Share%20Projects-Social%20Media-FF69B4?style=flat&labelColor=0D1117" />
+      <img src="https://img.shields.io/badge/💬%20Provide%20Feedback-Constructive-4ECDC4?style=flat&labelColor=0D1117" />
+      <img src="https://img.shields.io/badge/🐛%20Report%20Issues-GitHub-FF4500?style=flat&labelColor=0D1117" />
+      <img src="https://img.shields.io/badge/🤝%20Collaborate-Projects-9932CC?style=flat&labelColor=0D1117" />
+    </p>
+  </div>
+  </details>
+
+</div>
+
+## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Final Thoughts & Mission Statement
+
+<div align="center">
+
+  <!-- Mission Statement -->
+  <div style="padding: 30px; background: linear-gradient(135deg, rgba(0,255,65,0.1) 0%, rgba(0,123,255,0.1) 50%, rgba(153,50,204,0.1) 100%); border-radius: 25px; border: 3px solid #00FF41; margin: 30px 0; box-shadow: 0 0 30px rgba(0,255,65,0.2);">
+    
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=4000&pause=1500&color=00FF41&center=true&vCenter=true&multiline=true&width=800&height=120&lines=🛡️+Securing+the+Digital+Frontier;🚀+One+Line+of+Code+at+a+Time;🌟+Building+Tomorrow's+Cyber+Defense" alt="Mission Statement" />
+
+    <br><br>
+
+    <blockquote style="font-style: italic; color: #FFFFFF; font-size: 16px; line-height: 1.6; border-left: 4px solid #00FF41; padding-left: 20px; margin: 20px 0;">
+      "In a world where digital threats evolve daily, I stand as a guardian of cyberspace. 
+      My mission is to bridge the gap between cutting-edge technology and robust security, 
+      ensuring that innovation never comes at the cost of safety. Through code, research, 
+      and collaboration, I'm building the tools and knowledge that will protect our digital future."
+    </blockquote>
+
+    <h4>🎯 Core Values & Principles</h4>
+    <table>
+      <tr>
+        <td width="25%" align="center">
+          <div style="padding: 15px; background: rgba(0,255,65,0.1); border-radius: 10px; border: 1px solid #00FF41;">
+            <h5>🔐 Security First</h5>
+            <sub>Every solution prioritizes protection and privacy</sub>
+          </div>
+        </td>
+        <td width="25%" align="center">
+          <div style="padding: 15px; background: rgba(255,69,0,0.1); border-radius: 10px; border: 1px solid #FF4500;">
+            <h5>🚀 Innovation Driven</h5>
+            <sub>Embracing new technologies for better solutions</sub>
+          </div>
+        </td>
+        <td width="25%" align="center">
+          <div style="padding: 15px; background: rgba(0,123,255,0.1); border-radius: 10px; border: 1px solid #007BFF;">
+            <h5>🤝 Community Focused</h5>
+            <sub>Sharing knowledge and empowering others</sub>
+          </div>
+        </td>
+        <td width="25%" align="center">
+          <div style="padding: 15px; background: rgba(153,50,204,0.1); border-radius: 10px; border: 1px solid #9932CC;">
+            <h5>📚 Continuous Learning</h5>
+            <sub>Always evolving with the threat landscape</sub>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Closing Message -->
+  <div style="margin: 30px 0;">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=3000&pause=2000&color=FF69B4&center=true&vCenter=true&width=700&lines=Thank+you+for+visiting+my+profile!;Let's+secure+the+digital+world+together!;Always+ready+for+new+challenges+and+collaborations!" alt="Closing Message" />
+  </div>
+
+  <!-- Footer Badges -->
+  <p>
+    <img src="https://img.shields.io/badge/Made%20with-❤️%20%26%20Code-FF69B4?style=for-the-badge&labelColor=0D1117" />
+    <img src="https://img.shields.io/badge/Powered%20by-Cybersecurity%20Passion-00FF41?style=for-the-badge&labelColor=0D1117" />
+    <img src="https://img.shields.io/badge/Built%20for-Digital%20Security-FF4500?style=for-the-badge&labelColor=0D1117" />
+  </p>
+
+  <!-- Last Updated -->
+  <sub>
+    <img src="https://img.shields.io/badge/Last%20Updated-2025--01--27-9932CC?style=flat&labelColor=0D1117&logo=calendar&logoColor=white" />
+    <img src="https://img.shields.io/badge/Version-3.0-FFD700?style=flat&labelColor=0D1117&logo=tag&logoColor=white" />
+    <img src="https://img.shields.io/badge/Status-Active%20Development-32CD32?style=flat&labelColor=0D1117&logo=activity&logoColor=white" />
+  </sub>
+
+</div>
+
+---
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=100&section=footer&text=🛡️%20STAY%20SECURE%20•%20KEEP%20CODING%20•%20NEVER%20STOP%20LEARNING%20🚀&fontSize=20&fontColor=fff&animation=twinkling&fontAlignY=70" width="100%" />
+</div>
+
   <!-- Activity Status Indicators -->
   <p>
     <img src="https://img.shields.io/badge/🟢%20Status-Online%20&%20Active-32CD32?style=for-the-badge&labelColor=0D1117" />
@@ -1384,8 +1715,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
   </summary>
   <br>
 
-  <!-- Primary Social Links -->
-  <table>
+  <!-- Primary Social Links --<table>
     <tr>
       <td width="25%" align="center">
         <a href="https://linkedin.com/in/itisaddy" target="_blank">
@@ -1409,7 +1739,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
         <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=FF7139&center=true&vCenter=true&width=200&lines=🌐+Live+Projects;🎨+Design+Showcase;📊+Skills+Demo" alt="Portfolio Description" />
       </td>
       <td width="25%" align="center">
-        <a href="https://instagram.com/i__aditya7" target="_blank">
+        <a href="https://www.instagram.com/i__aditya7/" target="_blank" rel="noopener noreferrer">
           <img src="https://img.shields.io/badge/Instagram-Personal%20Updates-E4405F?style=for-the-badge&logo=instagram&logoColor=white&labelColor=0D1117" alt="Instagram" />
         </a>
         <br>
