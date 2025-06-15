@@ -342,7 +342,7 @@
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake-dark.svg">
         <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg">
-        <img alt="🐍 Cyberpunk Snake Game - GitHub Contribution Matrix Infiltration 🐍" src="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg" width="100%">
+        <img alt="🐍 Cyberpunk Snake Game - GitHub Contribution Matrix Infiltration 🐍" src="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg" width="100%" onerror="this.src='https://via.placeholder.com/800x200/0D1117/00FF41?text=🐍+Snake+Animation+Loading...+Please+wait+for+GitHub+Actions+to+complete'">
       </picture>
     </div>
 
