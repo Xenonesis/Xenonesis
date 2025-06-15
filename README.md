@@ -56,22 +56,22 @@
     </a>
     <img src="https://komarev.com/ghpvc/?username=Xenonesis&style=for-the-badge&color=FF6B6B&label=👁️%20PROFILE%20VIEWS" alt="Profile Views" />
     <a href="https://github.com/Xenonesis?tab=repositories">
-      <img src="https://img.shields.io/badge/📚%20REPOSITORIES-25+-4ECDC4?style=for-the-badge&labelColor=0D1117" alt="Repositories">
+      <img src="https://img.shields.io/github/repos/Xenonesis?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117&color=4ECDC4&label=📚%20REPOSITORIES" alt="Repositories">
     </a>
   </p>
   
   <!-- Status & Activity Row -->
   <p>
     <img src="https://img.shields.io/badge/🔴%20STATUS-ONLINE%20&%20MONITORING-00FF00?style=for-the-badge&labelColor=0D1117&logo=statuspage&logoColor=white" alt="Online Status">
-    <img src="https://img.shields.io/badge/🕒%20LAST%20UPDATED-2025--01--15-9B59B6?style=for-the-badge&labelColor=0D1117&logo=clockify&logoColor=white" alt="Last Updated">
+    <img src="https://img.shields.io/badge/🕒%20LAST%20UPDATED-2025--06--15-9B59B6?style=for-the-badge&labelColor=0D1117&logo=clockify&logoColor=white" alt="Last Updated">
     <img src="https://img.shields.io/badge/⚡%20RESPONSE%20TIME-INSTANT-FFD700?style=for-the-badge&labelColor=0D1117" alt="Response Time">
   </p>
   
   <!-- Achievement Badges -->
   <p>
-    <img src="https://img.shields.io/badge/🏆%20CERTIFICATIONS-20+-FF4500?style=for-the-badge&labelColor=0D1117" alt="Certifications">
+    <img src="https://img.shields.io/badge/🏆%20CERTIFICATIONS-Multiple-FF4500?style=for-the-badge&labelColor=0D1117" alt="Certifications">
     <img src="https://img.shields.io/badge/🎯%20PROJECTS-ACTIVE-32CD32?style=for-the-badge&labelColor=0D1117" alt="Active Projects">
-    <img src="https://img.shields.io/badge/🔥%20STREAK-DAILY%20COMMITS-DC143C?style=for-the-badge&labelColor=0D1117" alt="Commit Streak">
+    <img src="https://img.shields.io/badge/🔥%20DEVELOPMENT-CONTINUOUS-DC143C?style=for-the-badge&labelColor=0D1117" alt="Development Activity">
   </p>
   
   <!-- Interactive Quick Links -->
@@ -168,8 +168,8 @@ class CyberSpecialist:
         """
         
         self.portfolio: str = "https://iaddy.netlify.app/"
-        self.certifications: int = 20
-        self.last_updated: str = datetime.datetime.now().strftime("%Y-%m-%d")
+        self.certifications: str = "Multiple Professional"
+        self.last_updated: str = "2025-06-15"
 
     def get_current_focus(self) -> List[str]:
         return [
@@ -183,7 +183,7 @@ class CyberSpecialist:
         print(f"🚀 {self.name} ({self.alias})")
         print(f"📊 Status: {self.status}")
         print(f"🎓 Education: {self.education}")
-        print(f"🏆 Certifications: {self.certifications}+")
+        print(f"🏆 Certifications: {self.certifications}")
         print(f"💼 Active Roles: {len(self.roles)}")
         print("🎯 Current Focus Areas:")
         for focus in self.get_current_focus():
@@ -421,11 +421,11 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
 
   <!-- Category Filter Buttons -->
   <p>
-    <img src="https://img.shields.io/badge/🛡️%20CYBERSECURITY-5%20Projects-FF0000?style=for-the-badge&labelColor=0D1117&logo=shield&logoColor=white" />
-    <img src="https://img.shields.io/badge/🤖%20AI/ML-8%20Projects-00FF00?style=for-the-badge&labelColor=0D1117&logo=brain&logoColor=white" />
-    <img src="https://img.shields.io/badge/🌐%20WEB%20DEV-12%20Projects-0080FF?style=for-the-badge&labelColor=0D1117&logo=code&logoColor=white" />
-    <img src="https://img.shields.io/badge/🎮%20INTERACTIVE-6%20Projects-FF8000?style=for-the-badge&labelColor=0D1117&logo=gamepad&logoColor=white" />
-    <img src="https://img.shields.io/badge/🛠️%20UTILITIES-8%20Projects-9932CC?style=for-the-badge&labelColor=0D1117&logo=tools&logoColor=white" />
+    <img src="https://img.shields.io/badge/🛡️%20CYBERSECURITY-Security%20Focus-FF0000?style=for-the-badge&labelColor=0D1117&logo=shield&logoColor=white" />
+    <img src="https://img.shields.io/badge/🤖%20AI/ML-Machine%20Learning-00FF00?style=for-the-badge&labelColor=0D1117&logo=brain&logoColor=white" />
+    <img src="https://img.shields.io/badge/🌐%20WEB%20DEV-Full%20Stack-0080FF?style=for-the-badge&labelColor=0D1117&logo=code&logoColor=white" />
+    <img src="https://img.shields.io/badge/🎮%20INTERACTIVE-User%20Experience-FF8000?style=for-the-badge&labelColor=0D1117&logo=gamepad&logoColor=white" />
+    <img src="https://img.shields.io/badge/🛠️%20UTILITIES-Development%20Tools-9932CC?style=for-the-badge&labelColor=0D1117&logo=tools&logoColor=white" />
   </p>
   </details>
 
@@ -452,7 +452,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
           <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=code-guardian-report&theme=radical&bg_color=0D1117&hide_border=true&title_color=FF0000&icon_color=FF0000&text_color=FFFFFF&show_owner=true" alt="Code Guardian Report">
         </a>
         <br>
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=FF0000&center=true&vCenter=true&width=400&lines=📊+Security+Vulnerability+Reports;🔐+Code+Analysis+%26+Protection;⭐+1+Star+%7C+1+Fork" alt="Code Guardian Description" />
+        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=FF0000&center=true&vCenter=true&width=400&lines=📊+Security+Vulnerability+Reports;🔐+Code+Analysis+%26+Protection;🛡️+Security+Assessment+Tool" alt="Code Guardian Description" />
       </td>
     </tr>
   </table>
@@ -481,7 +481,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
           <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=Juris.AI&theme=radical&bg_color=0D1117&hide_border=true&title_color=00FF00&icon_color=00FF00&text_color=FFFFFF&show_owner=true" alt="Juris.AI">
         </a>
         <br>
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=00FF00&center=true&vCenter=true&width=300&lines=⚖️+Legal+AI+Assistant;🧠+TypeScript+Powered;⭐+2+Stars+%7C+1+Fork" alt="Juris.AI Description" />
+        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=00FF00&center=true&vCenter=true&width=300&lines=⚖️+Legal+AI+Assistant;🧠+TypeScript+Powered;🤖+AI+Legal+Research" alt="Juris.AI Description" />
       </td>
       <td width="33%" align="center">
         <a href="https://github.com/Xenonesis/omni.AI" target="_blank">
@@ -495,7 +495,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
           <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=webDev.ai-&theme=radical&bg_color=0D1117&hide_border=true&title_color=00FF00&icon_color=00FF00&text_color=FFFFFF&show_owner=true" alt="WebDev.AI">
         </a>
         <br>
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=00FF00&center=true&vCenter=true&width=300&lines=💻+AI+Web+Development;🎯+Code+Generation;⭐+2+Stars+%7C+MIT+License" alt="WebDev.AI Description" />
+        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=00FF00&center=true&vCenter=true&width=300&lines=💻+AI+Web+Development;🎯+Code+Generation;🚀+Automated+Development" alt="WebDev.AI Description" />
       </td>
     </tr>
   </table>
@@ -515,7 +515,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
           <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=chatbuddypro-&theme=radical&bg_color=0D1117&hide_border=true&title_color=00FF00&icon_color=00FF00&text_color=FFFFFF&show_owner=true" alt="Chat Buddy Pro">
         </a>
         <br>
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=00FF00&center=true&vCenter=true&width=400&lines=💬+AI+Chat+Assistant;🤖+Natural+Language+Processing;⭐+1+Star+%7C+TypeScript" alt="Chat Buddy Pro Description" />
+        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=00FF00&center=true&vCenter=true&width=400&lines=💬+AI+Chat+Assistant;🤖+Natural+Language+Processing;🚀+Conversational+AI" alt="Chat Buddy Pro Description" />
       </td>
     </tr>
   </table>
@@ -544,7 +544,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
           <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=Team-Blitz&theme=radical&bg_color=0D1117&hide_border=true&title_color=0080FF&icon_color=0080FF&text_color=FFFFFF&show_owner=true" alt="Team Blitz">
         </a>
         <br>
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=0080FF&center=true&vCenter=true&width=300&lines=⚡+Team+Collaboration;🚀+TypeScript+Framework;⭐+2+Stars+%7C+2+Forks" alt="Team Blitz Description" />
+        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=0080FF&center=true&vCenter=true&width=300&lines=⚡+Team+Collaboration;🚀+TypeScript+Framework;🤝+Project+Management" alt="Team Blitz Description" />
       </td>
       <td width="33%" align="center">
         <a href="https://github.com/Xenonesis/Zenflow" target="_blank">
@@ -564,14 +564,14 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
           <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=SEO-Website&theme=radical&bg_color=0D1117&hide_border=true&title_color=0080FF&icon_color=0080FF&text_color=FFFFFF&show_owner=true" alt="SEO Website">
         </a>
         <br>
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=0080FF&center=true&vCenter=true&width=400&lines=🔍+SEO+Optimization;📈+Search+Engine+Ready;⭐+2+Stars+%7C+HTML/CSS" alt="SEO Website Description" />
+        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=0080FF&center=true&vCenter=true&width=400&lines=🔍+SEO+Optimization;📈+Search+Engine+Ready;🌐+Web+Performance" alt="SEO Website Description" />
       </td>
       <td width="50%" align="center">
         <a href="https://github.com/Xenonesis/NewPortfolio" target="_blank">
           <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=NewPortfolio&theme=radical&bg_color=0D1117&hide_border=true&title_color=0080FF&icon_color=0080FF&text_color=FFFFFF&show_owner=true" alt="New Portfolio">
         </a>
         <br>
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=0080FF&center=true&vCenter=true&width=400&lines=💼+Personal+Portfolio;🎨+Modern+Design;⭐+1+Star+%7C+HTML+Showcase" alt="Portfolio Description" />
+        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=0080FF&center=true&vCenter=true&width=400&lines=💼+Personal+Portfolio;🎨+Modern+Design;✨+Professional+Showcase" alt="Portfolio Description" />
       </td>
     </tr>
   </table>
@@ -593,7 +593,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
           <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=typingmaster&theme=radical&bg_color=0D1117&hide_border=true&title_color=FF8000&icon_color=FF8000&text_color=FFFFFF&show_owner=true" alt="Typing Master">
         </a>
         <br>
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=FF8000&center=true&vCenter=true&width=300&lines=⌨️+Typing+Speed+Test;🎯+Skill+Improvement;⭐+2+Stars+%7C+TypeScript" alt="Typing Master Description" />
+        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=FF8000&center=true&vCenter=true&width=300&lines=⌨️+Typing+Speed+Test;🎯+Skill+Improvement;💪+Performance+Training" alt="Typing Master Description" />
       </td>
       <td width="33%" align="center">
         <a href="https://github.com/Xenonesis/CineSphere" target="_blank">
@@ -607,7 +607,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
           <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=ChatHub&theme=radical&bg_color=0D1117&hide_border=true&title_color=FF8000&icon_color=FF8000&text_color=FFFFFF&show_owner=true" alt="ChatHub">
         </a>
         <br>
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=FF8000&center=true&vCenter=true&width=300&lines=💬+Real-time+Chat;🌐+Social+Platform;⭐+1+Star+%7C+JavaScript" alt="ChatHub Description" />
+        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=FF8000&center=true&vCenter=true&width=300&lines=💬+Real-time+Chat;🌐+Social+Platform;🚀+Interactive+Communication" alt="ChatHub Description" />
       </td>
     </tr>
   </table>
@@ -629,7 +629,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
           <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=Bat-creator-ai&theme=radical&bg_color=0D1117&hide_border=true&title_color=9932CC&icon_color=9932CC&text_color=FFFFFF&show_owner=true" alt="Bat Creator AI">
         </a>
         <br>
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=9932CC&center=true&vCenter=true&width=400&lines=🦇+Batch+File+Generator;🤖+AI-Powered+Automation;⭐+1+Star+%7C+MIT+License" alt="Bat Creator Description" />
+        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=9932CC&center=true&vCenter=true&width=400&lines=🦇+Batch+File+Generator;🤖+AI-Powered+Automation;⚡+Script+Generation" alt="Bat Creator Description" />
       </td>
       <td width="50%" align="center">
         <a href="https://github.com/Xenonesis/Budget-tracker" target="_blank">
@@ -649,7 +649,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
           <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=BMI-Indian-&theme=radical&bg_color=0D1117&hide_border=true&title_color=9932CC&icon_color=9932CC&text_color=FFFFFF&show_owner=true" alt="BMI Indian">
         </a>
         <br>
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=9932CC&center=true&vCenter=true&width=400&lines=🏥+Health+Calculator;📏+BMI+for+Indian+Standards;⭐+1+Star+%7C+1+Fork" alt="BMI Calculator Description" />
+        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=9932CC&center=true&vCenter=true&width=400&lines=🏥+Health+Calculator;📏+BMI+for+Indian+Standards;💪+Health+Assessment" alt="BMI Calculator Description" />
       </td>
       <td width="50%" align="center">
         <a href="https://github.com/Xenonesis/Modern-Notepad" target="_blank">
@@ -674,19 +674,19 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
   <table>
     <tr>
       <td align="center" width="25%">
-        <img src="https://img.shields.io/badge/📈%20Total%20Repositories-45+-32CD32?style=for-the-badge&labelColor=0D1117" /><br>
+        <img src="https://img.shields.io/github/repos/Xenonesis?style=for-the-badge&labelColor=0D1117&color=32CD32&label=📈%20Total%20Repositories" /><br>
         <sub>Active development across multiple domains</sub>
       </td>
       <td align="center" width="25%">
-        <img src="https://img.shields.io/badge/⭐%20Total%20Stars-25+-FFD700?style=for-the-badge&labelColor=0D1117" /><br>
+        <img src="https://img.shields.io/github/stars/Xenonesis?style=for-the-badge&labelColor=0D1117&color=FFD700&label=⭐%20Total%20Stars" /><br>
         <sub>Community appreciation & recognition</sub>
       </td>
       <td align="center" width="25%">
-        <img src="https://img.shields.io/badge/🍴%20Total%20Forks-10+-FF69B4?style=for-the-badge&labelColor=0D1117" /><br>
-        <sub>Open source contributions</sub>
+        <img src="https://img.shields.io/github/followers/Xenonesis?style=for-the-badge&labelColor=0D1117&color=FF69B4&label=🍴%20Followers" /><br>
+        <sub>Growing community network</sub>
       </td>
       <td align="center" width="25%">
-        <img src="https://img.shields.io/badge/🔄%20Active%20Projects-15+-00BFFF?style=for-the-badge&labelColor=0D1117" /><br>
+        <img src="https://img.shields.io/badge/🔄%20Active%20Projects-Current-00BFFF?style=for-the-badge&labelColor=0D1117" /><br>
         <sub>Currently maintained repositories</sub>
       </td>
     </tr>
@@ -703,10 +703,10 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
   <!-- Call to Action for Projects -->
   <p>
     <a href="https://github.com/Xenonesis?tab=repositories" target="_blank">
-      <img src="https://img.shields.io/badge/🚀%20EXPLORE%20ALL%20PROJECTS-45%20Repositories-6A5ACD?style=for-the-badge&labelColor=0D1117&logo=github&logoColor=white" />
+      <img src="https://img.shields.io/github/repos/Xenonesis?style=for-the-badge&labelColor=0D1117&color=6A5ACD&logo=github&logoColor=white&label=🚀%20EXPLORE%20ALL%20PROJECTS" />
     </a>
     <a href="https://github.com/Xenonesis?tab=stars" target="_blank">
-      <img src="https://img.shields.io/badge/⭐%20STARRED%20PROJECTS-18%20Favorites-FFD700?style=for-the-badge&labelColor=0D1117&logo=star&logoColor=white" />
+      <img src="https://img.shields.io/github/stars/Xenonesis?style=for-the-badge&labelColor=0D1117&color=FFD700&logo=star&logoColor=white&label=⭐%20TOTAL%20STARS" />
     </a>
   </p>
 
@@ -769,7 +769,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
 
   <!-- Certification Progress -->
   <h4>🏆 Certification Journey</h4>
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=4000&pause=1500&color=FFD700&center=true&vCenter=true&multiline=true&width=800&height=100&lines=🎯+Currently+pursuing:+CISSP+%26+CEH;📚+Completed:+20%2B+cybersecurity+certifications;🚀+Next+target:+OSCP+%26+CISM" alt="Certification Progress" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=4000&pause=1500&color=FFD700&center=true&vCenter=true&multiline=true&width=800&height=100&lines=🎯+Currently+pursuing:+Advanced+Security+Certifications;📚+Completed:+Multiple+cybersecurity+certifications;🚀+Next+target:+Industry+Leading+Credentials" alt="Certification Progress" />
   </details>
 
   <br>
@@ -817,7 +817,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
 + 🚀 Exploring quantum cryptography and post-quantum security
 + 🌟 Mentoring junior cybersecurity professionals
 ! 🎯 Currently working on 3 major security research projects
-! 🔥 Active in 15+ repositories with regular contributions
+! 🔥 Active development across multiple repositories
 ```
 
 ## <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="30"> GitHub Analytics & Performance Dashboard
@@ -869,20 +869,20 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
   <table>
     <tr>
       <td align="center" width="25%">
-        <img src="https://img.shields.io/badge/📅%20Days%20Active-300+-32CD32?style=for-the-badge&labelColor=0D1117" /><br>
-        <sub>Consistent daily contributions</sub>
+        <img src="https://img.shields.io/badge/📅%20Days%20Active-Consistent-32CD32?style=for-the-badge&labelColor=0D1117" /><br>
+        <sub>Regular daily contributions</sub>
       </td>
       <td align="center" width="25%">
-        <img src="https://img.shields.io/badge/🔥%20Current%20Streak-45%20Days-FF4500?style=for-the-badge&labelColor=0D1117" /><br>
+        <img src="https://img.shields.io/badge/🔥%20Current%20Streak-Active-FF4500?style=for-the-badge&labelColor=0D1117" /><br>
         <sub>Ongoing commitment to coding</sub>
       </td>
       <td align="center" width="25%">
-        <img src="https://img.shields.io/badge/📈%20Best%20Streak-120%20Days-FFD700?style=for-the-badge&labelColor=0D1117" /><br>
-        <sub>Personal record achievement</sub>
+        <img src="https://img.shields.io/badge/📈%20Contribution%20Pattern-Regular-FFD700?style=for-the-badge&labelColor=0D1117" /><br>
+        <sub>Steady development activity</sub>
       </td>
       <td align="center" width="25%">
-        <img src="https://img.shields.io/badge/💻%20Total%20Commits-2000+-9932CC?style=for-the-badge&labelColor=0D1117" /><br>
-        <sub>Cumulative code contributions</sub>
+        <img src="https://img.shields.io/badge/💻%20Code%20Quality-High-9932CC?style=for-the-badge&labelColor=0D1117" /><br>
+        <sub>Focus on clean, secure code</sub>
       </td>
     </tr>
   </table>
@@ -913,11 +913,11 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
       <td width="50%" align="center">
         <!-- Custom Metrics -->
         <h5>🎯 Key Performance Indicators</h5>
-        <img src="https://img.shields.io/badge/📦%20Public%20Repos-45-00FF41?style=for-the-badge&labelColor=0D1117" /><br>
-        <img src="https://img.shields.io/badge/⭐%20Total%20Stars-25+-FFD700?style=for-the-badge&labelColor=0D1117" /><br>
-        <img src="https://img.shields.io/badge/🍴%20Total%20Forks-10+-FF69B4?style=for-the-badge&labelColor=0D1117" /><br>
-        <img src="https://img.shields.io/badge/👥%20Followers-2-32CD32?style=for-the-badge&labelColor=0D1117" /><br>
-        <img src="https://img.shields.io/badge/🔄%20Following-0-0080FF?style=for-the-badge&labelColor=0D1117" />
+        <img src="https://img.shields.io/github/repos/Xenonesis?style=for-the-badge&labelColor=0D1117&color=00FF41&label=📦%20Public%20Repos" /><br>
+        <img src="https://img.shields.io/github/stars/Xenonesis?style=for-the-badge&labelColor=0D1117&color=FFD700&label=⭐%20Total%20Stars" /><br>
+        <img src="https://img.shields.io/github/followers/Xenonesis?style=for-the-badge&labelColor=0D1117&color=FF69B4&label=🍴%20Followers" /><br>
+        <img src="https://img.shields.io/github/followers/Xenonesis?style=for-the-badge&labelColor=0D1117&color=32CD32&label=👥%20Followers" /><br>
+        <img src="https://img.shields.io/github/following/Xenonesis?style=for-the-badge&labelColor=0D1117&color=0080FF&label=🔄%20Following" />
       </td>
     </tr>
   </table>
@@ -1090,7 +1090,7 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
   <br>
 
   <!-- Multi-stage Terminal Animation -->
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=1200&pause=300&color=00FF41&center=true&vCenter=true&multiline=true&width=900&height=280&lines=xenonesis@kali:~$+sudo+nmap+-sS+-sV+-O+--script=vuln+target.com;Starting+Nmap+7.94+(https://nmap.org)+at+2025-01-15+20:06+IST;Nmap+scan+report+for+target.com+(192.168.1.100);Host+is+up+(0.045s+latency);PORT++++STATE++SERVICE+++VERSION;22/tcp++open+++ssh+++++++OpenSSH+8.9p1;80/tcp++open+++http++++++Apache+httpd+2.4.52;443/tcp+open+++https+++++Apache+httpd+2.4.52;|+ssl-cert:+Subject:+commonName=target.com;|+ssl-enum-ciphers:+TLSv1.2;xenonesis@kali:~$+python3+ai_threat_detector.py+--mode=realtime;[🤖]+AI+Threat+Detection+System+v2.0+Initialized;[🔍]+Analyzing+network+traffic+patterns...;[⚠️]+Suspicious+activity+detected+from+192.168.1.50;[🛡️]+Deploying+countermeasures...;[✅]+Threat+neutralized+successfully;[📊]+Generating+security+report...;xenonesis@kali:~$+echo+'Mission+Accomplished+🎯'" alt="Advanced Terminal Simulation" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=1200&pause=300&color=00FF41&center=true&vCenter=true&multiline=true&width=900&height=280&lines=xenonesis@kali:~$+sudo+nmap+-sS+-sV+-O+--script=vuln+target.com;Starting+Nmap+7.94+(https://nmap.org)+at+2025-06-15+14:30+UTC;Nmap+scan+report+for+target.com+(192.168.1.100);Host+is+up+(0.045s+latency);PORT++++STATE++SERVICE+++VERSION;22/tcp++open+++ssh+++++++OpenSSH+8.9p1;80/tcp++open+++http++++++Apache+httpd+2.4.52;443/tcp+open+++https+++++Apache+httpd+2.4.52;|+ssl-cert:+Subject:+commonName=target.com;|+ssl-enum-ciphers:+TLSv1.2;xenonesis@kali:~$+python3+ai_threat_detector.py+--mode=realtime;[🤖]+AI+Threat+Detection+System+v2.0+Initialized;[🔍]+Analyzing+network+traffic+patterns...;[⚠️]+Suspicious+activity+detected+from+192.168.1.50;[🛡️]+Deploying+countermeasures...;[✅]+Threat+neutralized+successfully;[📊]+Generating+security+report...;xenonesis@kali:~$+echo+'Mission+Accomplished+🎯'" alt="Advanced Terminal Simulation" />
   </details>
 
   <br>
@@ -1129,23 +1129,23 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
   <table>
     <tr>
       <td align="center" width="20%">
-        <img src="https://img.shields.io/badge/☕%20Coffee%20Consumed-∞%20Cups-8B4513?style=for-the-badge&labelColor=0D1117&logo=coffee&logoColor=white" /><br>
+        <img src="https://img.shields.io/badge/☕%20Coffee%20Consumed-Daily%20Fuel-8B4513?style=for-the-badge&labelColor=0D1117&logo=coffee&logoColor=white" /><br>
         <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=8B4513&center=true&vCenter=true&width=150&lines=⚡+Fuel+for+Innovation;🌙+Late+Night+Coding;💪+Endless+Energy" alt="Coffee Stats" />
       </td>
       <td align="center" width="20%">
-        <img src="https://img.shields.io/badge/🐛%20Bugs%20Squashed-2000+-32CD32?style=for-the-badge&labelColor=0D1117&logo=bug&logoColor=white" /><br>
+        <img src="https://img.shields.io/badge/🐛%20Bugs%20Squashed-Countless-32CD32?style=for-the-badge&labelColor=0D1117&logo=bug&logoColor=white" /><br>
         <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=32CD32&center=true&vCenter=true&width=150&lines=🔍+Debug+Master;⚡+Problem+Solver;🎯+Code+Quality" alt="Debug Stats" />
       </td>
       <td align="center" width="20%">
-        <img src="https://img.shields.io/badge/🔐%20Systems%20Secured-500+-FF4500?style=for-the-badge&labelColor=0D1117&logo=shield&logoColor=white" /><br>
+        <img src="https://img.shields.io/badge/🔐%20Systems%20Secured-Multiple-FF4500?style=for-the-badge&labelColor=0D1117&logo=shield&logoColor=white" /><br>
         <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=FF4500&center=true&vCenter=true&width=150&lines=🛡️+Digital+Guardian;🏰+Fortress+Builder;⚔️+Cyber+Warrior" alt="Security Stats" />
       </td>
       <td align="center" width="20%">
-        <img src="https://img.shields.io/badge/🎯%20CTF%20Victories-300+-9932CC?style=for-the-badge&labelColor=0D1117&logo=target&logoColor=white" /><br>
+        <img src="https://img.shields.io/badge/🎯%20CTF%20Victories-Active%20Participant-9932CC?style=for-the-badge&labelColor=0D1117&logo=target&logoColor=white" /><br>
         <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=9932CC&center=true&vCenter=true&width=150&lines=🏆+CTF+Champion;🧩+Puzzle+Master;🚀+Flag+Hunter" alt="CTF Stats" />
       </td>
       <td align="center" width="20%">
-        <img src="https://img.shields.io/badge/🤖%20AI%20Models-50+-00BFFF?style=for-the-badge&labelColor=0D1117&logo=brain&logoColor=white" /><br>
+        <img src="https://img.shields.io/badge/🤖%20AI%20Models-Developing-00BFFF?style=for-the-badge&labelColor=0D1117&logo=brain&logoColor=white" /><br>
         <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=10&duration=2000&pause=1000&color=00BFFF&center=true&vCenter=true&width=150&lines=🧠+ML+Engineer;🔮+AI+Innovator;⚡+Neural+Networks" alt="AI Stats" />
       </td>
     </tr>
@@ -1167,12 +1167,12 @@ print("Always ready to discuss cybersecurity, development, or AI/ML innovations!
         <h4>🌍 Global Reach</h4>
         <img src="https://count.getloli.com/get/@:xenonesis?theme=rule34" alt="Visitor Counter" />
         <br><br>
-        <img src="https://img.shields.io/badge/🌐%20Countries-50+-32CD32?style=for-the-badge&labelColor=0D1117" />
-        <img src="https://img.shields.io/badge/👥%20Unique%20Visitors-5000+-FF4500?style=for-the-badge&labelColor=0D1117" />
+        <img src="https://img.shields.io/badge/🌐%20Global%20Reach-Worldwide-32CD32?style=for-the-badge&labelColor=0D1117" />
+        <img src="https://img.shields.io/badge/👥%20Community-Growing-FF4500?style=for-the-badge&labelColor=0D1117" />
       </td>
       <td width="50%" align="center">
         <h4>📈 Engagement Metrics</h4>
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=3000&pause=1000&color=FF69B4&center=true&vCenter=true&multiline=true&width=400&height=100&lines=⏱️+Avg+Session:+5+minutes;🔄+Return+Rate:+75%25;📱+Mobile+Traffic:+40%25;💻+Desktop+Traffic:+60%25" alt="Engagement Stats" />
+        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=3000&pause=1000&color=FF69B4&center=true&vCenter=true&multiline=true&width=400&height=100&lines=⏱️+Quality+Engagement;🔄+Regular+Visitors;📱+Multi-Platform+Access;💻+Professional+Network" alt="Engagement Stats" />
       </td>
     </tr>
   </table>
