@@ -45,17 +45,62 @@ class CyberSpecialist:
     def __init__(self):
         self.name = "Aditya Kumar Tiwari"
         self.alias = "Xenonesis"
-        self.education = "Bachelor of Computer Applications @ Sushant University"
+        self.education = "BCA in Cybersecurity @ Sushant University"
         self.focus = ["Cybersecurity", "Full Stack Development", "AI/ML"]
-        self.languages = ["Python", "JavaScript", "C++", "SQL", "Bash"]
-        self.current_activity = "Reverse engineering malware samples"
-        
+        self.languages = ["Python", "JavaScript", "C++", "SQL", "Bash", "HTML", "CSS"]
+        self.current_roles = [
+            "Mentor @ JhaMobii Technologies",
+            "Cybersecurity Intern @ Null",
+            "Cybersecurity & AI/ML Intern @ Quantam Pvt. Ltd."
+        ]
+        self.mission = "Combining security and creativity to build impactful digital experiences"
+        self.portfolio = "https://iaddy.netlify.app/"
+        self.certifications = "20+ industry certifications"
+
     def say_hi(self):
         print("Thanks for dropping by! Let's secure the digital world together.")
+        print("Currently working on vulnerability assessments and AI/ML security applications.")
 
 me = CyberSpecialist()
 me.say_hi()
 ```
+
+## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Professional Experience
+
+<div align="center">
+
+```diff
++ 🏢 Currently working in 3 professional roles simultaneously
++ 🎯 Mentoring junior professionals in cybersecurity
++ 🔍 Conducting vulnerability assessments and threat analysis
++ 🤖 Applying AI/ML to cybersecurity challenges
+```
+
+</div>
+
+### <img src="https://img.shields.io/badge/Mentor-JhaMobii%20Technologies-FF6B6B?style=for-the-badge&logo=target&logoColor=white" /> **Mentor (Part-time)**
+**JhaMobii Technologies Pvt. Ltd., Remote** | *Aug 2024 - Present*
+
+- 🎓 Providing technical mentorship in cybersecurity to junior professionals and interns
+- 🛡️ Guiding team members through vulnerability assessments, threat analysis, and incident response strategies
+- 📚 Supporting learners in mastering security frameworks, cloud security, and penetration testing
+- 🌐 Ensuring mentees understand best practices for securing networks and applications in real-world environments
+
+### <img src="https://img.shields.io/badge/Cybersecurity%20Intern-Null-4ECDC4?style=for-the-badge&logo=shield&logoColor=white" /> **Cybersecurity Intern**
+**Null, Remote** | *Jun 2024 - Present*
+
+- 🔍 Conducting vulnerability assessments and implementing robust network security protocols
+- 📊 Monitoring network traffic and responding to security incidents with focus on intrusion detection
+- 👥 Working with remote teams to secure client systems, ensuring compliance with industry standards
+- 🛠️ Gaining hands-on experience with SIEM tools, firewall configurations, and incident response strategies
+
+### <img src="https://img.shields.io/badge/AI%2FML%20%26%20Cybersecurity%20Intern-Quantam-9B59B6?style=for-the-badge&logo=brain&logoColor=white" /> **Cybersecurity and AI/ML Intern**
+**Quantam Pvt. Ltd., Gurugram, Haryana** | *Oct 2024 - Present*
+
+- 🚀 Focusing on hands-on projects in cybersecurity and AI/ML, applying theoretical knowledge to real-world challenges
+- 🤝 Collaborating with the Counseling Team and working under dedicated mentor guidance
+- 🔐 Enhanced understanding of cybersecurity protocols, AI/ML applications, confidentiality, and data protection
+- 💼 Gained insights into corporate ethics and best practices for data security in professional environments
 
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="25"> Skills & Tools
 
@@ -68,6 +113,7 @@ me.say_hi()
     <img src="https://img.shields.io/badge/Network%20Security-013243?style=for-the-badge&logo=wireshark&logoColor=white" />
     <img src="https://img.shields.io/badge/Digital%20Forensics-6e0e0a?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAjVBMVEUAAAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD///9YlI8vAAAALXRSTlMAAAUkS3OVwuL0CDR1pM7t1SUCGWWaxfvPLAFAdKfBeQ4+n+Dhzq5YBiJQgqsFV5rwAAAAAWJLR0QuVNMQhwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAAd0SU1FB+YGDws1JN1LUDwAAAB/SURBVAjXNc7JFoIwEEXRBgwQmRQQURkUURl8/+/ztZKu3Xwn9xL6Ogz8AGMoDBOIE9hJCmmWw8lT5EWJvMrhVTWwRkPYGJCaFm3X49ANxGlG8zLTOhO88XdZV8JN3u4PeT6flPTlcC3b2838d+Q+Dzxe+n4d0s/v9NtIPA9ZhBfB0QuWxz5pkQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMi0wNi0xNVQxMTo1MzozNiswMDowMMH79gIAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjItMDYtMTVUMTE6NTM6MzYrMDA6MDCwpk6+AAAAAElFTkSuQmCC" />
     <img src="https://img.shields.io/badge/Malware%20Analysis-4B275F?style=for-the-badge&logo=virustotal&logoColor=white" />
+    <img src="https://img.shields.io/badge/Threat%20Intelligence-990000?style=for-the-badge&logo=paloaltonetworks&logoColor=white" />
   </p>
   
   <!-- Dev Skills -->
@@ -77,6 +123,8 @@ me.say_hi()
     <img src="https://img.shields.io/badge/Backend-Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white&labelColor=black" />
     <img src="https://img.shields.io/badge/Database-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white&labelColor=black" />
     <img src="https://img.shields.io/badge/API-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white&labelColor=black" />
+    <img src="https://img.shields.io/badge/CSS-TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=black" />
+    <img src="https://img.shields.io/badge/State-Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white&labelColor=black" />
   </p>
 
   <!-- AI/ML Skills -->
@@ -86,6 +134,7 @@ me.say_hi()
     <img src="https://img.shields.io/badge/Library-PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white&labelColor=black" />
     <img src="https://img.shields.io/badge/Analysis-Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white&labelColor=black" />
     <img src="https://img.shields.io/badge/Visualization-Matplotlib-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=black" />
+    <img src="https://img.shields.io/badge/NLP-Transformers-FFFF00?style=for-the-badge&logo=huggingface&logoColor=white&labelColor=black" />
   </p>
 
   <!-- Core Tools -->
@@ -95,6 +144,8 @@ me.say_hi()
     <img src="https://img.shields.io/badge/Cloud-AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white&labelColor=black" />
     <img src="https://img.shields.io/badge/Container-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white&labelColor=black" />
     <img src="https://img.shields.io/badge/CI/CD-GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white&labelColor=black" />
+    <img src="https://img.shields.io/badge/Version%20Control-Git-F05032?style=for-the-badge&logo=git&logoColor=white&labelColor=black" />
+    <img src="https://img.shields.io/badge/DevOps-Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white&labelColor=black" />
   </p>
 </div>
 
@@ -153,8 +204,8 @@ me.say_hi()
   <a href="https://twitter.com/XenonesisHacks" target="_blank">
     <img src="https://img.shields.io/badge/Twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter" />
   </a>
-  <a href="https://xenonesis.dev" target="_blank">
-    <img src="https://img.shields.io/badge/Website-%23FF7139.svg?&style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Website" />
+  <a href="https://iaddy.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-%23FF7139.svg?&style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Portfolio" />
   </a>
   <a href="mailto:contact@xenonesis.dev" target="_blank">
     <img src="https://img.shields.io/badge/Email-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
@@ -163,8 +214,8 @@ me.say_hi()
 
 <div align="center">
   <h3>📱 Scan to Connect</h3>
-  <!-- This creates a QR code that links to your profile -->
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://github.com/Xenonesis" alt="QR Code" />
+  <!-- This creates a QR code that links to your portfolio -->
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://iaddy.netlify.app/" alt="QR Code" />
 </div>
 
 <br>
