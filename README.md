@@ -681,121 +681,53 @@
   
 </div>
 
-## <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="50"> About Me
 
 <div align="center">
   
-  <!-- Interactive Profile Card -->
+  
+<div align="center">
+  
+  
+<div align="center">
+  
+  ## <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="50"> About Me
+
+  <p>
+    <strong>_7adi;</strong>
+  </p>
+  <p>
+    <em>👋 Hi, I'm Aditya Kumar Tiwari, a Cyber Security enthusiast currently pursuing a Bachelor of Computer Applications at Sushant University. </em>
+  </p>
+
   <table>
     <tr>
-      <td width="60%">
-        
-```python
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-🛡 XENONESIS PROFILE SYSTEM v2.0
-Advanced Cybersecurity Specialist Profile
-"""
-
-import datetime
-from typing import List, Dict
-
-class CyberSpecialist:
-    def __init__(self):
-        self.name: str = "Aditya Kumar Tiwari"
-        self.alias: str = "Xenonesis"
-        self.status: str = "🔴 ONLINE & MONITORING"
-        self.education: str = "BCA in Cybersecurity @ Sushant University"
-        
-        # Core Expertise Areas
-        self.expertise: List[str] = [
-            "🛡 Cybersecurity & Ethical Hacking",
-            "🌐 Full Stack Development",
-            "🤖 AI/ML & Neural Networks",
-            "🔍 Digital Forensics",
-            "☁ Cloud Security Architecture"
-        ]
-        
-        # Programming Arsenal
-        self.languages: Dict[str, str] = {
-            "Python": "🐍 Expert",
-            "JavaScript": "⚡ Advanced", 
-            "C++": "⚙ Proficient",
-            "SQL": "🗄 Advanced",
-            "Bash": "💻 Expert",
-            "Go": "🚀 Learning"
-        }
-        
-        # Current Professional Roles
-        self.roles: List[Dict] = [
-            {"title": "Mentor", "company": "JhaMobii Technologies", "type": "Part-time"},
-            {"title": "Cybersecurity Intern", "company": "Null", "type": "Remote"},
-            {"title": "AI/ML & Cyber Intern", "company": "Quantam Pvt. Ltd.", "type": "Hybrid"}
-        ]
-        
-        # Mission Statement
-        self.mission: str = """
-        🎯 Bridging the gap between security and innovation
-        🔐 Building resilient digital ecosystems
-        🌟 Empowering the next generation of cyber defenders
-        """
-        
-        self.portfolio: str = "https://iaddy.netlify.app/"
-        self.certifications: int = 20
-        self.last_updated: str = datetime.datetime.now().strftime("%Y-%m-%d")
-
-    def get_current_focus(self) -> List[str]:
-        return [
-            "🔍 Zero-day vulnerability research",
-            "🤖 AI-powered threat detection systems", 
-            "🌐 Blockchain security implementations",
-            "📱 Mobile application security testing"
-        ]
-
-    def display_stats(self) -> None:
-        print(f"🚀 {self.name} ({self.alias})")
-        print(f"📊 Status: {self.status}")
-        print(f"🎓 Education: {self.education}")
-        print(f"🏆 Certifications: {self.certifications}+")
-        print(f"💼 Active Roles: {len(self.roles)}")
-        print("🎯 Current Focus Areas:")
-        for focus in self.get_current_focus():
-            print(f"   • {focus}")
-
-# Initialize and run
-specialist = CyberSpecialist()
-specialist.display_stats()
-
-print("\n💬 Message from Xenonesis:")
-print("Thanks for visiting! Let's collaborate to secure the digital frontier.")
-print("Always ready to discuss cybersecurity, development, or AI/ML innovations! 🚀")
-```
-
-
+      <td align="center">
+        <strong>13</strong>
+        <br/>
+        Followers
       </td>
-      <td width="40%" align="center">
-        
-  <!-- Live Stats Dashboard -->
-  <img src="https://github-readme-stats.vercel.app/api?username=Xenonesis&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF41&icon_color=00FF41&text_color=FFFFFF&custom_title=⚡%20Live%20GitHub%20Stats" width="100%" />
-  
-  <br><br>
-  
-  <!-- Skill Level Indicators -->
-  <img src="https://img.shields.io/badge/🛡%20Cybersecurity-Expert-FF0000?style=for-the-badge&labelColor=0D1117" />
-  <img src="https://img.shields.io/badge/💻%20Development-Advanced-00FF00?style=for-the-badge&labelColor=0D1117" />
-  <img src="https://img.shields.io/badge/🤖%20AI/ML-Proficient-0080FF?style=for-the-badge&labelColor=0D1117" />
-  <img src="https://img.shields.io/badge/🔍%20Forensics-Expert-FF8000?style=for-the-badge&labelColor=0D1117" />
-  
-  <br><br>
-  
-  <!-- Current Activity Indicator -->
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=2000&pause=1000&color=00FF41&center=true&vCenter=true&width=300&lines=🔴+Currently+Online;🛡+Monitoring+Systems;🔍+Analyzing+Threats;💻+Coding+Solutions;🤖+Training+Models" alt="Activity Status" />
-  
+      <td align="center">
+        <strong>0</strong>
+        <br/>
+        Following
+      </td>
+      <td align="center">
+        <strong>92</strong>
+        <br/>
+        Repositories
+      </td>
+      <td align="center">
+        <strong>151</strong>
+        <br/>
+        Stars
       </td>
     </tr>
   </table>
-  
+
+  ### My Top Languages
+  <p>
+    HTML | TypeScript | Python | Vue | CSS
+  </p>
 </div>
 
 ## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Professional Experience
@@ -1012,12 +944,12 @@ Quantam Pvt. Ltd., Gurugram, Haryana | Oct 2024 - Present
 </div>
 
 ```diff
-+ 📝 Updated analytics dashboard with real-time GitHub API integration (2h ago)
-+ 🔄 Merged security improvements in cybersecurity-toolkit repository (4h ago)
-+ 🆕 Created automated GitHub analytics pipeline with mobile responsiveness (1d ago)
-+ ✅ Resolved critical authentication vulnerabilities in network scanner (1d ago)
-+ 🚀 Released new version of AI-powered threat detection system (2d ago)
-+ ⭐ Contributed to open-source security framework project (3d ago)
++ 📝 Pushed 1 commit to **Xenonesis** (6h ago)
++ 📝 Pushed 1 commit to **Xenonesis** (6h ago)
++ 📝 Pushed 1 commit to **Law-Agent** (6h ago)
++ 📝 Pushed 1 commit to **Law-Agent** (6h ago)
++ 📝 Pushed 1 commit to **Law-Agent** (6h ago)
++ 📝 Pushed 1 commit to **Law-Agent** (6h ago)
 ! 🔐 Researching zero-day vulnerabilities in IoT devices and smart contracts
 ! 🌐 Building secure, blockchain-based decentralized authentication system
 ! 🤖 Developing ML model for real-time network intrusion detection
@@ -1032,10 +964,10 @@ Quantam Pvt. Ltd., Gurugram, Haryana | Oct 2024 - Present
 
 ### 📊 Live Activity Metrics
 
-<img src="https://img.shields.io/badge/🔥%20Commits%20Today-8-FF6B6B?style=for-the-badge&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/📝%20PRs%20This%20Week-3-4ECDC4?style=for-the-badge&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/🐛%20Issues%20Resolved-5-45B7D1?style=for-the-badge&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/⭐%20Repos%20Starred-12-FFA726?style=for-the-badge&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/🔥%20Commits%20Today-0-FF6B6B?style=for-the-badge&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/📝%20PRs%20This%20Week-10-4ECDC4?style=for-the-badge&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/🐛%20Issues%20Resolved-2-45B7D1?style=for-the-badge&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/⭐%20Repos%20Starred-2-FFA726?style=for-the-badge&labelColor=0D1117" />
 
 ### 🎯 Current Focus Areas
 
@@ -1062,7 +994,7 @@ Quantam Pvt. Ltd., Gurugram, Haryana | Oct 2024 - Present
 
 </div>
 
-*Last updated: January 15, 2025 at 02:30 PM UTC*  
+*Last updated: August 04, 2025 at 05:22 AM UTC*  
 *🤖 Automatically synced with GitHub API every 6 hours*
 
 ## <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="30"> GitHub Analytics

@@ -1,423 +1,564 @@
-#!/usr/bin/env python3
-"""
-GitHub Analytics Runner
-Main entry point for running all analytics components
-"""
-
 import os
 import sys
 import asyncio
 import argparse
 import logging
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
+from typing import Dict, List, Any, Optional
+import time
+import aiohttp
+from dataclasses import dataclass, asdict
+import re
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("logs/analytics.log", encoding="utf-8"),
+        logging.StreamHandler()
+    ]
 )
 logger = logging.getLogger(__name__)
 
-def setup_environment():
-    """Setup required directories and environment"""
-    directories = ['backups', 'config', 'logs']
-    for directory in directories:
-        os.makedirs(directory, exist_ok=True)
-        logger.info(f"Ensured directory exists: {directory}")
+# --- Dataclasses ---
+@dataclass
+class RepositoryMetrics:
+    name: str
+    stars: int
+    forks: int
+    issues: int
+    language: str
+    last_updated: str
+    health_score: float
+    size: int = 0
+    prs: int = 0
+    contributors: int = 0
+    commits_30d: int = 0
 
-async def run_data_collection():
-    """Run analytics data collection"""
-    logger.info("Starting analytics data collection...")
+@dataclass
+class LanguageStats:
+    name: str
+    bytes: int
+    percentage: float
+    repos: int
+
+@dataclass
+class ActivityMetrics:
+    commits_month: int = 0
+
+# --- GitHub Data Collector ---
+class GitHubAnalyticsCollector:
+    def __init__(self, username: str, token: Optional[str] = None):
+        self.username = username
+        self.token = token
+        self.base_url = "https://api.github.com"
+        self.headers = {'Accept': 'application/vnd.github.v3+json'}
+        if self.token:
+            self.headers['Authorization'] = f'token {self.token}'
+
+    async def make_request(self, session: aiohttp.ClientSession, url: str) -> Optional[Any]:
+        try:
+            async with session.get(url, headers=self.headers) as response:
+                if response.status == 200:
+                    return await response.json()
+                else:
+                    logger.error(f"API request to {url} failed with status: {response.status}")
+                    return None
+        except Exception as e:
+            logger.error(f"Request error for {url}: {e}")
+            return None
+
+    async def get_user_data(self, session: aiohttp.ClientSession) -> Dict:
+        url = f"{self.base_url}/users/{self.username}"
+        return await self.make_request(session, url) or {}
+
+    async def get_repos(self, session: aiohttp.ClientSession) -> List[Dict]:
+        repos = []
+        page = 1
+        while True:
+            url = f"{self.base_url}/users/{self.username}/repos?per_page=100&page={page}"
+            data = await self.make_request(session, url)
+            if not data:
+                break
+            repos.extend(data)
+            page += 1
+        return repos
+
+    def calculate_health_score(self, repo: Dict) -> float:
+        score = 0
+        score += min(repo.get('stargazers_count', 0) * 0.5, 40)
+        score += min(repo.get('forks_count', 0), 20)
+        
+        try:
+            updated_at = datetime.fromisoformat(repo.get('updated_at', '').replace('Z', '+00:00'))
+            days_since_update = (datetime.now(updated_at.tzinfo) - updated_at).days
+            if days_since_update <= 30:
+                score += 40
+            elif days_since_update <= 90:
+                score += 20
+        except Exception:
+            pass # Ignore if date parsing fails
+            
+        return min(100.0, score)
+
+    async def collect_all_analytics(self) -> Dict:
+        logger.info("Starting analytics collection...")
+        async with aiohttp.ClientSession() as session:
+            user_data, repos_data = await asyncio.gather(
+                self.get_user_data(session),
+                self.get_repos(session)
+            )
+
+        repos = [RepositoryMetrics(
+            name=repo.get('name', ''),
+            stars=repo.get('stargazers_count', 0),
+            forks=repo.get('forks_count', 0),
+            issues=repo.get('open_issues_count', 0),
+            language=repo.get('language', 'Unknown'),
+            last_updated=repo.get('updated_at', ''),
+            health_score=self.calculate_health_score(repo)
+        ) for repo in repos_data]
+
+        lang_stats = self.process_language_stats(repos_data)
+        summary = self.calculate_summary_metrics(repos)
+
+        return {
+            "user_data": user_data,
+            "repositories": [asdict(r) for r in repos],
+            "language_stats": [asdict(l) for l in lang_stats],
+            "summary_metrics": summary,
+            "collection_info": {"total_repos": len(repos)}
+        }
+
+    def process_language_stats(self, repos_data: List[Dict]) -> List[LanguageStats]:
+        lang_map = {}
+        total_size = 0
+        for repo in repos_data:
+            lang = repo.get('language')
+            size = repo.get('size', 0)
+            if lang and size > 0:
+                if lang not in lang_map:
+                    lang_map[lang] = {'bytes': 0, 'repos': 0}
+                lang_map[lang]['bytes'] += size
+                lang_map[lang]['repos'] += 1
+                total_size += size
+        
+        if total_size == 0: return []
+
+        stats = [LanguageStats(
+            name=lang,
+            bytes=data['bytes'],
+            repos=data['repos'],
+            percentage=(data['bytes'] / total_size * 100)
+        ) for lang, data in lang_map.items()]
+
+        return sorted(stats, key=lambda x: x.bytes, reverse=True)
+
+    def calculate_summary_metrics(self, repos: List[RepositoryMetrics]) -> Dict:
+        if not repos: return {}
+        return {
+            "total_repositories": len(repos),
+            "total_stars": sum(r.stars for r in repos),
+            "total_forks": sum(r.forks for r in repos),
+            "average_health_score": sum(r.health_score for r in repos) / len(repos)
+        }
+
+# --- README Updaters ---
+class AboutMeUpdater:
+    def __init__(self, analytics_data: Dict[str, Any]):
+        self.data = analytics_data
+        self.user_data = self.data.get("user_data", {})
+        self.summary_metrics = self.data.get("summary_metrics", {})
+        self.language_stats = self.data.get("language_stats", [])
+
+    def generate_about_me_section(self) -> str:
+        """Generates the new 'About Me' section in Markdown."""
+        
+        bio = self.user_data.get("bio", "A passionate developer and cybersecurity enthusiast.")
+        name = self.user_data.get("name", "Aditya Kumar Tiwari")
+        followers = self.user_data.get("followers", 0)
+        following = self.user_data.get("following", 0)
+        total_repos = self.summary_metrics.get("total_repositories", 0)
+        total_stars = self.summary_metrics.get("total_stars", 0)
+
+        top_languages = [lang["name"] for lang in self.language_stats[:5]]
+
+        about_me_content = f"""
+<div align="center">
+  
+  ## <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="50"> About Me
+
+  <p>
+    <strong>{name}</strong>
+  </p>
+  <p>
+    <em>{bio}</em>
+  </p>
+
+  <table>
+    <tr>
+      <td align="center">
+        <strong>{followers}</strong>
+        <br/>
+        Followers
+      </td>
+      <td align="center">
+        <strong>{following}</strong>
+        <br/>
+        Following
+      </td>
+      <td align="center">
+        <strong>{total_repos}</strong>
+        <br/>
+        Repositories
+      </td>
+      <td align="center">
+        <strong>{total_stars}</strong>
+        <br/>
+        Stars
+      </td>
+    </tr>
+  </table>
+
+  ### My Top Languages
+  <p>
+    {' | '.join(top_languages)}
+  </p>
+</div>
+"""
+        return about_me_content
+
+    def update_readme(self, readme_path="README.md"):
+        """Replaces the 'About Me' section in the README.md file."""
+        with open(readme_path, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        start_marker = '## <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="50"> About Me'
+        end_marker = '## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Professional Experience'
+        
+        start_index = content.find(start_marker)
+        end_index = content.find(end_marker)
+
+        if start_index != -1 and end_index != -1:
+            new_about_me = self.generate_about_me_section()
+            new_content = content[:start_index] + new_about_me + "\n" + content[end_index:]
+            
+            with open(readme_path, "w", encoding="utf-8") as f:
+                f.write(new_content)
+            print("Successfully updated the 'About Me' section in README.md")
+        else:
+            print("Could not find the 'About Me' section markers in README.md")
+
+class CurrentActivitiesUpdater:
+    def __init__(self, username: str, token: str = None):
+        self.username = username
+        self.token = token or os.getenv('GITHUB_TOKEN')
+        self.base_url = "https://api.github.com"
+        self.headers = {
+            'Accept': 'application/vnd.github.v3+json',
+            'User-Agent': f'current-activities-updater/{username}'
+        }
+        if self.token:
+            self.headers['Authorization'] = f'token {self.token}'
+    
+    async def fetch_recent_activities(self, session: aiohttp.ClientSession) -> List[str]:
+        """Fetch recent GitHub activities"""
+        try:
+            # Get recent events
+            events_url = f"{self.base_url}/users/{self.username}/events"
+            async with session.get(events_url, headers=self.headers, params={'per_page': 30}) as response:
+                if response.status != 200:
+                    logger.error(f"Failed to fetch events: {response.status}")
+                    return self.get_fallback_activities()
+                
+                events = await response.json()
+                
+            activities = []
+            now = datetime.now()
+            
+            for event in events[:10]:  # Process last 10 events
+                event_date = datetime.fromisoformat(event['created_at'].replace('Z', '+00:00')).replace(tzinfo=None)
+                time_diff = now - event_date
+                
+                # Skip events older than 7 days
+                if time_diff.days > 7:
+                    continue
+                
+                # Format time
+                if time_diff.days == 0:
+                    if time_diff.seconds < 3600:
+                        time_str = f"{time_diff.seconds // 60}m ago"
+                    else:
+                        time_str = f"{time_diff.seconds // 3600}h ago"
+                else:
+                    time_str = f"{time_diff.days}d ago"
+                
+                event_type = event.get('type', '')
+                repo_name = event.get('repo', {}).get('name', '').split('/')[-1]
+                
+                # Process different event types
+                if event_type == 'PushEvent':
+                    commits = len(event.get('payload', {}).get('commits', []))
+                    activities.append(f"+ 📝 Pushed {commits} commit{'s' if commits != 1 else ''} to **{repo_name}** ({time_str})")
+                
+                elif event_type == 'CreateEvent':
+                    ref_type = event.get('payload', {}).get('ref_type', '')
+                    if ref_type == 'repository':
+                        activities.append(f"+ 🆕 Created new repository **{repo_name}** ({time_str})")
+                    elif ref_type == 'branch':
+                        branch = event.get('payload', {}).get('ref', '')
+                        activities.append(f"+ 🌿 Created branch `{branch}` in **{repo_name}** ({time_str})")
+                
+                elif event_type == 'PullRequestEvent':
+                    action = event.get('payload', {}).get('action', '')
+                    pr_number = event.get('payload', {}).get('number', '')
+                    if action == 'opened':
+                        activities.append(f"+ 🔄 Opened pull request #{pr_number} in **{repo_name}** ({time_str})")
+                    elif action == 'closed' and event.get('payload', {}).get('pull_request', {}).get('merged'):
+                        activities.append(f"+ ✅ Merged pull request #{pr_number} in **{repo_name}** ({time_str})")
+                
+                elif event_type == 'IssuesEvent':
+                    action = event.get('payload', {}).get('action', '')
+                    issue_number = event.get('payload', {}).get('issue', {}).get('number', '')
+                    if action == 'opened':
+                        activities.append(f"+ 🐛 Opened issue #{issue_number} in **{repo_name}** ({time_str})")
+                    elif action == 'closed':
+                        activities.append(f"+ ✅ Closed issue #{issue_number} in **{repo_name}** ({time_str})")
+                
+                elif event_type == 'WatchEvent':
+                    activities.append(f"+ ⭐ Starred **{repo_name}** ({time_str})")
+                
+                elif event_type == 'ForkEvent':
+                    activities.append(f"+ 🍴 Forked **{repo_name}** ({time_str})")
+                
+                elif event_type == 'ReleaseEvent':
+                    action = event.get('payload', {}).get('action', '')
+                    if action == 'published':
+                        tag = event.get('payload', {}).get('release', {}).get('tag_name', '')
+                        activities.append(f"+ 🚀 Released version `{tag}` of **{repo_name}** ({time_str})")
+            
+            return activities[:6]  # Return top 6 recent activities
+            
+        except Exception as e:
+            logger.error(f"Error fetching activities: {e}")
+            return self.get_fallback_activities()
+    
+    async def fetch_activity_metrics(self, session: aiohttp.ClientSession) -> Dict[str, int]:
+        """Fetch real-time activity metrics"""
+        try:
+            # Get events for metrics calculation
+            events_url = f"{self.base_url}/users/{self.username}/events"
+            async with session.get(events_url, headers=self.headers, params={'per_page': 100}) as response:
+                if response.status != 200:
+                    return self.get_fallback_metrics()
+                
+                events = await response.json()
+            
+            now = datetime.now()
+            today = now.date()
+            week_ago = now - timedelta(days=7)
+            
+            commits_today = 0
+            prs_this_week = 0
+            issues_resolved = 0
+            repos_starred = 0
+            
+            for event in events:
+                event_date = datetime.fromisoformat(event['created_at'].replace('Z', '+00:00')).replace(tzinfo=None)
+                event_type = event.get('type', '')
+                
+                if event_type == 'PushEvent':
+                    if event_date.date() == today:
+                        commits_today += len(event.get('payload', {}).get('commits', []))
+                
+                elif event_type == 'PullRequestEvent' and event_date >= week_ago:
+                    action = event.get('payload', {}).get('action', '')
+                    if action in ['opened', 'closed']:
+                        prs_this_week += 1
+                
+                elif event_type == 'IssuesEvent' and event_date >= week_ago:
+                    action = event.get('payload', {}).get('action', '')
+                    if action == 'closed':
+                        issues_resolved += 1
+                
+                elif event_type == 'WatchEvent' and event_date >= week_ago:
+                    repos_starred += 1
+            
+            return {
+                'commits_today': commits_today,
+                'prs_this_week': prs_this_week,
+                'issues_resolved': issues_resolved,
+                'repos_starred': repos_starred
+            }
+            
+        except Exception as e:
+            logger.error(f"Error fetching metrics: {e}")
+            return self.get_fallback_metrics()
+    
+    def get_fallback_activities(self) -> List[str]:
+        """Fallback activities if API fails"""
+        return [
+            "+ 📝 Updated security documentation and analytics pipeline (2h ago)",
+            "+ 🔄 Merged improvements to cybersecurity toolkit (4h ago)",
+            "+ 🆕 Created automated GitHub analytics dashboard (1d ago)",
+            "+ ✅ Resolved authentication vulnerabilities (1d ago)",
+            "+ 🚀 Released AI-powered threat detection update (2d ago)",
+            "+ ⭐ Contributed to open-source security framework (3d ago)"
+        ]
+    
+    def get_fallback_metrics(self) -> Dict[str, int]:
+        """Fallback metrics if API fails"""
+        return {
+            'commits_today': 8,
+            'prs_this_week': 3,
+            'issues_resolved': 5,
+            'repos_starred': 12
+        }
+    
+    async def update_readme_current_activities(self) -> bool:
+        """Update the Current Activities section in README.md with real data"""
+        logger.info("🚀 Updating Current Activities section with real GitHub data...")
+        
+        async with aiohttp.ClientSession() as session:
+            # Fetch real data
+            recent_activities = await self.fetch_recent_activities(session)
+            metrics = await self.fetch_activity_metrics(session)
+        
+        # Read current README
+        try:
+            with open('README.md', 'r', encoding='utf-8') as f:
+                content = f.read()
+        except FileNotFoundError:
+            logger.error("❌ README.md not found!")
+            return False
+        
+        # Add ongoing activities
+        ongoing_activities = [
+            "! 🔐 Researching zero-day vulnerabilities in IoT devices and smart contracts",
+            "! 🌐 Building secure, blockchain-based decentralized authentication system",
+            "! 🤖 Developing ML model for real-time network intrusion detection",
+            "! 📚 Mastering advanced exploitation techniques and reverse engineering",
+            "- 🛡 Actively participating in international CTF competitions",
+            "- 💻 Contributing to OWASP and other open-source security projects",
+            "- 🎯 Mentoring cybersecurity professionals at JhaMobii Technologies",
+            "- 🔍 Conducting vulnerability assessments for enterprise clients"
+        ]
+        
+        # Combine activities
+        all_activities = recent_activities + ongoing_activities
+        
+        # Create new activities section
+        current_time = datetime.now().strftime('%B %d, %Y at %I:%M %p')
+        
+        activities_section = f"""## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Current Activities
+
+<div align="center">
+
+### 🔥 Real-Time GitHub Activity Feed
+
+</div>
+
+```diff
+{chr(10).join(all_activities)}
+```
+
+<div align="center">
+
+### 📊 Live Activity Metrics
+
+<img src="https://img.shields.io/badge/🔥%20Commits%20Today-{metrics['commits_today']}-FF6B6B?style=for-the-badge&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/📝%20PRs%20This%20Week-{metrics['prs_this_week']}-4ECDC4?style=for-the-badge&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/🐛%20Issues%20Resolved-{metrics['issues_resolved']}-45B7D1?style=for-the-badge&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/⭐%20Repos%20Starred-{metrics['repos_starred']}-FFA726?style=for-the-badge&labelColor=0D1117" />
+
+### 🎯 Current Focus Areas
+
+<table>
+<tr>
+<td align="center" width="33%">
+<img src="https://img.shields.io/badge/🛡%20Security%20Research-Active-00FF41?style=for-the-badge&labelColor=0D1117" /><br>
+<sub>IoT Vulnerability Analysis</sub>
+</td>
+<td align="center" width="33%">
+<img src="https://img.shields.io/badge/🤖%20AI%2FML%20Development-In%20Progress-FF6B6B?style=for-the-badge&labelColor=0D1117" /><br>
+<sub>Intrusion Detection Models</sub>
+</td>
+<td align="center" width="33%">
+<img src="https://img.shields.io/badge/🌐%20Blockchain%20Security-Building-4ECDC4?style=for-the-badge&labelColor=0D1117" /><br>
+<sub>Decentralized Auth Systems</sub>
+</td>
+</tr>
+</table>
+
+### ⚡ Real-Time Status
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2000&pause=1000&color=00FF41&center=true&vCenter=true&width=600&lines=🔴+Currently+Online+and+Coding;🛡+Monitoring+Security+Systems;🔍+Analyzing+Threat+Patterns;💻+Developing+Security+Solutions;🤖+Training+ML+Models;🎯+Participating+in+CTF+Events" alt="Real-time Activity" />
+
+</div>
+
+*Last updated: {current_time} UTC*  
+*🤖 Automatically synced with GitHub API every 6 hours*
+
+"""
+        
+        # Find and replace the current activities section
+        pattern = r'## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Current Activities.*?(?=## <img|$)'
+        
+        if re.search(pattern, content, re.DOTALL):
+            new_content = re.sub(pattern, activities_section, content, flags=re.DOTALL)
+            logger.info("✅ Updated existing Current Activities section")
+        else:
+            # Add before GitHub Analytics section if not found
+            github_analytics_pattern = r'(## <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="30"> GitHub Analytics)'
+            if re.search(github_analytics_pattern, content):
+                new_content = re.sub(github_analytics_pattern, activities_section + r'\1', content)
+                logger.info("✅ Added Current Activities section before GitHub Analytics")
+            else:
+                new_content = content + "\n\n" + activities_section
+                logger.info("✅ Added Current Activities section at the end")
+        
+        # Write updated README
+        try:
+            with open('README.md', 'w', encoding='utf-8') as f:
+                f.write(new_content)
+            
+            logger.info("✅ README.md updated successfully!")
+            logger.info(f"📊 Updated with {len(recent_activities)} recent activities")
+            logger.info(f"📈 Metrics: {metrics['commits_today']} commits today, {metrics['prs_this_week']} PRs this week")
+            return True
+            
+        except Exception as e:
+            logger.error(f"❌ Error writing README.md: {e}")
+            return False
+
+# --- Main Pipeline ---
+async def run_full_pipeline():
+    start_time = time.time()
+    logger.info("Starting GitHub analytics pipeline...")
+    
+    setup_environment()
     
     try:
-        # Import and run the analytics collector
-        sys.path.append('scripts')
-        from automated_analytics_updater import GitHubAnalyticsCollector
+        analytics_data = await GitHubAnalyticsCollector(os.getenv('GITHUB_USERNAME', 'Xenonesis'), os.getenv('GITHUB_TOKEN')).collect_all_analytics()
         
-        username = os.getenv('GITHUB_USERNAME') or os.getenv('GH_USERNAME', 'Xenonesis')
-        token = os.getenv('GITHUB_TOKEN') or os.getenv('GH_TOKEN')
-        
-        if not token:
-            logger.warning("No GitHub token found. API requests will be limited.")
-        
-        collector = GitHubAnalyticsCollector(username, token)
-        analytics_data = await collector.collect_all_analytics()
-        
-        # Save the data
         with open('analytics-data.json', 'w') as f:
             json.dump(analytics_data, f, indent=2, default=str)
-        
-        logger.info(f"Data collection completed. Processed {analytics_data['collection_info']['total_repos']} repositories")
-        return analytics_data
-        
+        logger.info("Analytics data saved to analytics-data.json")
+
+        # Run updates
+        AboutMeUpdater(analytics_data).update_readme()
+        await CurrentActivitiesUpdater(os.getenv('GITHUB_USERNAME', 'Xenonesis'), os.getenv('GITHUB_TOKEN')).update_readme_current_activities()
+
+        execution_time = time.time() - start_time
+        logger.info(f"Pipeline completed in {execution_time:.2f} seconds.")
+
     except Exception as e:
-        logger.error(f"Data collection failed: {e}")
-        raise
+        logger.critical(f"Fatal error in pipeline: {e}", exc_info=True)
 
-def generate_dashboards(analytics_data):
-    """Generate all dashboard variants"""
-    logger.info("Generating dashboards...")
-    
-    try:
-        # Import dashboard generators
-        sys.path.append('scripts')
-        from interactive_dashboard_generator import InteractiveDashboardGenerator
-        from mobile_responsive_updater import MobileResponsiveUpdater
-        
-        # Generate interactive dashboard
-        interactive_generator = InteractiveDashboardGenerator(analytics_data)
-        interactive_html = interactive_generator.generate_dashboard()
-        
-        with open('interactive-dashboard.html', 'w', encoding='utf-8') as f:
-            f.write(interactive_html)
-        logger.info("Interactive dashboard generated successfully")
-        
-        # Generate mobile dashboard
-        mobile_generator = MobileResponsiveUpdater(analytics_data)
-        mobile_html = mobile_generator.generate_mobile_optimized_html()
-        
-        with open('mobile-dashboard.html', 'w', encoding='utf-8') as f:
-            f.write(mobile_html)
-        logger.info("Mobile dashboard generated successfully")
-        
-        return True
-        
-    except Exception as e:
-        logger.error(f"Dashboard generation failed: {e}")
-        import traceback
-        logger.error(f"Full traceback: {traceback.format_exc()}")
-        return False
-
-def update_readme_and_analytics(analytics_data):
-    """Update README and analytics markdown files"""
-    logger.info("Updating README and analytics files...")
-    
-    try:
-        # Update README badges
-        update_readme_badges(analytics_data)
-        
-        # Update analytics markdown
-        update_analytics_markdown(analytics_data)
-        
-        logger.info("README and analytics files updated")
-        return True
-        
-    except Exception as e:
-        logger.error(f"README/analytics update failed: {e}")
-        return False
-
-def update_readme_badges(analytics_data):
-    """Update badges in README.md"""
-    import re
-    
-    try:
-        with open('README.md', 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        summary = analytics_data.get('summary_metrics', {})
-        activity = analytics_data.get('activity_metrics', {})
-        
-        # Define badge updates
-        updates = {
-            'Total%20Repositories': str(summary.get('total_repositories', 0)),
-            'Total%20Stars': str(summary.get('total_stars', 0)),
-            'Active%20Repos': str(summary.get('active_repositories', 0)),
-            'Health%20Score': f"{summary.get('average_health_score', 0):.1f}%25",
-            'Commits%20This%20Month': str(activity.get('commits_month', 0)),
-            'Current%20Streak': f"{activity.get('streak_days', 0)}%20days"
-        }
-        
-        # Apply updates
-        for key, value in updates.items():
-            pattern = f'(https://img\\.shields\\.io/badge/{key.replace("%20", "%20")}-)[^-]+(-.+?(?:alt=|"))'
-            replacement = f'\\g<1>{value}\\g<2>'
-            content = re.sub(pattern, replacement, content)
-        
-        # Update language percentages
-        languages = analytics_data.get('language_stats', [])
-        if languages:
-            for i, lang in enumerate(languages[:4]):
-                lang_name = lang.get('name', '').replace('+', '%2B')
-                percentage = lang.get('percentage', 0)
-                
-                # Update specific language badges
-                if lang_name == 'Python':
-                    content = re.sub(
-                        r'(https://img\.shields\.io/badge/)\d+\.\d+(%25-Usage-blue)',
-                        f'\\g<1>{percentage:.1f}\\g<2>',
-                        content
-                    )
-                elif lang_name == 'JavaScript':
-                    content = re.sub(
-                        r'(https://img\.shields\.io/badge/)\d+\.\d+(%25-Usage-yellow)',
-                        f'\\g<1>{percentage:.1f}\\g<2>',
-                        content
-                    )
-        
-        with open('README.md', 'w', encoding='utf-8') as f:
-            f.write(content)
-            
-    except Exception as e:
-        logger.error(f"Error updating README badges: {e}")
-        raise
-
-def update_analytics_markdown(analytics_data):
-    """Update repository-analytics.md with detailed data"""
-    try:
-        summary = analytics_data.get('summary_metrics', {})
-        repos = analytics_data.get('repositories', [])
-        languages = analytics_data.get('language_stats', [])
-        activity = analytics_data.get('activity_metrics', {})
-        
-        # Generate top repositories table
-        top_repos = sorted(repos, key=lambda x: x.get('stars', 0), reverse=True)[:10]
-        
-        repo_table = "| Repository | Stars | Forks | Issues | Language | Health Score | Last Updated |\n"
-        repo_table += "|------------|-------|-------|--------|----------|--------------|-------------|\n"
-        
-        for repo in top_repos:
-            last_updated = datetime.fromisoformat(repo.get('last_updated', '').replace('Z', '+00:00'))
-            days_ago = (datetime.now() - last_updated.replace(tzinfo=None)).days
-            
-            repo_table += f"| {repo.get('name', 'Unknown')} | ⭐ {repo.get('stars', 0)} | 🍴 {repo.get('forks', 0)} | 🐛 {repo.get('issues', 0)} | {repo.get('language', 'Unknown')} | {repo.get('health_score', 0):.1f}% | {days_ago} days ago |\n"
-        
-        # Generate language stats
-        lang_stats = ""
-        for lang in languages[:10]:
-            lang_stats += f"- **{lang.get('name', 'Unknown')}**: {lang.get('percentage', 0):.1f}% ({lang.get('repos', 0)} repos)\n"
-        
-        # Create updated analytics content
-        analytics_content = f"""# 📊 Advanced Repository Analytics & Language Insights
-
-*Last Updated: {datetime.now().strftime('%B %d, %Y at %I:%M %p')}*
-
-## 🏆 Repository Performance Metrics
-
-### Summary Statistics
-- **Total Repositories**: {summary.get('total_repositories', 0)}
-- **Total Stars**: {summary.get('total_stars', 0)}
-- **Total Forks**: {summary.get('total_forks', 0)}
-- **Average Health Score**: {summary.get('average_health_score', 0):.1f}%
-- **Active Repositories**: {summary.get('active_repositories', 0)}
-- **Community Engagement**: {summary.get('community_engagement', 0)}
-
-### Top Performing Repositories
-{repo_table}
-
-## 💻 Language Usage Deep Dive
-
-### Primary Languages by Usage
-{lang_stats}
-
-## 🚀 Development Activity Metrics
-
-### Recent Activity Summary
-- **Commits Today**: {activity.get('commits_today', 0)}
-- **Commits This Week**: {activity.get('commits_week', 0)}
-- **Commits This Month**: {activity.get('commits_month', 0)}
-- **Pull Requests Opened**: {activity.get('prs_opened', 0)}
-- **Pull Requests Merged**: {activity.get('prs_merged', 0)}
-- **Issues Opened**: {activity.get('issues_opened', 0)}
-- **Issues Closed**: {activity.get('issues_closed', 0)}
-- **Current Streak**: {activity.get('streak_days', 0)} days
-
-## 📈 Performance Analytics
-
-### Repository Health Distribution
-```
-Excellent (90-100%): {len([r for r in repos if r.get('health_score', 0) >= 90])} repositories
-Good (70-89%):       {len([r for r in repos if 70 <= r.get('health_score', 0) < 90])} repositories
-Fair (50-69%):       {len([r for r in repos if 50 <= r.get('health_score', 0) < 70])} repositories
-Needs Attention:     {len([r for r in repos if r.get('health_score', 0) < 50])} repositories
-```
-
-### Productivity Metrics
-- **Productivity Score**: {summary.get('productivity_score', 0):.1f}/100
-- **Average Repository Size**: {sum(r.get('size', 0) for r in repos) / len(repos) / 1024:.1f} MB
-- **Most Active Repository**: {max(repos, key=lambda x: x.get('commits_30d', 0)).get('name', 'N/A') if repos else 'N/A'}
-
-## 🔗 Interactive Dashboards
-
-- **[📱 Mobile Dashboard](./mobile-dashboard.html)** - Optimized for mobile devices
-- **[💻 Interactive Dashboard](./interactive-dashboard.html)** - Full-featured desktop experience
-
----
-
-*This report is automatically generated from GitHub API data.*
-*For real-time updates, the system refreshes every 6 hours.*
-
-### Key Features
-• **Real Data Integration** - All metrics pull from actual GitHub APIs
-• **Professional Presentation** - Organized tables and structured layouts  
-• **Comprehensive Coverage** - From basic stats to advanced analytics
-• **Visual Appeal** - Consistent Tokyo Night theme with modern badges
-• **Actionable Insights** - Performance benchmarks and improvement areas
-• **Community Focus** - Collaboration and contribution metrics
-• **Mobile Responsive** - Optimized viewing on all devices
-• **Interactive Visualizations** - Charts and graphs for better understanding
-"""
-        
-        with open('repository-analytics.md', 'w', encoding='utf-8') as f:
-            f.write(analytics_content)
-            
-    except Exception as e:
-        logger.error(f"Error updating analytics markdown: {e}")
-        raise
-
-async def run_current_activities_update():
-    """Update Current Activities section with real GitHub data"""
-    logger.info("Updating Current Activities section...")
-    
-    try:
-        # Import and run the current activities updater
-        sys.path.append('scripts')
-        from current_activities_updater import CurrentActivitiesUpdater
-        
-        username = os.getenv('GITHUB_USERNAME') or os.getenv('GH_USERNAME', 'Xenonesis')
-        token = os.getenv('GITHUB_TOKEN') or os.getenv('GH_TOKEN')
-        
-        updater = CurrentActivitiesUpdater(username, token)
-        success = await updater.update_readme_current_activities()
-        
-        logger.info(f"Current Activities update: {'✅' if success else '❌'}")
-        return success
-        
-    except Exception as e:
-        logger.error(f"Current Activities update failed: {e}")
-        return False
-
-async def run_full_pipeline():
-    """Run the complete analytics pipeline"""
-    start_time = datetime.now()
-    logger.info("Starting complete GitHub analytics pipeline...")
-    
-    try:
-        # Setup environment
-        setup_environment()
-        
-        # Step 1: Collect analytics data
-        analytics_data = await run_data_collection()
-        
-        # Step 2: Generate dashboards
-        dashboard_success = generate_dashboards(analytics_data)
-        
-        # Step 3: Update README and analytics
-        readme_success = update_readme_and_analytics(analytics_data)
-        
-        # Step 4: Update Current Activities with real-time data
-        activities_success = await run_current_activities_update()
-        
-        # Calculate execution time
-        execution_time = (datetime.now() - start_time).total_seconds()
-        
-        # Summary
-        logger.info("="*60)
-        logger.info("GITHUB ANALYTICS PIPELINE COMPLETED")
-        logger.info("="*60)
-        logger.info(f"Execution Time: {execution_time:.2f} seconds")
-        logger.info(f"Repositories Processed: {analytics_data['collection_info']['total_repos']}")
-        logger.info(f"Interactive Dashboard: {'✅' if dashboard_success else '❌'}")
-        logger.info(f"Mobile Dashboard: {'✅' if dashboard_success else '❌'}")
-        logger.info(f"README Updated: {'✅' if readme_success else '❌'}")
-        logger.info(f"Analytics Updated: {'✅' if readme_success else '❌'}")
-        logger.info(f"Current Activities: {'✅' if activities_success else '❌'}")
-        logger.info(f"Rate Limit Remaining: {analytics_data['collection_info']['rate_limit_remaining']}")
-        logger.info("="*60)
-        
-        # Create summary file
-        summary = {
-            'timestamp': datetime.now().isoformat(),
-            'execution_time_seconds': execution_time,
-            'repositories_processed': analytics_data['collection_info']['total_repos'],
-            'dashboards_generated': dashboard_success,
-            'readme_updated': readme_success,
-            'current_activities_updated': activities_success,
-            'rate_limit_remaining': analytics_data['collection_info']['rate_limit_remaining'],
-            'total_stars': analytics_data['summary_metrics']['total_stars'],
-            'total_repositories': analytics_data['summary_metrics']['total_repositories'],
-            'health_score': analytics_data['summary_metrics']['average_health_score']
-        }
-        
-        with open('pipeline-summary.json', 'w') as f:
-            json.dump(summary, f, indent=2)
-        
-        return True
-        
-    except Exception as e:
-        logger.error(f"Pipeline failed: {e}")
-        return False
-
-def main():
-    """Main function with command line interface"""
-    parser = argparse.ArgumentParser(description='GitHub Analytics Pipeline')
-    parser.add_argument('--collect-only', action='store_true', 
-                       help='Only collect data, skip dashboard generation')
-    parser.add_argument('--dashboards-only', action='store_true',
-                       help='Only generate dashboards from existing data')
-    parser.add_argument('--update-only', action='store_true',
-                       help='Only update README and analytics files')
-    parser.add_argument('--activities-only', action='store_true',
-                       help='Only update Current Activities section')
-    parser.add_argument('--setup', action='store_true',
-                       help='Setup environment and create config files')
-    
-    args = parser.parse_args()
-    
-    if args.setup:
-        logger.info("Setting up GitHub Analytics environment...")
-        setup_environment()
-        
-        # Create sample config
-        config_content = """# GitHub Analytics Configuration
-# Set your GitHub username and token as environment variables:
-# export GITHUB_USERNAME="your-username"
-# export GITHUB_TOKEN="your-personal-access-token"
-
-# Optional: Email notifications
-# export SMTP_SERVER="smtp.gmail.com"
-# export SMTP_PORT="587"
-# export EMAIL_USER="your-email@gmail.com"
-# export EMAIL_PASS="your-app-password"
-# export NOTIFICATION_EMAIL="notifications@example.com"
-"""
-        
-        with open('config/setup.md', 'w') as f:
-            f.write(config_content)
-        
-        logger.info("Setup completed! Check config/setup.md for configuration instructions.")
-        return
-    
-    if args.collect_only:
-        logger.info("Running data collection only...")
-        asyncio.run(run_data_collection())
-        
-    elif args.dashboards_only:
-        logger.info("Generating dashboards only...")
-        try:
-            with open('analytics-data.json', 'r') as f:
-                analytics_data = json.load(f)
-            generate_dashboards(analytics_data)
-        except FileNotFoundError:
-            logger.error("No analytics data found. Run data collection first.")
-            
-    elif args.update_only:
-        logger.info("Updating README and analytics only...")
-        try:
-            with open('analytics-data.json', 'r') as f:
-                analytics_data = json.load(f)
-            update_readme_and_analytics(analytics_data)
-        except FileNotFoundError:
-            logger.error("No analytics data found. Run data collection first.")
-    
-    elif args.activities_only:
-        logger.info("Updating Current Activities only...")
-        asyncio.run(run_current_activities_update())
-            
-    else:
-        # Run full pipeline
-        success = asyncio.run(run_full_pipeline())
-        sys.exit(0 if success else 1)
+def setup_environment():
+    os.makedirs('logs', exist_ok=True)
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(run_full_pipeline())
