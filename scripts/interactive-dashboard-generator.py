@@ -908,6 +908,9 @@ class InteractiveDashboardGenerator:
         """
 
 def generate_interactive_dashboard(analytics_data: Dict) -> str:
+    """Main function to generate interactive dashboard"""
+    generator = InteractiveDashboardGenerator(analytics_data)
+    return generator.generate_dashboard()(analytics_data: Dict) -> str:
     """Generate interactive dashboard from analytics data"""
     generator = InteractiveDashboardGenerator(analytics_data)
     return generator.generate_dashboard()

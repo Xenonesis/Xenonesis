@@ -1,14 +1,18 @@
-<!-- Dynamic Hero Section with Real Data -->
+<!-- Dynamic Hero Section -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=280&section=header&text=Xenonesis&fontSize=80&fontColor=fff&animation=twinkling&fontAlignY=35&desc=🚀%20Software%20Developer%20•%20🔐%20Cybersecurity%20Enthusiast%20•%20🤖%20AI/ML%20Explorer&descAlignY=55&descAlign=50&descSize=16" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=280&section=header&text=XENONESIS&fontSize=80&fontColor=fff&animation=twinkling&fontAlignY=35&desc=🛡%20Cybersecurity%20Specialist%20•%20💻%20Full%20Stack%20Developer%20•%20🤖%20AI/ML%20Engineer&descAlignY=55&descAlign=50&descSize=16" width="100%" />
   
   <!-- Real-time Typing Animation -->
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=36BCF7&center=true&vCenter=true&width=600&lines=👋+Welcome+to+my+GitHub+Profile!;💻+Passionate+Software+Developer;🔐+Cybersecurity+Enthusiast;🌱+Always+Learning+New+Technologies;🚀+Building+Amazing+Projects" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=36BCF7&center=true&vCenter=true&width=700&lines=🚀+Welcome+to+my+Digital+Fortress!;🛡+Cybersecurity+%26+Ethical+Hacking+Expert;💻+Full+Stack+Developer+%26+AI+Engineer;🔍+Digital+Forensics+%26+Threat+Analysis;⚡+Building+Secure+Digital+Solutions" alt="Typing SVG" />
 
-  <br><br>
+  <br>
   
-  <!-- Modern Snake Animation -->
-  <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="Snake animation" />
+  <!-- Enhanced Snake Animation -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg">
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg">
+  </picture>
 </div>
 
 <!-- 📊 COMPREHENSIVE GITHUB STATISTICS SECTION -->
@@ -615,54 +619,6 @@
 
 <br>
 
-<div align="center">
-  
-  <!-- Dynamic Hero Section with Real Data -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=280&section=header&text=YOUR_NAME&fontSize=80&fontColor=fff&animation=twinkling&fontAlignY=35&desc=🚀%20Software%20Developer%20•%20🔐%20Cybersecurity%20Enthusiast%20•%20🤖%20AI/ML%20Explorer&descAlignY=55&descAlign=50&descSize=16" width="100%" />
-  
-  <!-- Real-time Typing Animation with Your Info -->
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=36BCF7&center=true&vCenter=true&width=600&lines=👋+Welcome+to+my+GitHub+Profile!;💻+Passionate+Software+Developer;🔐+Cybersecurity+Enthusiast;🌱+Always+Learning+New+Technologies;🚀+Building+Amazing+Projects" alt="Typing SVG" />
-
-  <br>
-  
-  <!-- Interactive Terminal Window -->
-  <details>
-  <summary>
-    <img src="https://img.shields.io/badge/🖥_Click_to_Open_Terminal-000000?style=for-the-badge&logo=windows-terminal&logoColor=00FF41" />
-  </summary>
-  
-  bash
-  ┌──(xenonesis㉿kali)-[~]
-  └─$ neofetch
-  
-         ,.=:!!t3Z3z.,                    xenonesis@github
-        :tt:::tt333EE3                   ──────────────────
-        Et:::ztt33EEEL @Ee.,      ..,    OS: Kali GNU/Linux
-       ;tt:::tt333EE7 ;EEEEEEttttt33#    Host: Cybersecurity Specialist
-      :Et:::zt333EEQ. $EEEEEttttt33QL    Kernel: Penetration Testing
-      it::::tt333EEF @EEEEEEttttt33F     Uptime: 24/7 Security Mode
-     ;3=*^"*4EEV :EEEEEEttttt33@.     Shell: bash 5.1.16
-     ,.=::::!t=., ` @EEEEEEtttz33QF      Terminal: Secure Shell
-    ;::::::::zt33)   "4EEEtttji3P*       CPU: Intel i7 (Overclocked)
-   :t::::::::tt33.:Z3z..  `` ,..g.       Memory: 32GB DDR4
-   i::::::::zt33F AEEEtttt::::ztF        GPU: NVIDIA RTX 4080
-  ;:::::::::t33V ;EEEttttt::::t3         Storage: 2TB NVMe SSD
-  E::::::::zt33L @EEEtttt::::z3F         Network: Gigabit Ethernet
- {3=*^"*4E3) ;EEEtttt:::::tZ`         
-             ` :EEEEtttt::::z7            Current Mission: Securing Digital Assets
-                 "VEzjt:;;z>*`            Status: Online & Monitoring
-  
-  </details>
-  
-  <!-- Enhanced Snake Animation with Custom Styling -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg">
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg">
-  </picture>
-
-</div>
-
 <!-- Enhanced Interactive Badge Section -->
 <div align="center">
   
@@ -714,13 +670,14 @@
 
 <div align="center">
   
-  text
+  ```text
   $ whoami
   > Cybersecurity enthusiast | BCA Student at Sushant University | Digital Vanguard
   $ skills --list
   > Loading complete! Expertise in security, development, and artificial intelligence
   $ current_status
   > Analyzing vulnerabilities, coding solutions, and exploring neural networks
+  ```
   
 </div>
 
@@ -733,9 +690,9 @@
     <tr>
       <td width="60%">
         
-python
+```python
 #!/usr/bin/env python3
-# -- coding: utf-8 --
+# -*- coding: utf-8 -*-
 """
 🛡 XENONESIS PROFILE SYSTEM v2.0
 Advanced Cybersecurity Specialist Profile
@@ -745,7 +702,7 @@ import datetime
 from typing import List, Dict
 
 class CyberSpecialist:
-    def _init_(self):
+    def __init__(self):
         self.name: str = "Aditya Kumar Tiwari"
         self.alias: str = "Xenonesis"
         self.status: str = "🔴 ONLINE & MONITORING"
@@ -762,8 +719,8 @@ class CyberSpecialist:
         
         # Programming Arsenal
         self.languages: Dict[str, str] = {
-            "Python": "🐍 Advanced",
-            "JavaScript": "⚡ Expert", 
+            "Python": "🐍 Expert",
+            "JavaScript": "⚡ Advanced", 
             "C++": "⚙ Proficient",
             "SQL": "🗄 Advanced",
             "Bash": "💻 Expert",
@@ -813,6 +770,7 @@ specialist.display_stats()
 print("\n💬 Message from Xenonesis:")
 print("Thanks for visiting! Let's collaborate to secure the digital frontier.")
 print("Always ready to discuss cybersecurity, development, or AI/ML innovations! 🚀")
+```
 
 
       </td>

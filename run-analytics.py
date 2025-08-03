@@ -62,25 +62,31 @@ def generate_dashboards(analytics_data):
     try:
         # Import dashboard generators
         sys.path.append('scripts')
-        from interactive_dashboard_generator import generate_interactive_dashboard
-        from mobile_responsive_updater import generate_mobile_dashboard
+        from interactive_dashboard_generator import InteractiveDashboardGenerator
+        from mobile_responsive_updater import MobileResponsiveUpdater
         
         # Generate interactive dashboard
-        interactive_html = generate_interactive_dashboard(analytics_data)
+        interactive_generator = InteractiveDashboardGenerator(analytics_data)
+        interactive_html = interactive_generator.generate_dashboard()
+        
         with open('interactive-dashboard.html', 'w', encoding='utf-8') as f:
             f.write(interactive_html)
-        logger.info("Interactive dashboard generated")
+        logger.info("Interactive dashboard generated successfully")
         
         # Generate mobile dashboard
-        mobile_html = generate_mobile_dashboard(analytics_data)
+        mobile_generator = MobileResponsiveUpdater(analytics_data)
+        mobile_html = mobile_generator.generate_mobile_optimized_html()
+        
         with open('mobile-dashboard.html', 'w', encoding='utf-8') as f:
             f.write(mobile_html)
-        logger.info("Mobile dashboard generated")
+        logger.info("Mobile dashboard generated successfully")
         
         return True
         
     except Exception as e:
         logger.error(f"Dashboard generation failed: {e}")
+        import traceback
+        logger.error(f"Full traceback: {traceback.format_exc()}")
         return False
 
 def update_readme_and_analytics(analytics_data):

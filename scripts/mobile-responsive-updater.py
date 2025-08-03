@@ -1177,4 +1177,179 @@ def main():
         logger.error(f"Error generating mobile dashboard: {e}")
 
 if __name__ == "__main__":
-    main()
+    main()  
+  def generate_mobile_javascript(self) -> str:
+        """Generate mobile-optimized JavaScript"""
+        languages_data = json.dumps(self.data.get('language_stats', []))
+        repositories_data = json.dumps(self.data.get('repositories', []))
+        
+        return f"""
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {{
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }}
+        
+        // Chart.js Mobile Configuration
+        Chart.defaults.color = '#C9D1D9';
+        Chart.defaults.borderColor = 'rgba(139, 148, 158, 0.2)';
+        
+        // Mobile Language Chart
+        const languageData = {languages_data};
+        if (languageData.length > 0) {{
+            const mobileLanguageChart = new Chart(document.getElementById('mobileLanguageChart'), {{
+                type: 'doughnut',
+                data: {{
+                    labels: languageData.slice(0, 6).map(lang => lang.name),
+                    datasets: [{{
+                        data: languageData.slice(0, 6).map(lang => lang.percentage),
+                        backgroundColor: [
+                            '#58A6FF', '#1F6FEB', '#7C3AED', '#F85149',
+                            '#2EA043', '#FF8E53'
+                        ],
+                        borderWidth: 1,
+                        borderColor: '#0D1117'
+                    }}]
+                }},
+                options: {{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {{
+                        legend: {{
+                            position: 'bottom',
+                            labels: {{
+                                padding: 15,
+                                usePointStyle: true,
+                                font: {{
+                                    size: 11
+                                }}
+                            }}
+                        }}
+                    }}
+                }}
+            }});
+        }}
+        
+        // Mobile Health Chart
+        const repoData = {repositories_data};
+        if (repoData.length > 0) {{
+            const mobileHealthChart = new Chart(document.getElementById('mobileHealthChart'), {{
+                type: 'bar',
+                data: {{
+                    labels: repoData.slice(0, 5).map(repo => repo.name.length > 10 ? repo.name.substring(0, 10) + '...' : repo.name),
+                    datasets: [{{
+                        label: 'Health',
+                        data: repoData.slice(0, 5).map(repo => repo.health_score),
+                        backgroundColor: 'rgba(88, 166, 255, 0.6)',
+                        borderColor: '#58A6FF',
+                        borderWidth: 1
+                    }}]
+                }},
+                options: {{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {{
+                        y: {{
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {{
+                                color: 'rgba(139, 148, 158, 0.1)'
+                            }},
+                            ticks: {{
+                                font: {{
+                                    size: 10
+                                }}
+                            }}
+                        }},
+                        x: {{
+                            grid: {{
+                                color: 'rgba(139, 148, 158, 0.1)'
+                            }},
+                            ticks: {{
+                                font: {{
+                                    size: 10
+                                }}
+                            }}
+                        }}
+                    }},
+                    plugins: {{
+                        legend: {{
+                            display: false
+                        }}
+                    }}
+                }}
+            }});
+        }}
+        
+        // Touch gestures for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.addEventListener('touchstart', function(event) {{
+            touchStartX = event.changedTouches[0].screenX;
+        }});
+        
+        document.addEventListener('touchend', function(event) {{
+            touchEndX = event.changedTouches[0].screenX;
+            handleSwipe();
+        }});
+        
+        function handleSwipe() {{
+            if (touchEndX < touchStartX - 50) {{
+                // Swipe left - could implement navigation
+                console.log('Swiped left');
+            }}
+            if (touchEndX > touchStartX + 50) {{
+                // Swipe right - could implement navigation
+                console.log('Swiped right');
+            }}
+        }}
+        
+        // Intersection Observer for animations
+        const observerOptions = {{
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
+        }};
+        
+        const observer = new IntersectionObserver((entries) => {{
+            entries.forEach(entry => {{
+                if (entry.isIntersecting) {{
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }}
+            }});
+        }}, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.metric-card, .repo-card, .chart-wrapper').forEach(element => {{
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(element);
+        }});
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {{
+            const menu = document.getElementById('mobileMenu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!menu.contains(event.target) && !toggle.contains(event.target)) {{
+                menu.classList.remove('active');
+            }}
+        }});
+        
+        // Prevent zoom on double tap for iOS
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {{
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {{
+                event.preventDefault();
+            }}
+            lastTouchEnd = now;
+        }}, false);
+        """
+
+def generate_mobile_dashboard(analytics_data: Dict) -> str:
+    """Main function to generate mobile dashboard"""
+    generator = MobileResponsiveUpdater(analytics_data)
+    return generator.generate_mobile_optimized_html()
