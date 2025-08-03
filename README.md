@@ -1,10 +1,26 @@
+<!-- Cyberpunk Loading Screen Animation -->
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/dBaSKWF.gif">
+    <source media="(prefers-color-scheme: light)" srcset="https://i.imgur.com/T8VkXqr.gif">
+    <img height="20" src="https://i.imgur.com/dBaSKWF.gif">
+  </picture>
+</div>
+
+<!-- Professional Security Shield Badge -->
+<div align="center">
+  <img src="https://img.shields.io/badge/SECURITY%20LEVEL-MAXIMUM-ff0000?style=for-the-badge&logo=shield&logoColor=white&labelColor=000000&color=ff0000" alt="Security Level">
+  <img src="https://img.shields.io/badge/THREAT%20DETECTION-ACTIVE-00ff00?style=for-the-badge&logo=radar&logoColor=white&labelColor=000000" alt="Threat Detection">
+  <img src="https://img.shields.io/badge/ENCRYPTION-AES--256-blue?style=for-the-badge&logo=lock&logoColor=white&labelColor=000000" alt="Encryption">
+</div>
+
 <div align="center">
   
-  <!-- Enhanced Hero Section with Glitch Effect -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=300&section=header&text=XENONESIS&fontSize=90&fontColor=fff&animation=twinkling&fontAlignY=35&desc=🛡%20CYBERSECURITY%20•%20🚀%20FULL%20STACK%20•%20🤖%20AI/ML&descAlignY=55&descAlign=50&descSize=20" width="100%" />
+  <!-- Ultra Modern Hero Section with Gradient Effects -->
+  <img src="https://capsule-render.vercel.app/api?type=cylinder&color=gradient&customColorList=0,2,2,5,30&height=350&section=header&text=XENONESIS&fontSize=80&fontColor=fff&animation=fadeIn&fontAlignY=40&desc=🛡%20ELITE%20CYBERSECURITY%20SPECIALIST%20•%20🚀%20FULL%20STACK%20ARCHITECT%20•%20🤖%20AI/ML%20PIONEER&descAlignY=60&descAlign=50&descSize=18" width="100%" />
   
-  <!-- Animated Typing Banner with Enhanced Styling -->
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&multiline=true&width=1000&height=120&lines=👨‍💻+Aditya+Kumar+Tiwari+%7C+Cybersecurity+Specialist;🔐+Ethical+Hacker+%7C+Digital+Forensics+Expert;🌐+Full+Stack+Developer+%7C+AI%2FML+Innovator;🎯+Securing+Digital+Frontiers+%7C+Building+Tomorrow" alt="Enhanced Typing SVG" />
+  <!-- Advanced Matrix-Style Typing Animation -->
+  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=24&duration=2500&pause=800&color=00FF41&background=0D111700&center=true&vCenter=true&multiline=true&width=1200&height=140&lines=🔥+XENONESIS+%7C+DIGITAL+SECURITY+ARCHITECT;👨‍💻+Aditya+Kumar+Tiwari+%7C+Cybersecurity+Specialist;🔐+Elite+Ethical+Hacker+%7C+Digital+Forensics+Expert;🌐+Full+Stack+Developer+%7C+AI%2FML+Research+Engineer;🎯+Securing+Digital+Ecosystems+%7C+Building+Tomorrow's+Defense;⚡+24%2F7+Threat+Hunter+%7C+Code+Architect+%7C+Neural+Network+Engineer" alt="Elite Professional Banner" />
 
   <br>
   
