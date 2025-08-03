@@ -1,0 +1,279 @@
+name: 🤖 GitHub Analytics Auto-Update
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: 'Force full update'
+        required: false
+        default: 'false'
+        type: boolean
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/**'
+      - 'run-analytics.py'
+      - '.github/workflows/analytics-update.yml'
+
+env:
+  GITHUB_USERNAME: ${{ github.repository_owner }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  update-analytics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: 📦 Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install aiohttp requests pyyaml schedule
+        pip install asyncio-throttle python-dateutil
+    
+    - name: 🔧 Setup Environment
+      run: |
+        python run-analytics.py --setup
+        mkdir -p backups logs
+    
+    - name: 📊 Run Analytics Collection
+      id: analytics
+      run: |
+        echo "Starting analytics collection..."
+        python run-analytics.py
+        
+        # Check if files were generated
+        if [ -f "analytics-data.json" ]; then
+          echo "analytics_success=true" >> $GITHUB_OUTPUT
+        else
+          echo "analytics_success=false" >> $GITHUB_OUTPUT
+        fi
+        
+        if [ -f "interactive-dashboard.html" ]; then
+          echo "dashboard_success=true" >> $GITHUB_OUTPUT
+        else
+          echo "dashboard_success=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: 📱 Generate Mobile Dashboard
+      if: steps.analytics.outputs.analytics_success == 'true'
+      run: |
+        python -c "
+        import sys
+        sys.path.append('scripts')
+        from mobile_responsive_updater import main
+        main()
+        "
+    
+    - name: 🔍 Validate Generated Files
+      run: |
+        echo "Checking generated files..."
+        ls -la *.html *.json *.md || true
+        
+        # Validate JSON files
+        if [ -f "analytics-data.json" ]; then
+          python -c "import json; json.load(open('analytics-data.json'))" && echo "✅ analytics-data.json is valid"
+        fi
+        
+        # Check HTML files
+        if [ -f "interactive-dashboard.html" ]; then
+          echo "✅ Interactive dashboard generated ($(wc -l < interactive-dashboard.html) lines)"
+        fi
+        
+        if [ -f "mobile-dashboard.html" ]; then
+          echo "✅ Mobile dashboard generated ($(wc -l < mobile-dashboard.html) lines)"
+        fi
+    
+    - name: 📈 Generate Summary Report
+      if: steps.analytics.outputs.analytics_success == 'true'
+      run: |
+        python -c "
+        import json
+        from datetime import datetime
+        
+        try:
+            with open('analytics-data.json', 'r') as f:
+                data = json.load(f)
+            
+            summary = data.get('summary_metrics', {})
+            activity = data.get('activity_metrics', {})
+            
+            print('📊 ANALYTICS SUMMARY')
+            print('=' * 50)
+            print(f'Total Repositories: {summary.get(\"total_repositories\", 0)}')
+            print(f'Total Stars: {summary.get(\"total_stars\", 0)}')
+            print(f'Total Forks: {summary.get(\"total_forks\", 0)}')
+            print(f'Health Score: {summary.get(\"average_health_score\", 0):.1f}%')
+            print(f'Commits This Month: {activity.get(\"commits_month\", 0)}')
+            print(f'Current Streak: {activity.get(\"streak_days\", 0)} days')
+            print(f'Rate Limit Remaining: {data.get(\"collection_info\", {}).get(\"rate_limit_remaining\", \"Unknown\")}')
+            print('=' * 50)
+        except Exception as e:
+            print(f'Error generating summary: {e}')
+        "
+    
+    - name: 🔄 Check for Changes
+      id: changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Add all generated files
+        git add README.md repository-analytics.md *.html *.json || true
+        
+        # Check if there are changes to commit
+        if git diff --staged --quiet; then
+          echo "No changes detected"
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+        else
+          echo "Changes detected"
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          
+          # Show what changed
+          echo "Changed files:"
+          git diff --staged --name-only
+        fi
+    
+    - name: 💾 Commit and Push Changes
+      if: steps.changes.outputs.has_changes == 'true'
+      run: |
+        # Create commit message with timestamp and stats
+        TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S UTC')
+        
+        # Extract stats for commit message
+        STATS=""
+        if [ -f "analytics-data.json" ]; then
+          STATS=$(python -c "
+          import json
+          try:
+              with open('analytics-data.json', 'r') as f:
+                  data = json.load(f)
+              summary = data.get('summary_metrics', {})
+              print(f'📊 {summary.get(\"total_repositories\", 0)} repos, {summary.get(\"total_stars\", 0)} stars, {summary.get(\"average_health_score\", 0):.0f}% health')
+          except:
+              print('📊 Analytics updated')
+          ")
+        fi
+        
+        git commit -m "🤖 Auto-update GitHub analytics - $TIMESTAMP
+
+        $STATS
+        
+        - Updated repository statistics
+        - Refreshed interactive dashboards  
+        - Generated mobile-responsive views
+        - Updated README badges and analytics
+        
+        [skip ci]"
+        
+        git push
+    
+    - name: 📊 Upload Analytics Data as Artifact
+      if: steps.analytics.outputs.analytics_success == 'true'
+      uses: actions/upload-artifact@v3
+      with:
+        name: analytics-data-${{ github.run_number }}
+        path: |
+          analytics-data.json
+          pipeline-summary.json
+          *.html
+        retention-days: 30
+    
+    - name: 🚨 Notify on Failure
+      if: failure()
+      run: |
+        echo "❌ Analytics update failed!"
+        echo "Check the logs above for details."
+        
+        # Create issue on failure (optional)
+        if [ "${{ secrets.CREATE_ISSUES_ON_FAILURE }}" = "true" ]; then
+          gh issue create \
+            --title "🚨 Analytics Update Failed - $(date '+%Y-%m-%d')" \
+            --body "The automated analytics update failed. Please check the [workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details." \
+            --label "bug,automation" || true
+        fi
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: ✅ Success Notification
+      if: success() && steps.changes.outputs.has_changes == 'true'
+      run: |
+        echo "✅ Analytics update completed successfully!"
+        echo "📊 Repository statistics have been updated"
+        echo "📱 Mobile and desktop dashboards generated"
+        echo "🔄 Changes committed and pushed"
+
+  # Optional: Deploy dashboards to GitHub Pages
+  deploy-dashboards:
+    needs: update-analytics
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && needs.update-analytics.result == 'success'
+    
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+    - name: 📥 Checkout
+      uses: actions/checkout@v4
+      with:
+        ref: main
+    
+    - name: 🔧 Setup Pages
+      uses: actions/configure-pages@v3
+    
+    - name: 📁 Create Pages Directory
+      run: |
+        mkdir -p _site
+        
+        # Copy HTML files if they exist
+        [ -f "interactive-dashboard.html" ] && cp interactive-dashboard.html _site/index.html
+        [ -f "mobile-dashboard.html" ] && cp mobile-dashboard.html _site/mobile.html
+        
+        # Create a simple index if no dashboards exist
+        if [ ! -f "_site/index.html" ]; then
+          cat > _site/index.html << 'EOF'
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>GitHub Analytics</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body>
+            <h1>GitHub Analytics Dashboard</h1>
+            <p>Dashboards are being generated. Please check back later.</p>
+        </body>
+        </html>
+        EOF
+        fi
+    
+    - name: 📤 Upload Pages Artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: '_site'
+    
+    - name: 🚀 Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2
