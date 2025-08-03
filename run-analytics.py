@@ -265,6 +265,28 @@ Needs Attention:     {len([r for r in repos if r.get('health_score', 0) < 50])} 
         logger.error(f"Error updating analytics markdown: {e}")
         raise
 
+async def run_current_activities_update():
+    """Update Current Activities section with real GitHub data"""
+    logger.info("Updating Current Activities section...")
+    
+    try:
+        # Import and run the current activities updater
+        sys.path.append('scripts')
+        from current_activities_updater import CurrentActivitiesUpdater
+        
+        username = os.getenv('GITHUB_USERNAME') or os.getenv('GH_USERNAME', 'Xenonesis')
+        token = os.getenv('GITHUB_TOKEN') or os.getenv('GH_TOKEN')
+        
+        updater = CurrentActivitiesUpdater(username, token)
+        success = await updater.update_readme_current_activities()
+        
+        logger.info(f"Current Activities update: {'✅' if success else '❌'}")
+        return success
+        
+    except Exception as e:
+        logger.error(f"Current Activities update failed: {e}")
+        return False
+
 async def run_full_pipeline():
     """Run the complete analytics pipeline"""
     start_time = datetime.now()
@@ -283,6 +305,9 @@ async def run_full_pipeline():
         # Step 3: Update README and analytics
         readme_success = update_readme_and_analytics(analytics_data)
         
+        # Step 4: Update Current Activities with real-time data
+        activities_success = await run_current_activities_update()
+        
         # Calculate execution time
         execution_time = (datetime.now() - start_time).total_seconds()
         
@@ -296,6 +321,7 @@ async def run_full_pipeline():
         logger.info(f"Mobile Dashboard: {'✅' if dashboard_success else '❌'}")
         logger.info(f"README Updated: {'✅' if readme_success else '❌'}")
         logger.info(f"Analytics Updated: {'✅' if readme_success else '❌'}")
+        logger.info(f"Current Activities: {'✅' if activities_success else '❌'}")
         logger.info(f"Rate Limit Remaining: {analytics_data['collection_info']['rate_limit_remaining']}")
         logger.info("="*60)
         
@@ -306,6 +332,7 @@ async def run_full_pipeline():
             'repositories_processed': analytics_data['collection_info']['total_repos'],
             'dashboards_generated': dashboard_success,
             'readme_updated': readme_success,
+            'current_activities_updated': activities_success,
             'rate_limit_remaining': analytics_data['collection_info']['rate_limit_remaining'],
             'total_stars': analytics_data['summary_metrics']['total_stars'],
             'total_repositories': analytics_data['summary_metrics']['total_repositories'],
@@ -330,6 +357,8 @@ def main():
                        help='Only generate dashboards from existing data')
     parser.add_argument('--update-only', action='store_true',
                        help='Only update README and analytics files')
+    parser.add_argument('--activities-only', action='store_true',
+                       help='Only update Current Activities section')
     parser.add_argument('--setup', action='store_true',
                        help='Setup environment and create config files')
     
@@ -380,6 +409,10 @@ def main():
             update_readme_and_analytics(analytics_data)
         except FileNotFoundError:
             logger.error("No analytics data found. Run data collection first.")
+    
+    elif args.activities_only:
+        logger.info("Updating Current Activities only...")
+        asyncio.run(run_current_activities_update())
             
     else:
         # Run full pipeline
