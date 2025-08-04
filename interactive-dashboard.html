@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Analytics Dashboard - Xenonesis</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0D1117 0%, #161B22 100%);
+            color: #C9D1D9;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: rgba(22, 27, 34, 0.8);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(88, 166, 255, 0.2);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #58A6FF, #1F6FEB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #8B949E;
+            margin-bottom: 20px;
+        }
+        
+        .last-updated {
+            font-size: 0.9rem;
+            color: #7C3AED;
+            background: rgba(124, 58, 237, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        /* Summary Cards */
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .summary-card {
+            background: rgba(22, 27, 34, 0.9);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #58A6FF, #1F6FEB);
+        }
+        
+        .summary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(88, 166, 255, 0.2);
+        }
+        
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #58A6FF;
+        }
+        
+        .card-title {
+            font-size: 0.9rem;
+            color: #8B949E;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .card-value {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #C9D1D9;
+            margin-bottom: 10px;
+        }
+        
+        .card-change {
+            font-size: 0.85rem;
+            padding: 4px 8px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
+        .card-change.positive {
+            background: rgba(46, 160, 67, 0.2);
+            color: #2EA043;
+        }
+        
+        .card-change.negative {
+            background: rgba(248, 81, 73, 0.2);
+            color: #F85149;
+        }
+        
+        /* Charts Section */
+        .charts-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #C9D1D9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: #58A6FF;
+        }
+        
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+        }
+        
+        .chart-container {
+            background: rgba(22, 27, 34, 0.9);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            height: 400px;
+        }
+        
+        .chart-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #C9D1D9;
+            text-align: center;
+        }
+        
+        /* Repositories Section */
+        .repositories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .repo-card {
+            background: rgba(22, 27, 34, 0.9);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .repo-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(88, 166, 255, 0.15);
+        }
+        
+        .repo-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .repo-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #58A6FF;
+            text-decoration: none;
+            flex: 1;
+        }
+        
+        .repo-language {
+            background: rgba(88, 166, 255, 0.2);
+            color: #58A6FF;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+        
+        .repo-stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .repo-stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            color: #8B949E;
+        }
+        
+        .health-score {
+            margin-top: 15px;
+        }
+        
+        .health-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(139, 148, 158, 0.3);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .health-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #F85149, #FF8E53, #2EA043);
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+        
+        /* Activity Section */
+        .activity-timeline {
+            background: rgba(22, 27, 34, 0.9);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(139, 148, 158, 0.2);
+        }
+        
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+        
+        .timeline-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(88, 166, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: #58A6FF;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-title {
+            font-weight: bold;
+            color: #C9D1D9;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-description {
+            color: #8B949E;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #8B949E;
+            border-top: 1px solid rgba(139, 148, 158, 0.2);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .dashboard-container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .summary-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-container {
+                height: 300px;
+            }
+            
+            .repositories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .repo-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .repo-stats {
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .card-value {
+                font-size: 1.8rem;
+            }
+            
+            .chart-container {
+                height: 250px;
+                padding: 15px;
+            }
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(88, 166, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #58A6FF;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.6s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-30px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <header class="header fade-in">
+            <h1><i class="fab fa-github"></i> Xenonesis Analytics Dashboard</h1>
+            <p class="subtitle">Comprehensive GitHub Statistics & Insights</p>
+            <div class="last-updated">
+                <i class="fas fa-clock"></i> Last Updated: August 04, 2025 at 02:29 PM
+            </div>
+        </header>
+        
+        <div class="summary-cards">
+            <div class="summary-card slide-in">
+                <div class="card-icon">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <div class="card-title">Total Repositories</div>
+                <div class="card-value">92</div>
+                <div class="card-change positive">
+                    +2 this month
+                </div>
+            </div>
+            
+            <div class="summary-card slide-in">
+                <div class="card-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="card-title">Total Stars</div>
+                <div class="card-value">151</div>
+                <div class="card-change positive">
+                    +12 this week
+                </div>
+            </div>
+            
+            <div class="summary-card slide-in">
+                <div class="card-icon">
+                    <i class="fas fa-code-commit"></i>
+                </div>
+                <div class="card-title">Commits This Month</div>
+                <div class="card-value">0</div>
+                <div class="card-change positive">
+                    0 this week
+                </div>
+            </div>
+            
+            <div class="summary-card slide-in">
+                <div class="card-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <div class="card-title">Current Streak</div>
+                <div class="card-value">0 days</div>
+                <div class="card-change positive">
+                    Keep it up!
+                </div>
+            </div>
+            
+            <div class="summary-card slide-in">
+                <div class="card-icon">
+                    <i class="fas fa-heart-pulse"></i>
+                </div>
+                <div class="card-title">Health Score</div>
+                <div class="card-value">28.972826086956523%</div>
+                <div class="card-change positive">
+                    Excellent
+                </div>
+            </div>
+            
+            <div class="summary-card slide-in">
+                <div class="card-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="card-title">Community Engagement</div>
+                <div class="card-value">0</div>
+                <div class="card-change positive">
+                    Stars + Forks
+                </div>
+            </div>
+            </div>
+        
+        <section class="charts-section">
+            <h2 class="section-title">
+                <i class="fas fa-chart-line"></i>
+                Analytics & Visualizations
+            </h2>
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3 class="chart-title">Language Distribution</h3>
+                    <canvas id="languageChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-title">Repository Health Scores</h3>
+                    <canvas id="healthChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-title">Activity Timeline</h3>
+                    <canvas id="activityChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-title">Stars vs Forks</h3>
+                    <canvas id="starsForksChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="repositories-section">
+            <h2 class="section-title">
+                <i class="fas fa-folder-open"></i>
+                Top Repositories
+            </h2>
+            <div class="repositories-grid">
+        
+            <div class="repo-card fade-in">
+                <div class="repo-header">
+                    <a href="https://github.com/Xenonesis/code-guardian-report" 
+                       class="repo-name" target="_blank">
+                        code-guardian-report
+                    </a>
+                    <span class="repo-language">TypeScript</span>
+                </div>
+                <div class="repo-stats">
+                    <div class="repo-stat">
+                        <i class="fas fa-star"></i>
+                        19
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-code-branch"></i>
+                        20
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-exclamation-circle"></i>
+                        31
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-users"></i>
+                        0
+                    </div>
+                </div>
+                <div class="health-score">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <span style="font-size: 0.9rem; color: #8B949E;">Health Score</span>
+                        <span style="font-size: 0.9rem; color: #C9D1D9;">69.5%</span>
+                    </div>
+                    <div class="health-bar">
+                        <div class="health-fill" style="width: 69.5%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="repo-card fade-in">
+                <div class="repo-header">
+                    <a href="https://github.com/Xenonesis/Code-Guardian-" 
+                       class="repo-name" target="_blank">
+                        Code-Guardian-
+                    </a>
+                    <span class="repo-language">TypeScript</span>
+                </div>
+                <div class="repo-stats">
+                    <div class="repo-stat">
+                        <i class="fas fa-star"></i>
+                        8
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-code-branch"></i>
+                        4
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-exclamation-circle"></i>
+                        6
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-users"></i>
+                        0
+                    </div>
+                </div>
+                <div class="health-score">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <span style="font-size: 0.9rem; color: #8B949E;">Health Score</span>
+                        <span style="font-size: 0.9rem; color: #C9D1D9;">48.0%</span>
+                    </div>
+                    <div class="health-bar">
+                        <div class="health-fill" style="width: 48.0%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="repo-card fade-in">
+                <div class="repo-header">
+                    <a href="https://github.com/Xenonesis/Team-Blitz" 
+                       class="repo-name" target="_blank">
+                        Team-Blitz
+                    </a>
+                    <span class="repo-language">TypeScript</span>
+                </div>
+                <div class="repo-stats">
+                    <div class="repo-stat">
+                        <i class="fas fa-star"></i>
+                        4
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-code-branch"></i>
+                        2
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-exclamation-circle"></i>
+                        2
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-users"></i>
+                        0
+                    </div>
+                </div>
+                <div class="health-score">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <span style="font-size: 0.9rem; color: #8B949E;">Health Score</span>
+                        <span style="font-size: 0.9rem; color: #C9D1D9;">24.0%</span>
+                    </div>
+                    <div class="health-bar">
+                        <div class="health-fill" style="width: 24.0%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="repo-card fade-in">
+                <div class="repo-header">
+                    <a href="https://github.com/Xenonesis/BMI-Indian-" 
+                       class="repo-name" target="_blank">
+                        BMI-Indian-
+                    </a>
+                    <span class="repo-language">HTML</span>
+                </div>
+                <div class="repo-stats">
+                    <div class="repo-stat">
+                        <i class="fas fa-star"></i>
+                        3
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-code-branch"></i>
+                        1
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-exclamation-circle"></i>
+                        0
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-users"></i>
+                        0
+                    </div>
+                </div>
+                <div class="health-score">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <span style="font-size: 0.9rem; color: #8B949E;">Health Score</span>
+                        <span style="font-size: 0.9rem; color: #C9D1D9;">22.5%</span>
+                    </div>
+                    <div class="health-bar">
+                        <div class="health-fill" style="width: 22.5%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="repo-card fade-in">
+                <div class="repo-header">
+                    <a href="https://github.com/Xenonesis/Juris.AI" 
+                       class="repo-name" target="_blank">
+                        Juris.AI
+                    </a>
+                    <span class="repo-language">TypeScript</span>
+                </div>
+                <div class="repo-stats">
+                    <div class="repo-stat">
+                        <i class="fas fa-star"></i>
+                        3
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-code-branch"></i>
+                        1
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-exclamation-circle"></i>
+                        0
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-users"></i>
+                        0
+                    </div>
+                </div>
+                <div class="health-score">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <span style="font-size: 0.9rem; color: #8B949E;">Health Score</span>
+                        <span style="font-size: 0.9rem; color: #C9D1D9;">22.5%</span>
+                    </div>
+                    <div class="health-bar">
+                        <div class="health-fill" style="width: 22.5%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="repo-card fade-in">
+                <div class="repo-header">
+                    <a href="https://github.com/Xenonesis/new-typing" 
+                       class="repo-name" target="_blank">
+                        new-typing
+                    </a>
+                    <span class="repo-language">TypeScript</span>
+                </div>
+                <div class="repo-stats">
+                    <div class="repo-stat">
+                        <i class="fas fa-star"></i>
+                        3
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-code-branch"></i>
+                        0
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-exclamation-circle"></i>
+                        0
+                    </div>
+                    <div class="repo-stat">
+                        <i class="fas fa-users"></i>
+                        0
+                    </div>
+                </div>
+                <div class="health-score">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <span style="font-size: 0.9rem; color: #8B949E;">Health Score</span>
+                        <span style="font-size: 0.9rem; color: #C9D1D9;">21.5%</span>
+                    </div>
+                    <div class="health-bar">
+                        <div class="health-fill" style="width: 21.5%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+        </section>
+        
+        
+        <section class="activity-section">
+            <h2 class="section-title">
+                <i class="fas fa-activity"></i>
+                Recent Activity
+            </h2>
+            <div class="activity-timeline">
+        
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-code-commit"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-title">0 commits today</div>
+                    <div class="timeline-description">Keep up the great work!</div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-git-alt"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-title">0 pull requests opened this month</div>
+                    <div class="timeline-description">Contributing to the community</div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-title">0 pull requests merged</div>
+                    <div class="timeline-description">Successful collaborations</div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-bug"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-title">0 issues resolved</div>
+                    <div class="timeline-description">Problem-solving in action</div>
+                </div>
+            </div>
+            
+            </div>
+        </section>
+        
+        
+        <footer class="footer">
+            <p>
+                <i class="fas fa-robot"></i>
+                Generated automatically from GitHub API data
+                <br>
+                <small>Dashboard updates every 6 hours • Built with ❤️ for developers</small>
+            </p>
+        </footer>
+        
+    </div>
+    
+    <script>
+        
+        // Chart.js Configuration
+        Chart.defaults.color = '#C9D1D9';
+        Chart.defaults.borderColor = 'rgba(139, 148, 158, 0.2)';
+        
+        // Language Distribution Chart
+        const languageData = [{"name": "HTML", "bytes": 266374, "percentage": 45.24260829392902, "repos": 17}, {"name": "TypeScript", "bytes": 261557, "percentage": 44.42445920973966, "repos": 27}, {"name": "Python", "bytes": 38330, "percentage": 6.51020435893255, "repos": 7}, {"name": "Vue", "bytes": 17716, "percentage": 3.0089950540790262, "repos": 1}, {"name": "CSS", "bytes": 3605, "percentage": 0.6122955051904995, "repos": 1}, {"name": "JavaScript", "bytes": 1154, "percentage": 0.19600250013587697, "repos": 8}, {"name": "Rust", "bytes": 32, "percentage": 0.0054350779933692046, "repos": 1}];
+        const languageChart = new Chart(document.getElementById('languageChart'), {
+            type: 'doughnut',
+            data: {
+                labels: languageData.map(lang => lang.name),
+                datasets: [{
+                    data: languageData.map(lang => lang.percentage),
+                    backgroundColor: [
+                        '#58A6FF', '#1F6FEB', '#7C3AED', '#F85149',
+                        '#2EA043', '#FF8E53', '#E3B341', '#8B949E'
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#0D1117'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            usePointStyle: true
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Repository Health Chart
+        const repoData = [{"name": "-resume", "stars": 2, "forks": 0, "issues": 0, "language": "JavaScript", "last_updated": "2025-06-23T23:34:08Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "3d", "stars": 2, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:34:25Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "A.I-BOT-", "stars": 2, "forks": 0, "issues": 0, "language": "Python", "last_updated": "2025-06-23T23:34:07Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "adhar-quiz-web", "stars": 2, "forks": 0, "issues": 0, "language": "JavaScript", "last_updated": "2025-06-23T23:30:14Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Alien-Intelligence", "stars": 2, "forks": 0, "issues": 0, "language": "JavaScript", "last_updated": "2025-06-23T23:33:39Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Alien-Intelligence-AI", "stars": 2, "forks": 0, "issues": 0, "language": "JavaScript", "last_updated": "2025-06-23T23:33:36Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Ayush-readme.md", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-19T14:50:59Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Bat-creator-ai", "stars": 2, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-06-23T23:30:28Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "BMI-Indian-", "stars": 3, "forks": 1, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:36:08Z", "health_score": 22.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Budget-tracker", "stars": 2, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-07-11T15:55:25Z", "health_score": 41.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Chat-Buddy", "stars": 2, "forks": 0, "issues": 0, "language": "JavaScript", "last_updated": "2025-06-23T23:36:57Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "chat-buddy-pro", "stars": 2, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-06-23T23:30:39Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "chat2cart", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-03T20:25:04Z", "health_score": 20.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "chatbuddypro-", "stars": 2, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-07-25T16:44:35Z", "health_score": 41.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "ChatHub", "stars": 2, "forks": 0, "issues": 0, "language": "JavaScript", "last_updated": "2025-06-23T23:30:41Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "CHC", "stars": 1, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-07-08T11:15:45Z", "health_score": 40.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "chetanverma-ui", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-01T12:22:18Z", "health_score": 20.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Cine", "stars": 2, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:33:43Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "CineSphere", "stars": 2, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:33:46Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "claude-coder", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-06-20T10:51:00Z", "health_score": 20.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Code-Guardian-", "stars": 8, "forks": 4, "issues": 6, "language": "TypeScript", "last_updated": "2025-08-01T14:38:10Z", "health_score": 48.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "code-guardian-report", "stars": 19, "forks": 20, "issues": 31, "language": "TypeScript", "last_updated": "2025-08-03T10:27:44Z", "health_score": 69.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "CodeGeeX4", "stars": 2, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-28T04:53:43Z", "health_score": 41.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Code_Guardian", "stars": 0, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-07-24T05:08:53Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "CompetitorPulse", "stars": 1, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-07-21T21:45:31Z", "health_score": 40.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "cvent", "stars": 2, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:35:52Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "designali", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-01T12:13:30Z", "health_score": 20.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "developer-portfolios", "stars": 2, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-06-23T23:30:37Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "devfolio", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-08-02T05:53:04Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "DocMagic", "stars": 0, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-08-01T11:13:57Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Download-Anything", "stars": 2, "forks": 0, "issues": 0, "language": "Python", "last_updated": "2025-07-28T09:16:32Z", "health_score": 41.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "eCommerce", "stars": 2, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:34:27Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "ElasticGridScroll", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-19T21:48:39Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Esports-platforms", "stars": 2, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-06-23T23:30:17Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "family-memories", "stars": 2, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-06-29T23:39:52Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "helloworld", "stars": 2, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-06-26T19:16:10Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "hyperswitch", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-08-02T05:41:54Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "IDS", "stars": 2, "forks": 0, "issues": 0, "language": "JavaScript", "last_updated": "2025-06-23T23:30:29Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Innova", "stars": 2, "forks": 0, "issues": 0, "language": "CSS", "last_updated": "2025-06-23T23:31:03Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "InsForge", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-08-02T06:01:19Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "interactive-droplets", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-19T21:47:19Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "jaiashwinisatish-readme.md", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-19T16:09:22Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Juris.AI", "stars": 3, "forks": 1, "issues": 0, "language": "TypeScript", "last_updated": "2025-06-23T23:30:18Z", "health_score": 22.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "KK-Computers", "stars": 1, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-07-19T14:04:07Z", "health_score": 40.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Law-Agent", "stars": 0, "forks": 0, "issues": 1, "language": "Python", "last_updated": "2025-08-03T22:29:29Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "llama-models", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-06T23:16:10Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "llm-app", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-08-02T05:40:39Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Magic-Bricks-Clone", "stars": 2, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:33:50Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Modern-Notepad", "stars": 2, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-06-23T23:37:00Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Mohammad-Ehshan-readme.md", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-19T15:27:55Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "nebula", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-10T21:02:55Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "NeoFi", "stars": 1, "forks": 1, "issues": 0, "language": "TypeScript", "last_updated": "2025-07-10T13:31:41Z", "health_score": 41.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "new-typing", "stars": 3, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-06-23T23:30:36Z", "health_score": 21.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "newblitzteam", "stars": 2, "forks": 0, "issues": 0, "language": "Vue", "last_updated": "2025-06-23T23:30:12Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "NewCineSphere", "stars": 2, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:34:21Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "newcinsphere", "stars": 2, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-06-23T23:34:24Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "NewPortfolio", "stars": 2, "forks": 0, "issues": 2, "language": "HTML", "last_updated": "2025-07-02T15:36:39Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "nextfaang", "stars": 1, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-07-21T10:06:34Z", "health_score": 40.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "NS-Flappy-Bird", "stars": 2, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-06-23T23:34:30Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "omni.AI", "stars": 2, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-06-23T23:30:27Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "opencode", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-02T20:00:11Z", "health_score": 20.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "pathway", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-08-02T05:39:18Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "PawCare", "stars": 2, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-06-23T23:33:38Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "PentestGPT", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-30T13:41:46Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Portfolio", "stars": 2, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:34:26Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Prachi-Upadhyay", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-29T10:11:57Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Propdekho", "stars": 2, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:34:14Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "public-apis", "stars": 2, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-06-23T23:34:09Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "react-portfolio-template", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-01T12:21:45Z", "health_score": 20.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Real-Estate-Web", "stars": 2, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:34:10Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Real-state-BOT", "stars": 2, "forks": 0, "issues": 0, "language": "Python", "last_updated": "2025-06-23T23:34:17Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Realstate", "stars": 2, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:34:20Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Refresho", "stars": 2, "forks": 0, "issues": 0, "language": "Python", "last_updated": "2025-06-23T23:30:13Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Relationship-Radar", "stars": 2, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:33:42Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "sahayak-sikshak", "stars": 0, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-07-22T20:51:40Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Sahayak-Teacher", "stars": 0, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-07-26T17:54:57Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "sentiment-sentinel-sight", "stars": 1, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-07-24T08:26:51Z", "health_score": 40.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "SentinelCX", "stars": 0, "forks": 0, "issues": 0, "language": "Python", "last_updated": "2025-07-21T16:08:15Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "SEO-Website", "stars": 3, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-23T23:30:22Z", "health_score": 21.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "snake-game-", "stars": 2, "forks": 0, "issues": 0, "language": "JavaScript", "last_updated": "2025-06-23T23:30:16Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Socialsync", "stars": 1, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-07-03T15:22:35Z", "health_score": 20.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "sysmonrust", "stars": 2, "forks": 0, "issues": 0, "language": "Rust", "last_updated": "2025-06-29T19:45:30Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Taskmanager", "stars": 1, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-07-19T14:04:10Z", "health_score": 40.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Team-Blitz", "stars": 4, "forks": 2, "issues": 2, "language": "TypeScript", "last_updated": "2025-06-28T22:22:40Z", "health_score": 24.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "typingmaster", "stars": 3, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-06-23T23:30:24Z", "health_score": 21.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Warp", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-22T16:11:52Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "waveterm", "stars": 0, "forks": 0, "issues": 0, "language": null, "last_updated": "2025-07-22T16:11:29Z", "health_score": 40.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Webdev.AI", "stars": 2, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-06-23T23:30:31Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "webDev.ai-", "stars": 3, "forks": 0, "issues": 0, "language": "TypeScript", "last_updated": "2025-06-23T23:30:30Z", "health_score": 21.5, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "webllm", "stars": 2, "forks": 0, "issues": 0, "language": "HTML", "last_updated": "2025-06-29T19:45:52Z", "health_score": 21.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Xenonesis", "stars": 2, "forks": 0, "issues": 0, "language": "Python", "last_updated": "2025-08-04T08:28:44Z", "health_score": 41.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}, {"name": "Zenflow", "stars": 2, "forks": 1, "issues": 1, "language": "TypeScript", "last_updated": "2025-06-27T22:50:05Z", "health_score": 22.0, "size": 0, "prs": 0, "contributors": 0, "commits_30d": 0}];
+        const healthChart = new Chart(document.getElementById('healthChart'), {
+            type: 'bar',
+            data: {
+                labels: repoData.slice(0, 8).map(repo => repo.name),
+                datasets: [{
+                    label: 'Health Score',
+                    data: repoData.slice(0, 8).map(repo => repo.health_score),
+                    backgroundColor: 'rgba(88, 166, 255, 0.6)',
+                    borderColor: '#58A6FF',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: {
+                            color: 'rgba(139, 148, 158, 0.1)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: 'rgba(139, 148, 158, 0.1)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+        
+        // Activity Timeline Chart
+        const activityData = {};
+        const activityChart = new Chart(document.getElementById('activityChart'), {
+            type: 'line',
+            data: {
+                labels: ['Today', 'This Week', 'This Month'],
+                datasets: [{
+                    label: 'Commits',
+                    data: [
+                        activityData.commits_today || 0,
+                        activityData.commits_week || 0,
+                        activityData.commits_month || 0
+                    ],
+                    borderColor: '#58A6FF',
+                    backgroundColor: 'rgba(88, 166, 255, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(139, 148, 158, 0.1)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: 'rgba(139, 148, 158, 0.1)'
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Stars vs Forks Scatter Chart
+        const starsForksChart = new Chart(document.getElementById('starsForksChart'), {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Repositories',
+                    data: repoData.map(repo => ({
+                        x: repo.stars,
+                        y: repo.forks
+                    })),
+                    backgroundColor: 'rgba(88, 166, 255, 0.6)',
+                    borderColor: '#58A6FF',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Stars'
+                        },
+                        grid: {
+                            color: 'rgba(139, 148, 158, 0.1)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Forks'
+                        },
+                        grid: {
+                            color: 'rgba(139, 148, 158, 0.1)'
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add loading states
+        function showLoading(elementId) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = '<div class="loading"></div>';
+        }
+        
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.summary-card, .repo-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+        
+        // Auto-refresh functionality
+        let refreshInterval;
+        
+        function startAutoRefresh() {
+            refreshInterval = setInterval(() => {
+                // In a real implementation, this would fetch new data
+                console.log('Auto-refreshing dashboard data...');
+            }, 300000); // 5 minutes
+        }
+        
+        function stopAutoRefresh() {
+            if (refreshInterval) {
+                clearInterval(refreshInterval);
+            }
+        }
+        
+        // Start auto-refresh on load
+        startAutoRefresh();
+        
+        // Stop auto-refresh when page is hidden
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopAutoRefresh();
+            } else {
+                startAutoRefresh();
+            }
+        });
+        
+    </script>
+</body>
+</html>

@@ -1229,521 +1229,18 @@
   
 </div>
 
-<body>
-<div class="container">
-<header class="header animate-fadeIn">
-<h1><i class="fab fa-github"></i> Repository Deep Dive Analytics</h1>
-<p class="subtitle">Comprehensive GitHub Statistics & Insights for Xenonesis</p>
-<div class="last-updated">
-<i class="fas fa-clock"></i>
-Last Updated: August 04, 2025 at 12:06 AM
+<!-- 🚀 REPOSITORY HIGHLIGHTS & ANALYTICS -->
+<div align="center">
+  <h3>🏆 Repository Highlights & Analytics</h3>
+  
+  <!-- Featured Repositories -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 20px;">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=code-guardian-report&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8" alt="code-guardian-report" />
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=Code-Guardian-&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8" alt="Code-Guardian-" />
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=Team-Blitz&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8" alt="Team-Blitz" />
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=Juris.AI&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8" alt="Juris.AI" />
+  </div>
 </div>
-</header>
-<!-- Summary Cards -->
-<div class="summary-cards animate-slideUp">
-<div class="summary-card">
-<div class="card-icon">
-<i class="fas fa-code-branch"></i>
-</div>
-<div class="card-title">Total Repositories</div>
-<div class="card-value">73</div>
-<div class="card-change positive">
-Active & Maintained
-</div>
-</div>
-<div class="summary-card">
-<div class="card-icon">
-<i class="fas fa-star"></i>
-</div>
-<div class="card-title">Total Stars</div>
-<div class="card-value">92</div>
-<div class="card-change positive">
-Growing Community
-</div>
-</div>
-<div class="summary-card">
-<div class="card-icon">
-<i class="fas fa-code-commit"></i>
-</div>
-<div class="card-title">Total Forks</div>
-<div class="card-value">25</div>
-<div class="card-change positive">
-Community Contributions
-</div>
-</div>
-<div class="summary-card">
-<div class="card-icon">
-<i class="fas fa-exclamation-circle"></i>
-</div>
-<div class="card-title">Open Issues</div>
-<div class="card-value">36</div>
-<div class="card-change positive">
-Active Development
-</div>
-</div>
-<div class="summary-card">
-<div class="card-icon">
-<i class="fas fa-heart-pulse"></i>
-</div>
-<div class="card-title">Avg Health Score</div>
-<div class="card-value">31.2%</div>
-<div class="card-change positive">
-Growing & Improving
-</div>
-</div>
-<div class="summary-card">
-<div class="card-icon">
-<i class="fas fa-users"></i>
-</div>
-<div class="card-title">Community Engagement</div>
-<div class="card-value">117</div>
-<div class="card-change positive">
-Stars + Forks
-</div>
-</div>
-</div>
-<!-- Charts Section -->
-<section class="section">
-<h2 class="section-title">
-<i class="fas fa-chart-line"></i>
-Analytics & Visualizations
-</h2>
-<div class="charts-grid">
-<div class="chart-container">
-<h3 class="chart-title">Language Distribution</h3>
-<div class="chart-canvas">
-<canvas id="languageChart"></canvas>
-</div>
-</div>
-<div class="chart-container">
-<h3 class="chart-title">Repository Health Scores</h3>
-<div class="chart-canvas">
-<canvas id="healthChart"></canvas>
-</div>
-</div>
-<div class="chart-container">
-<h3 class="chart-title">Stars vs Forks Distribution</h3>
-<div class="chart-canvas">
-<canvas id="starsForksChart"></canvas>
-</div>
-</div>
-<div class="chart-container">
-<h3 class="chart-title">Repository Activity Timeline</h3>
-<div class="chart-canvas">
-<canvas id="activityChart"></canvas>
-</div>
-</div>
-</div>
-</section>
-<!-- Top Repositories Section -->
-<section class="section">
-<h2 class="section-title">
-<i class="fas fa-folder-open"></i>
-Top Repositories by Stars
-</h2>
-<div class="repositories-grid" id="repositoriesGrid">
-<!-- Repositories will be populated by JavaScript -->
-</div>
-</section>
-<!-- Detailed Metrics Table -->
-<section class="section">
-<h2 class="section-title">
-<i class="fas fa-table"></i>
-Repository Performance Metrics
-</h2>
-<div class="metrics-table">
-<table id="metricsTable">
-<thead>
-<tr>
-<th>Repository</th>
-<th>Language</th>
-<th>Stars</th>
-<th>Forks</th>
-<th>Issues</th>
-<th>Health Score</th>
-<th>Last Updated</th>
-</tr>
-</thead>
-<tbody>
-<!-- Table rows will be populated by JavaScript -->
-</tbody>
-</table>
-</div>
-</section>
-<footer class="footer">
-<p>
-<i class="fas fa-robot"></i>
-Generated automatically from GitHub API data
-<br>
-<small>Dashboard updates every 6 hours • Built with ❤️ for developers</small>
-</p>
-</footer>
-</div>
-<script>
-// Real repository data from analytics-data.json
-const repositoryData = [
-{
-"name": "code-guardian-report",
-"stars": 19,
-"forks": 20,
-"issues": 30,
-"language": "TypeScript",
-"last_updated": "2025-08-03T10:27:44Z",
-"health_score": 69.5
-},
-{
-"name": "Code-Guardian-",
-"stars": 8,
-"forks": 4,
-"issues": 6,
-"language": "TypeScript",
-"last_updated": "2025-08-01T14:38:10Z",
-"health_score": 48.0
-},
-{
-"name": "BMI-Indian-",
-"stars": 3,
-"forks": 1,
-"issues": 0,
-"language": "HTML",
-"last_updated": "2025-06-23T23:36:08Z",
-"health_score": 22.5
-},
-{
-"name": "-resume",
-"stars": 2,
-"forks": 0,
-"issues": 0,
-"language": "JavaScript",
-"last_updated": "2025-06-23T23:34:08Z",
-"health_score": 21.0
-},
-{
-"name": "3d",
-"stars": 2,
-"forks": 0,
-"issues": 0,
-"language": "HTML",
-"last_updated": "2025-06-23T23:34:25Z",
-"health_score": 21.0
-},
-{
-"name": "A.I-BOT-",
-"stars": 2,
-"forks": 0,
-"issues": 0,
-"language": "Python",
-"last_updated": "2025-06-23T23:34:07Z",
-"health_score": 21.0
-},
-{
-"name": "Budget-tracker",
-"stars": 2,
-"forks": 0,
-"issues": 0,
-"language": "TypeScript",
-"last_updated": "2025-07-11T15:55:25Z",
-"health_score": 41.0
-},
-{
-"name": "Download-Anything",
-"stars": 2,
-"forks": 0,
-"issues": 0,
-"language": "Python",
-"last_updated": "2025-07-28T09:16:32Z",
-"health_score": 41.0
-}
-];
-// Language distribution data
-const languageData = {
-"TypeScript": 15,
-"JavaScript": 12,
-"HTML": 8,
-"Python": 7,
-"CSS": 3,
-"Other": 28
-};
-// Initialize charts after DOM is loaded
-document.addEventListener('DOMContentLoaded', function () {
-initializeCharts();
-populateRepositories();
-populateMetricsTable();
-});
-function initializeCharts() {
-// Language Distribution Chart
-const languageCtx = document.getElementById('languageChart').getContext('2d');
-new Chart(languageCtx, {
-type: 'doughnut',
-data: {
-labels: Object.keys(languageData),
-datasets: [{
-data: Object.values(languageData),
-backgroundColor: [
-'#58A6FF',
-'#1F6FEB',
-'#7C3AED',
-'#2EA043',
-'#FF8E53',
-'#F85149'
-],
-borderWidth: 2,
-borderColor: '#0D1117'
-}]
-},
-options: {
-responsive: true,
-maintainAspectRatio: false,
-plugins: {
-legend: {
-position: 'bottom',
-labels: {
-color: '#C9D1D9',
-padding: 20
-}
-}
-}
-}
-});
-// Health Score Distribution Chart
-const healthCtx = document.getElementById('healthChart').getContext('2d');
-const healthRanges = {
-'Excellent (80-100%)': 0,
-'Good (60-79%)': 1,
-'Fair (40-59%)': 2,
-'Poor (20-39%)': 3,
-'Critical (0-19%)': 2
-};
-new Chart(healthCtx, {
-type: 'bar',
-data: {
-labels: Object.keys(healthRanges),
-datasets: [{
-label: 'Repository Count',
-data: Object.values(healthRanges),
-backgroundColor: [
-'#2EA043',
-'#58A6FF',
-'#FF8E53',
-'#F85149',
-'#8B949E'
-],
-borderColor: '#0D1117',
-borderWidth: 1
-}]
-},
-options: {
-responsive: true,
-maintainAspectRatio: false,
-plugins: {
-legend: {
-display: false
-}
-},
-scales: {
-x: {
-ticks: {
-color: '#C9D1D9'
-},
-grid: {
-color: 'rgba(139, 148, 158, 0.2)'
-}
-},
-y: {
-ticks: {
-color: '#C9D1D9'
-},
-grid: {
-color: 'rgba(139, 148, 158, 0.2)'
-}
-}
-}
-}
-});
-// Stars vs Forks Chart
-const starsForksCtx = document.getElementById('starsForksChart').getContext('2d');
-new Chart(starsForksCtx, {
-type: 'scatter',
-data: {
-datasets: [{
-label: 'Repositories',
-data: repositoryData.map(repo => ({
-x: repo.stars,
-y: repo.forks
-})),
-backgroundColor: '#58A6FF',
-borderColor: '#1F6FEB',
-borderWidth: 2
-}]
-},
-options: {
-responsive: true,
-maintainAspectRatio: false,
-plugins: {
-legend: {
-labels: {
-color: '#C9D1D9'
-}
-}
-},
-scales: {
-x: {
-title: {
-display: true,
-text: 'Stars',
-color: '#C9D1D9'
-},
-ticks: {
-color: '#C9D1D9'
-},
-grid: {
-color: 'rgba(139, 148, 158, 0.2)'
-}
-},
-y: {
-title: {
-display: true,
-text: 'Forks',
-color: '#C9D1D9'
-},
-ticks: {
-color: '#C9D1D9'
-},
-grid: {
-color: 'rgba(139, 148, 158, 0.2)'
-}
-}
-}
-}
-});
-// Activity Timeline Chart
-const activityCtx = document.getElementById('activityChart').getContext('2d');
-const monthlyData = [12, 15, 8, 22, 18, 25, 30, 28, 35, 20, 15, 10];
-new Chart(activityCtx, {
-type: 'line',
-data: {
-labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-datasets: [{
-label: 'Repository Updates',
-data: monthlyData,
-borderColor: '#58A6FF',
-backgroundColor: 'rgba(88, 166, 255, 0.1)',
-borderWidth: 3,
-fill: true,
-tension: 0.4
-}]
-},
-options: {
-responsive: true,
-maintainAspectRatio: false,
-plugins: {
-legend: {
-labels: {
-color: '#C9D1D9'
-}
-}
-},
-scales: {
-x: {
-ticks: {
-color: '#C9D1D9'
-},
-grid: {
-color: 'rgba(139, 148, 158, 0.2)'
-}
-},
-y: {
-ticks: {
-color: '#C9D1D9'
-},
-grid: {
-color: 'rgba(139, 148, 158, 0.2)'
-}
-}
-}
-}
-});
-}
-function populateRepositories() {
-const repositoriesGrid = document.getElementById('repositoriesGrid');
-const topRepos = repositoryData.slice(0, 6);
-topRepos.forEach(repo => {
-const repoCard = document.createElement('div');
-repoCard.className = 'repo-card animate-slideUp';
-const languageBadge = repo.language ? `<span class="repo-language">${repo.language}</span>` : '';
-const lastUpdated = new Date(repo.last_updated).toLocaleDateString();
-repoCard.innerHTML = `
-<div class="repo-header">
-<a href="https://github.com/Xenonesis/${repo.name}" 
-class="repo-name" target="_blank">
-${repo.name}
-</a>
-${languageBadge}
-</div>
-<div class="repo-stats">
-<div class="repo-stat">
-<i class="fas fa-star"></i>
-${repo.stars}
-</div>
-<div class="repo-stat">
-<i class="fas fa-code-branch"></i>
-${repo.forks}
-</div>
-<div class="repo-stat">
-<i class="fas fa-exclamation-circle"></i>
-${repo.issues}
-</div>
-<div class="repo-stat">
-<i class="fas fa-calendar"></i>
-${lastUpdated}
-</div>
-</div>
-<div class="health-score">
-<div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-<span style="font-size: 0.9rem; color: #8B949E;">Health Score</span>
-<span style="font-size: 0.9rem; color: #C9D1D9;">${repo.health_score.toFixed(1)}%</span>
-</div>
-<div class="health-bar">
-<div class="health-fill" style="width: ${repo.health_score}%"></div>
-</div>
-</div>
-`;
-repositoriesGrid.appendChild(repoCard);
-});
-}
-function populateMetricsTable() {
-const tableBody = document.querySelector('#metricsTable tbody');
-repositoryData.forEach(repo => {
-const row = document.createElement('tr');
-const lastUpdated = new Date(repo.last_updated).toLocaleDateString();
-const languageDisplay = repo.language || 'N/A';
-let healthBadge;
-if (repo.health_score >= 60) {
-healthBadge = `<span class="badge badge-success">${repo.health_score.toFixed(1)}%</span>`;
-} else if (repo.health_score >= 40) {
-healthBadge = `<span class="badge badge-warning">${repo.health_score.toFixed(1)}%</span>`;
-} else {
-healthBadge = `<span class="badge badge-error">${repo.health_score.toFixed(1)}%</span>`;
-}
-row.innerHTML = `
-<td>
-<a href="https://github.com/Xenonesis/${repo.name}" 
-target="_blank" style="color: #58A6FF; text-decoration: none;">
-${repo.name}
-</a>
-</td>
-<td>${languageDisplay}</td>
-<td>${repo.stars}</td>
-<td>${repo.forks}</td>
-<td>${repo.issues}</td>
-<td>${healthBadge}</td>
-<td>${lastUpdated}</td>
-`;
-tableBody.appendChild(row);
-});
-}
-</script>
-</body>
 </html>
 ```
 
@@ -2132,6 +1629,9 @@ tableBody.appendChild(row);
   
 <div align="center">
   
+  
+<div align="center">
+  
   ## <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="50"> About Me
 
   <p>
@@ -2386,12 +1886,12 @@ Quantam Pvt. Ltd., Gurugram, Haryana | Oct 2024 - Present
 </div>
 
 ```diff
-+ 📝 Pushed 1 commit to **Xenonesis** (6h ago)
-+ 📝 Pushed 1 commit to **Xenonesis** (6h ago)
-+ 📝 Pushed 1 commit to **Law-Agent** (6h ago)
-+ 📝 Pushed 1 commit to **Law-Agent** (6h ago)
-+ 📝 Pushed 1 commit to **Law-Agent** (6h ago)
-+ 📝 Pushed 1 commit to **Law-Agent** (6h ago)
++ 📝 Pushed 1 commit to **Xenonesis** (14h ago)
++ 📝 Pushed 1 commit to **Xenonesis** (14h ago)
++ 📝 Pushed 1 commit to **Xenonesis** (15h ago)
++ 📝 Pushed 1 commit to **Xenonesis** (15h ago)
++ 📝 Pushed 1 commit to **Law-Agent** (15h ago)
++ 📝 Pushed 1 commit to **Law-Agent** (16h ago)
 ! 🔐 Researching zero-day vulnerabilities in IoT devices and smart contracts
 ! 🌐 Building secure, blockchain-based decentralized authentication system
 ! 🤖 Developing ML model for real-time network intrusion detection
@@ -2406,8 +1906,8 @@ Quantam Pvt. Ltd., Gurugram, Haryana | Oct 2024 - Present
 
 ### 📊 Live Activity Metrics
 
-<img src="https://img.shields.io/badge/🔥%20Commits%20Today-0-FF6B6B?style=for-the-badge&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/📝%20PRs%20This%20Week-10-4ECDC4?style=for-the-badge&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/🔥%20Commits%20Today-1-FF6B6B?style=for-the-badge&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/📝%20PRs%20This%20Week-9-4ECDC4?style=for-the-badge&labelColor=0D1117" />
 <img src="https://img.shields.io/badge/🐛%20Issues%20Resolved-2-45B7D1?style=for-the-badge&labelColor=0D1117" />
 <img src="https://img.shields.io/badge/⭐%20Repos%20Starred-2-FFA726?style=for-the-badge&labelColor=0D1117" />
 
@@ -2436,7 +1936,7 @@ Quantam Pvt. Ltd., Gurugram, Haryana | Oct 2024 - Present
 
 </div>
 
-*Last updated: August 04, 2025 at 05:22 AM UTC*  
+*Last updated: August 04, 2025 at 02:29 PM UTC*  
 *🤖 Automatically synced with GitHub API every 6 hours*
 
 ## <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="30"> GitHub Analytics
