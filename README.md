@@ -68,8 +68,214 @@
   
   <!-- Advanced Metrics Dashboard -->
   <div align="center">
-    <h3>📈 Advanced Analytics</h3>
+    <h3>
+      <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Chart%20Increasing.png" alt="Chart" width="35" height="35" />
+      Advanced Analytics & Deep Insights
+    </h3>
+    
+    <!-- Analytics Control Panel -->
+    <table>
+      <tr>
+        <td align="center">
+          <img src="https://img.shields.io/badge/📊_Analytics_Mode-Advanced-blueviolet?style=for-the-badge&logo=googleanalytics&logoColor=white&labelColor=0D1117" alt="Analytics Mode" />
+        </td>
+        <td align="center">
+          <img src="https://img.shields.io/badge/🔄_Auto_Refresh-Every_6hrs-orange?style=for-the-badge&logo=clockify&logoColor=white&labelColor=0D1117" alt="Auto Refresh" />
+        </td>
+        <td align="center">
+          <img src="https://img.shields.io/badge/📈_Data_Points-1000+-green?style=for-the-badge&logo=databricks&logoColor=white&labelColor=0D1117" alt="Data Points" />
+        </td>
+      </tr>
+    </table>
+    
+    <br>
+    <!-- Main Metrics Image with Enhanced Container -->
     <img src="https://metrics.lecoq.io/Xenonesis?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&languages=1&lines=1&achievements=1&notable=1&discussions=1&followup=1&reactions=1&people=1&stargazers=1&repositories=1&activity=1&code=1&habits=1&languages.limit=8&languages.threshold=0%25&languages.colors=github&languages.sections=most-used&languages.indepth=false&languages.analysis.timeout=15&languages.categories=markup%2C%20programming&languages.recent.categories=markup%2C%20programming&languages.recent.load=300&languages.recent.days=14&lines.sections=base&lines.repositories.limit=4&lines.history.limit=1&achievements.threshold=C&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&notable.from=organization&notable.repositories=false&notable.indepth=false&notable.types=commit&discussions.categories=true&discussions.categories.limit=0&followup.sections=repositories&followup.indepth=false&reactions.limit=200&reactions.limit.issues=100&reactions.limit.discussions=100&reactions.limit.discussions.comments=100&reactions.details=false&reactions.ignored=github-actions%5Bbot%5D%2C%20dependabot%5Bbot%5D%2C%20dependabot-preview%5Bbot%5D&people.limit=24&people.identicons=false&people.identicons.hide=false&people.size=28&people.types=followers%2C%20following&people.shuffle=false&stargazers.charts=false&stargazers.charts.type=classic&stargazers.worldmap=false&stargazers.worldmap.token=NOT_SET&repositories.batch=100&repositories.forks=false&repositories.affiliations=owner&activity.limit=5&activity.load=300&activity.days=14&activity.visibility=all&activity.timestamps=false&activity.filter=all&code.lines=12&code.load=400&code.days=3&code.visibility=public&habits.from=200&habits.days=14&habits.facts=true&habits.charts=false&habits.charts.type=classic&habits.trim=false&habits.languages.limit=8&habits.languages.threshold=0%25&config.timezone=America%2FNew_York" alt="Detailed Metrics" />
+    
+    <br><br>
+    
+    <!-- Quick Insights Grid -->
+    <details open>
+      <summary>
+        <b>📊 Click to View Detailed Analytics Breakdown</b>
+      </summary>
+      <br>
+      
+      <table>
+        <tr>
+          <td align="center" width="33%">
+            <img src="https://img.shields.io/badge/💡-Key_Insights-58A6FF?style=for-the-badge&labelColor=0D1117" />
+            <br><br>
+            <img src="https://img.shields.io/badge/Total_Repos-92-blue?style=flat-square&logo=github&logoColor=white&labelColor=0D1117" />
+            <br>
+            <img src="https://img.shields.io/badge/Total_Stars-151-yellow?style=flat-square&logo=star&logoColor=white&labelColor=0D1117" />
+            <br>
+            <img src="https://img.shields.io/badge/Total_Forks-27-green?style=flat-square&logo=git&logoColor=white&labelColor=0D1117" />
+            <br>
+            <img src="https://img.shields.io/badge/Avg_Health-28.97%25-orange?style=flat-square&logo=heart&logoColor=white&labelColor=0D1117" />
+          </td>
+          <td align="center" width="33%">
+            <img src="https://img.shields.io/badge/🎯-Top_Languages-7C3AED?style=for-the-badge&labelColor=0D1117" />
+            <br><br>
+            <img src="https://img.shields.io/badge/1._HTML-45.24%25-E34C26?style=flat-square&logo=html5&logoColor=white&labelColor=0D1117" />
+            <br>
+            <img src="https://img.shields.io/badge/2._TypeScript-44.42%25-3178C6?style=flat-square&logo=typescript&logoColor=white&labelColor=0D1117" />
+            <br>
+            <img src="https://img.shields.io/badge/3._Python-6.51%25-3776AB?style=flat-square&logo=python&logoColor=white&labelColor=0D1117" />
+            <br>
+            <img src="https://img.shields.io/badge/4._Vue-3.01%25-4FC08D?style=flat-square&logo=vue.js&logoColor=white&labelColor=0D1117" />
+          </td>
+          <td align="center" width="33%">
+            <img src="https://img.shields.io/badge/🏆-Performance-2EA043?style=for-the-badge&labelColor=0D1117" />
+            <br><br>
+            <img src="https://img.shields.io/badge/Code_Quality-A+-brightgreen?style=flat-square&logo=codeclimate&logoColor=white&labelColor=0D1117" />
+            <br>
+            <img src="https://img.shields.io/badge/Activity_Score-High-green?style=flat-square&logo=activity&logoColor=white&labelColor=0D1117" />
+            <br>
+            <img src="https://img.shields.io/badge/Community-Active-blue?style=flat-square&logo=people&logoColor=white&labelColor=0D1117" />
+            <br>
+            <img src="https://img.shields.io/badge/Growth-+8.6%25-success?style=flat-square&logo=trending-up&logoColor=white&labelColor=0D1117" />
+          </td>
+        </tr>
+      </table>
+      
+      <br>
+      
+      <!-- Interactive Dashboard Link -->
+      <table>
+        <tr>
+          <td align="center">
+            <a href="./interactive-dashboard.html">
+              <img src="https://img.shields.io/badge/🎨_INTERACTIVE_DASHBOARD-View_Live_Charts-FF1493?style=for-the-badge&logo=chartdotjs&logoColor=white&labelColor=0D1117" alt="Interactive Dashboard" />
+            </a>
+          </td>
+          <td align="center">
+            <a href="./analytics-data.json">
+              <img src="https://img.shields.io/badge/📥_DOWNLOAD_DATA-Export_JSON-00D9FF?style=for-the-badge&logo=json&logoColor=white&labelColor=0D1117" alt="Download Data" />
+            </a>
+          </td>
+        </tr>
+      </table>
+      
+      <br>
+      
+      <!-- Analytics Features Grid -->
+      <h4>✨ Analytics Features</h4>
+      <table>
+        <tr>
+          <td align="center">
+            <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" width="30" />
+            <br>
+            <b>Real-time Charts</b>
+            <br>
+            <sub>Interactive visualizations</sub>
+          </td>
+          <td align="center">
+            <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Calendar.png" width="30" />
+            <br>
+            <b>Time Filters</b>
+            <br>
+            <sub>7/30/90/365 days</sub>
+          </td>
+          <td align="center">
+            <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Floppy%20Disk.png" width="30" />
+            <br>
+            <b>Export Data</b>
+            <br>
+            <sub>JSON/CSV formats</sub>
+          </td>
+          <td align="center">
+            <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Mobile%20Phone.png" width="30" />
+            <br>
+            <b>Mobile Ready</b>
+            <br>
+            <sub>Responsive design</sub>
+          </td>
+        </tr>
+      </table>
+      
+      <br>
+      
+      <!-- Health Score Breakdown -->
+      <h4>💚 Repository Health Breakdown</h4>
+      <table>
+        <tr>
+          <td align="center">
+            <img src="https://img.shields.io/badge/Excellent-69.5%25-brightgreen?style=for-the-badge&logo=shield&logoColor=white&labelColor=0D1117" />
+            <br>
+            <sub>code-guardian-report</sub>
+          </td>
+          <td align="center">
+            <img src="https://img.shields.io/badge/Good-45.8%25-green?style=for-the-badge&logo=shield&logoColor=white&labelColor=0D1117" />
+            <br>
+            <sub>DocMagic</sub>
+          </td>
+          <td align="center">
+            <img src="https://img.shields.io/badge/Average-32.4%25-yellow?style=for-the-badge&logo=shield&logoColor=white&labelColor=0D1117" />
+            <br>
+            <sub>Law-Agent</sub>
+          </td>
+          <td align="center">
+            <img src="https://img.shields.io/badge/Needs_Work-18.2%25-orange?style=for-the-badge&logo=shield&logoColor=white&labelColor=0D1117" />
+            <br>
+            <sub>devfolio</sub>
+          </td>
+        </tr>
+      </table>
+      
+      <br>
+      
+      <!-- Contribution Patterns -->
+      <h4>📅 Contribution Patterns</h4>
+      <table>
+        <tr>
+          <td align="center" width="25%">
+            <img src="https://img.shields.io/badge/Monday-⭐⭐⭐⭐-blue?style=flat-square&labelColor=0D1117" />
+          </td>
+          <td align="center" width="25%">
+            <img src="https://img.shields.io/badge/Tuesday-⭐⭐⭐⭐⭐-green?style=flat-square&labelColor=0D1117" />
+          </td>
+          <td align="center" width="25%">
+            <img src="https://img.shields.io/badge/Wednesday-⭐⭐⭐⭐⭐-green?style=flat-square&labelColor=0D1117" />
+          </td>
+          <td align="center" width="25%">
+            <img src="https://img.shields.io/badge/Thursday-⭐⭐⭐⭐-blue?style=flat-square&labelColor=0D1117" />
+          </td>
+        </tr>
+        <tr>
+          <td align="center" width="25%">
+            <img src="https://img.shields.io/badge/Friday-⭐⭐⭐-yellow?style=flat-square&labelColor=0D1117" />
+          </td>
+          <td align="center" width="25%">
+            <img src="https://img.shields.io/badge/Saturday-⭐⭐-orange?style=flat-square&labelColor=0D1117" />
+          </td>
+          <td align="center" width="25%">
+            <img src="https://img.shields.io/badge/Sunday-⭐⭐-orange?style=flat-square&labelColor=0D1117" />
+          </td>
+          <td align="center" width="25%">
+            <img src="https://img.shields.io/badge/Peak_Hours-2PM_--_6PM-purple?style=flat-square&labelColor=0D1117" />
+          </td>
+        </tr>
+      </table>
+      
+      <br>
+      
+      <!-- Technology Trends -->
+      <h4>📈 Technology Trends (Last 30 Days)</h4>
+      <table>
+        <tr>
+          <td align="center">
+            <img src="https://img.shields.io/badge/↗️_TypeScript-+12%25-3178C6?style=flat-square&logo=typescript&logoColor=white&labelColor=0D1117" />
+            <img src="https://img.shields.io/badge/↗️_Python-+8%25-3776AB?style=flat-square&logo=python&logoColor=white&labelColor=0D1117" />
+            <img src="https://img.shields.io/badge/→_HTML-Stable-E34C26?style=flat-square&logo=html5&logoColor=white&labelColor=0D1117" />
+            <img src="https://img.shields.io/badge/↗️_Vue.js-+15%25-4FC08D?style=flat-square&logo=vue.js&logoColor=white&labelColor=0D1117" />
+            <img src="https://img.shields.io/badge/↘️_CSS--5%25-1572B6?style=flat-square&logo=css3&logoColor=white&labelColor=0D1117" />
+          </td>
+        </tr>
+      </table>
+      
+    </details>
+    
   </div>
   
   <br>
