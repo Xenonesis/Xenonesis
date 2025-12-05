@@ -60,7 +60,6 @@
   
   <!-- Detailed Repository Stats -->
   <div align="center">
-    <h3>🏆 Repository Highlights & Analytics</h3>
     
     <!-- Featured Repositories -->
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 20px;">
@@ -1231,7 +1230,6 @@
 
 <!-- 🚀 REPOSITORY HIGHLIGHTS & ANALYTICS -->
 <div align="center">
-  <h3>🏆 Repository Highlights & Analytics</h3>
   
   <!-- Featured Repositories -->
   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 20px;">
