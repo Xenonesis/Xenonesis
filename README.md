@@ -61,79 +61,7 @@
   <!-- Detailed Repository Stats -->
   <div align="center">
     
-    <!-- Featured Repositories -->
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 20px;">
-      <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=cybersecurity-toolkit&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8" alt="Cybersecurity Toolkit" />
-      <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=ai-ml-projects&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8" alt="AI/ML Projects" />
-      <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=network-security-scanner&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8" alt="Network Security Scanner" />
-      <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=blockchain-analyzer&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8" alt="Blockchain Analyzer" />
-    </div>
     
-    <!-- Repository Statistics Grid -->
-    <h4>📈 Repository Analytics</h4>
-    <table align="center">
-      <tr>
-        <td align="center">
-          <img src="https://img.shields.io/badge/Total%20Repositories-42-blue?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Total Repos" />
-        </td>
-        <td align="center">
-          <img src="https://img.shields.io/badge/Public%20Repos-38-green?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Public Repos" />
-        </td>
-        <td align="center">
-          <img src="https://img.shields.io/badge/Private%20Repos-4-red?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Private Repos" />
-        </td>
-      </tr>
-      <tr>
-        <td align="center">
-          <img src="https://img.shields.io/badge/Forked%20Repos-12-purple?style=for-the-badge&logo=git&logoColor=white&labelColor=0D1117" alt="Forked Repos" />
-        </td>
-        <td align="center">
-          <img src="https://img.shields.io/badge/Original%20Repos-30-orange?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Original Repos" />
-        </td>
-        <td align="center">
-          <img src="https://img.shields.io/badge/Archived%20Repos-3-yellow?style=for-the-badge&logo=archive&logoColor=white&labelColor=0D1117" alt="Archived Repos" />
-        </td>
-      </tr>
-    </table>
-    
-    <!-- Repository Size & Activity Stats -->
-    <h4>💾 Repository Size & Activity</h4>
-    <table align="center">
-      <tr>
-        <td align="center">
-          <img src="https://img.shields.io/badge/Total%20Size-2.3GB-blue?style=for-the-badge&logo=harddisk&logoColor=white&labelColor=0D1117" alt="Total Size" />
-        </td>
-        <td align="center">
-          <img src="https://img.shields.io/badge/Avg%20Repo%20Size-61MB-green?style=for-the-badge&logo=database&logoColor=white&labelColor=0D1117" alt="Average Size" />
-        </td>
-        <td align="center">
-          <img src="https://img.shields.io/badge/Largest%20Repo-450MB-red?style=for-the-badge&logo=folder&logoColor=white&labelColor=0D1117" alt="Largest Repo" />
-        </td>
-      </tr>
-      <tr>
-        <td align="center">
-          <img src="https://img.shields.io/badge/Active%20Repos-28-purple?style=for-the-badge&logo=activity&logoColor=white&labelColor=0D1117" alt="Active Repos" />
-        </td>
-        <td align="center">
-          <img src="https://img.shields.io/badge/Stale%20Repos-7-orange?style=for-the-badge&logo=clock&logoColor=white&labelColor=0D1117" alt="Stale Repos" />
-        </td>
-        <td align="center">
-          <img src="https://img.shields.io/badge/Recently%20Updated-15-yellow?style=for-the-badge&logo=refresh&logoColor=white&labelColor=0D1117" alt="Recently Updated" />
-        </td>
-      </tr>
-    </table>
-    
-    <!-- Repository Categories -->
-    <h4>📂 Repository Categories</h4>
-    <div align="center">
-      <img src="https://img.shields.io/badge/🔐%20Cybersecurity-12%20repos-red?style=for-the-badge&labelColor=0D1117" alt="Cybersecurity" />
-      <img src="https://img.shields.io/badge/🤖%20AI/ML-8%20repos-blue?style=for-the-badge&labelColor=0D1117" alt="AI/ML" />
-      <img src="https://img.shields.io/badge/🌐%20Web%20Dev-10%20repos-green?style=for-the-badge&labelColor=0D1117" alt="Web Dev" />
-      <img src="https://img.shields.io/badge/🔧%20DevOps-5%20repos-orange?style=for-the-badge&labelColor=0D1117" alt="DevOps" />
-      <img src="https://img.shields.io/badge/📱%20Mobile-3%20repos-purple?style=for-the-badge&labelColor=0D1117" alt="Mobile" />
-      <img src="https://img.shields.io/badge/🎮%20Game%20Dev-2%20repos-pink?style=for-the-badge&labelColor=0D1117" alt="Game Dev" />
-      <img src="https://img.shields.io/badge/📊%20Data%20Science-2%20repos-yellow?style=for-the-badge&labelColor=0D1117" alt="Data Science" />
-    </div>
   </div>
   
   <br>
@@ -1228,17 +1156,6 @@
   
 </div>
 
-<!-- 🚀 REPOSITORY HIGHLIGHTS & ANALYTICS -->
-<div align="center">
-  
-  <!-- Featured Repositories -->
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 20px;">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=code-guardian-report&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8" alt="code-guardian-report" />
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=Code-Guardian-&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8" alt="Code-Guardian-" />
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=Team-Blitz&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8" alt="Team-Blitz" />
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=Juris.AI&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8" alt="Juris.AI" />
-  </div>
-</div>
 </html>
 ```
 
