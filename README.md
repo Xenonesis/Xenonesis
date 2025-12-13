@@ -15,6 +15,119 @@
   </picture>
 </div>
 
+<br>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+
+<!-- 👤 ABOUT ME SECTION -->
+<h2 align="center">
+  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28">
+  About Me
+</h2>
+
+<div align="center">
+  <img align="right" width="300" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" alt="Coding GIF" />
+</div>
+
+```yaml
+name: Aditya Kumar Tiwari
+alias: Xenonesis
+location: India 🇮🇳
+current_focus: 
+  - Cybersecurity Research
+  - AI/ML Security Applications
+  - Full Stack Development
+
+expertise:
+  security: [Penetration Testing, Digital Forensics, Threat Analysis, VAPT]
+  development: [React, Node.js, Python, TypeScript]
+  ai_ml: [TensorFlow, PyTorch, Computer Vision, NLP]
+
+certifications:
+  - Ethical Hacking
+  - Network Security
+  - Cloud Security
+
+fun_facts:
+  - 🔐 I break things to make them secure
+  - ☕ Coffee is my debugging fuel
+  - 🎯 CTF enthusiast & problem solver
+```
+
+<br clear="both">
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+
+<!-- 🛠 TECH ARSENAL SECTION -->
+<h2 align="center">🛠 Tech Arsenal</h2>
+
+<div align="center">
+  
+  <!-- Security & Hacking Tools -->
+  <details open>
+    <summary><b>🛡️ Security & Penetration Testing</b></summary>
+    <br>
+    <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white" />
+    <img src="https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burp-suite&logoColor=white" />
+    <img src="https://img.shields.io/badge/Metasploit-2596CD?style=for-the-badge&logo=metasploit&logoColor=white" />
+    <img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" />
+    <img src="https://img.shields.io/badge/Nmap-0E83CD?style=for-the-badge&logo=nmap&logoColor=white" />
+    <img src="https://img.shields.io/badge/OWASP-000000?style=for-the-badge&logo=owasp&logoColor=white" />
+  </details>
+
+  <!-- Programming Languages -->
+  <details open>
+    <summary><b>💻 Programming Languages</b></summary>
+    <br>
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+    <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
+    <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" />
+    <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
+  </details>
+
+  <!-- Frameworks & Libraries -->
+  <details open>
+    <summary><b>🚀 Frameworks & Libraries</b></summary>
+    <br>
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+    <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
+    <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
+    <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
+    <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+  </details>
+
+  <!-- Cloud & DevOps -->
+  <details>
+    <summary><b>☁️ Cloud & DevOps</b></summary>
+    <br>
+    <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />
+    <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+    <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
+    <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" />
+    <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
+    <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />
+  </details>
+
+  <!-- Databases -->
+  <details>
+    <summary><b>🗄️ Databases</b></summary>
+    <br>
+    <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
+    <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
+    <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
+    <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+    <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+  </details>
+  
+</div>
+
+<br>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+
 <!-- 📊 GITHUB ANALYTICS & STATISTICS SECTION -->
 <div align="center">
   <h2>📊 GitHub Analytics & Statistics</h2>
