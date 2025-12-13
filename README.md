@@ -137,29 +137,36 @@ fun_facts:
     <img src="https://komarev.com/ghpvc/?username=Xenonesis&label=Profile%20Views&color=0e75b6&style=for-the-badge" alt="Profile Views" />
     <img src="https://img.shields.io/github/followers/Xenonesis?label=Followers&style=for-the-badge&color=blue" alt="GitHub Followers" />
     <img src="https://img.shields.io/github/stars/Xenonesis?label=Total%20Stars&style=for-the-badge&color=yellow" alt="GitHub Stars" />
-    <img src="https://img.shields.io/badge/dynamic/json?label=Public%20Repos&query=public_repos&url=https://api.github.com/users/Xenonesis&style=for-the-badge&color=green" alt="Public Repos" />
   </div>
   
   <br>
   
   <!-- Advanced GitHub Stats Cards -->
   <div align="center">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Xenonesis&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8" alt="GitHub Stats" />
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xenonesis&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9&border_radius=8&langs_count=8" alt="Top Languages" />
+    <a href="https://github.com/Xenonesis">
+      <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Xenonesis&show_icons=true&theme=tokyonight&include_all_commits=false&count_private=true&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8&cache_seconds=86400" alt="GitHub Stats" />
+    </a>
+    <a href="https://github.com/Xenonesis">
+      <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xenonesis&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9&border_radius=8&langs_count=8&cache_seconds=86400" alt="Top Languages" />
+    </a>
   </div>
   
   <br>
   
   <!-- GitHub Streak Stats -->
   <div align="center">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Xenonesis&theme=tokyonight&hide_border=true&background=0D1117&stroke=58A6FF&ring=1F6FEB&fire=FF6B6B&currStreakNum=C9D1D9&sideNums=C9D1D9&currStreakLabel=58A6FF&sideLabels=C9D1D9&dates=8B949E" alt="GitHub Streak" />
+    <a href="https://github.com/Xenonesis">
+      <img src="https://streak-stats.demolab.com/?user=Xenonesis&theme=tokyonight&hide_border=true&background=0D1117&stroke=58A6FF&ring=1F6FEB&fire=FF6B6B&currStreakNum=C9D1D9&sideNums=C9D1D9&currStreakLabel=58A6FF&sideLabels=C9D1D9&dates=8B949E" alt="GitHub Streak" />
+    </a>
   </div>
   
   <br>
   
   <!-- Detailed Activity Graph -->
   <div align="center">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=Xenonesis&theme=tokyo-night&bg_color=0D1117&color=58A6FF&line=1F6FEB&point=FF6B6B&area=true&hide_border=true&custom_title=Contribution%20Activity%20Graph" alt="Contribution Graph" />
+    <a href="https://github.com/Xenonesis">
+      <img src="https://github-readme-activity-graph.vercel.app/graph?username=Xenonesis&theme=tokyo-night&bg_color=0D1117&color=58A6FF&line=1F6FEB&point=FF6B6B&area=true&hide_border=true&custom_title=Contribution%20Activity%20Graph" alt="Contribution Graph" />
+    </a>
   </div>
 </div>
 
@@ -183,15 +190,13 @@ fun_facts:
 
 <br>
 
-<!-- 📊 GitHub Analytics -->
+<!-- 📊 GitHub Trophies -->
 <div align="center">
-  <h2>📊 GitHub Analytics</h2>
+  <h2>🏆 GitHub Trophies</h2>
  
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xenonesis&layout=compact&langs_count=8&theme=radical&bg_color=0D1117&hide_border=true" />
-  
-  <br><br>
-  
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Xenonesis&theme=radical&hide_border=true&background=0D1117" alt="Xenonesis' streaks" />
+  <a href="https://github.com/Xenonesis">
+    <img src="https://github-profile-trophy.vercel.app/?username=Xenonesis&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4&row=1" alt="GitHub Trophies" />
+  </a>
 </div>
 
 <br>
