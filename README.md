@@ -73,8 +73,7 @@
 <!-- 📊 GitHub Analytics -->
 <div align="center">
   <h2>📊 GitHub Analytics</h2>
-  
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Xenonesis&show_icons=true&theme=radical&include_all_commits=true&count_private=true&bg_color=0D1117&hide_border=true" />
+ 
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xenonesis&layout=compact&langs_count=8&theme=radical&bg_color=0D1117&hide_border=true" />
   
   <br><br>

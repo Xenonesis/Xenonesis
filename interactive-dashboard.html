@@ -19,11 +19,12 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0D1117 0%, #161B22 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0e13 0%, #0D1117 50%, #161B22 100%);
             color: #C9D1D9;
             line-height: 1.6;
             min-height: 100vh;
+            letter-spacing: -0.01em;
         }
         
         .dashboard-container {
@@ -35,35 +36,43 @@
         /* Header Styles */
         .header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 30px 0;
-            background: rgba(22, 27, 34, 0.8);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(88, 166, 255, 0.2);
+            margin-bottom: 48px;
+            padding: 40px 32px;
+            background: linear-gradient(135deg, rgba(22, 27, 34, 0.95) 0%, rgba(13, 17, 23, 0.95) 100%);
+            border-radius: 16px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(88, 166, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(88, 166, 255, 0.1);
         }
         
         .header h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(45deg, #58A6FF, #1F6FEB);
+            font-size: 2.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #58A6FF 0%, #1F6FEB 50%, #7C3AED 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            background-clip: text;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
         }
         
         .header .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.125rem;
             color: #8B949E;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            font-weight: 400;
+            letter-spacing: 0.01em;
         }
         
         .last-updated {
-            font-size: 0.9rem;
-            color: #7C3AED;
-            background: rgba(124, 58, 237, 0.1);
-            padding: 8px 16px;
-            border-radius: 20px;
+            font-size: 0.875rem;
+            color: #A78BFA;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(124, 58, 237, 0.08) 100%);
+            padding: 10px 20px;
+            border-radius: 24px;
             display: inline-block;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            font-weight: 500;
         }
         
         /* Summary Cards */
@@ -75,13 +84,14 @@
         }
         
         .summary-card {
-            background: rgba(22, 27, 34, 0.9);
-            border-radius: 12px;
-            padding: 25px;
-            border: 1px solid rgba(88, 166, 255, 0.2);
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(22, 27, 34, 0.95) 0%, rgba(13, 17, 23, 0.95) 100%);
+            border-radius: 16px;
+            padding: 28px 24px;
+            border: 1px solid rgba(88, 166, 255, 0.12);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
         
         .summary-card::before {
@@ -90,41 +100,48 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #58A6FF, #1F6FEB);
+            height: 4px;
+            background: linear-gradient(90deg, #58A6FF 0%, #1F6FEB 50%, #7C3AED 100%);
+            opacity: 0.8;
         }
         
         .summary-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(88, 166, 255, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(88, 166, 255, 0.25), 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-color: rgba(88, 166, 255, 0.3);
         }
         
         .card-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
+            font-size: 2.25rem;
+            margin-bottom: 16px;
             color: #58A6FF;
+            opacity: 0.9;
         }
         
         .card-title {
-            font-size: 0.9rem;
+            font-size: 0.813rem;
             color: #8B949E;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
         
         .card-value {
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: #C9D1D9;
-            margin-bottom: 10px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #E6EDF3;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
         }
         
         .card-change {
-            font-size: 0.85rem;
-            padding: 4px 8px;
-            border-radius: 12px;
+            font-size: 0.813rem;
+            padding: 6px 12px;
+            border-radius: 16px;
             display: inline-block;
+            font-weight: 500;
         }
         
         .card-change.positive {
@@ -143,12 +160,14 @@
         }
         
         .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: #C9D1D9;
+            font-size: 1.875rem;
+            margin-bottom: 32px;
+            color: #E6EDF3;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
         
         .section-title i {
@@ -162,18 +181,27 @@
         }
         
         .chart-container {
-            background: rgba(22, 27, 34, 0.9);
-            border-radius: 12px;
-            padding: 25px;
-            border: 1px solid rgba(88, 166, 255, 0.2);
+            background: linear-gradient(135deg, rgba(22, 27, 34, 0.95) 0%, rgba(13, 17, 23, 0.95) 100%);
+            border-radius: 16px;
+            padding: 28px 24px;
+            border: 1px solid rgba(88, 166, 255, 0.12);
             height: 400px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .chart-container:hover {
+            border-color: rgba(88, 166, 255, 0.2);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
         }
         
         .chart-title {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #C9D1D9;
+            font-size: 1.125rem;
+            margin-bottom: 24px;
+            color: #E6EDF3;
             text-align: center;
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
         
         /* Repositories Section */
@@ -185,88 +213,134 @@
         }
         
         .repo-card {
-            background: rgba(22, 27, 34, 0.9);
-            border-radius: 12px;
-            padding: 20px;
-            border: 1px solid rgba(88, 166, 255, 0.2);
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(22, 27, 34, 0.95) 0%, rgba(13, 17, 23, 0.95) 100%);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(88, 166, 255, 0.12);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
         
         .repo-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(88, 166, 255, 0.15);
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 12px 32px rgba(88, 166, 255, 0.2), 0 6px 12px rgba(0, 0, 0, 0.3);
+            border-color: rgba(88, 166, 255, 0.25);
         }
         
         .repo-header {
             display: flex;
-            justify-content: between;
+            justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
+            gap: 12px;
         }
         
         .repo-name {
-            font-size: 1.1rem;
-            font-weight: bold;
+            font-size: 1.125rem;
+            font-weight: 600;
             color: #58A6FF;
             text-decoration: none;
             flex: 1;
+            transition: color 0.2s ease;
+        }
+        
+        .repo-name:hover {
+            color: #79C0FF;
+            text-decoration: underline;
         }
         
         .repo-language {
-            background: rgba(88, 166, 255, 0.2);
-            color: #58A6FF;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 0.8rem;
+            background: rgba(88, 166, 255, 0.15);
+            color: #79C0FF;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.813rem;
+            font-weight: 500;
+            border: 1px solid rgba(88, 166, 255, 0.2);
         }
         
         .repo-stats {
             display: flex;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 16px;
+            margin-top: 16px;
+            flex-wrap: wrap;
         }
         
         .repo-stat {
             display: flex;
             align-items: center;
-            gap: 5px;
-            font-size: 0.9rem;
+            gap: 6px;
+            font-size: 0.875rem;
             color: #8B949E;
+            font-weight: 500;
+        }
+        
+        .repo-stat i {
+            opacity: 0.8;
         }
         
         .health-score {
-            margin-top: 15px;
+            margin-top: 20px;
+        }
+        
+        .health-score-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .health-score-label span:first-child {
+            font-size: 0.875rem;
+            color: #8B949E;
+            font-weight: 500;
+        }
+        
+        .health-score-label span:last-child {
+            font-size: 0.875rem;
+            color: #E6EDF3;
+            font-weight: 600;
         }
         
         .health-bar {
             width: 100%;
-            height: 6px;
-            background: rgba(139, 148, 158, 0.3);
-            border-radius: 3px;
+            height: 8px;
+            background: rgba(139, 148, 158, 0.2);
+            border-radius: 6px;
             overflow: hidden;
         }
         
         .health-fill {
             height: 100%;
-            background: linear-gradient(90deg, #F85149, #FF8E53, #2EA043);
-            border-radius: 3px;
-            transition: width 0.5s ease;
+            background: linear-gradient(90deg, #F85149 0%, #FF8E53 50%, #2EA043 100%);
+            border-radius: 6px;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 8px rgba(46, 160, 67, 0.3);
         }
         
         /* Activity Section */
         .activity-timeline {
-            background: rgba(22, 27, 34, 0.9);
-            border-radius: 12px;
-            padding: 25px;
-            border: 1px solid rgba(88, 166, 255, 0.2);
-            margin-bottom: 40px;
+            background: linear-gradient(135deg, rgba(22, 27, 34, 0.95) 0%, rgba(13, 17, 23, 0.95) 100%);
+            border-radius: 16px;
+            padding: 28px 24px;
+            border: 1px solid rgba(88, 166, 255, 0.12);
+            margin-bottom: 48px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
         
         .timeline-item {
             display: flex;
             align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(139, 148, 158, 0.2);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(139, 148, 158, 0.15);
+            transition: background-color 0.2s ease;
+        }
+        
+        .timeline-item:hover {
+            background-color: rgba(88, 166, 255, 0.03);
+            margin: 0 -24px;
+            padding-left: 24px;
+            padding-right: 24px;
+            border-radius: 8px;
         }
         
         .timeline-item:last-child {
@@ -274,15 +348,17 @@
         }
         
         .timeline-icon {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            background: rgba(88, 166, 255, 0.2);
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.15) 0%, rgba(31, 111, 235, 0.15) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            margin-right: 16px;
             color: #58A6FF;
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            flex-shrink: 0;
         }
         
         .timeline-content {
@@ -290,84 +366,150 @@
         }
         
         .timeline-title {
-            font-weight: bold;
-            color: #C9D1D9;
-            margin-bottom: 5px;
+            font-weight: 600;
+            color: #E6EDF3;
+            margin-bottom: 6px;
+            font-size: 1rem;
         }
         
         .timeline-description {
             color: #8B949E;
-            font-size: 0.9rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
         }
         
         /* Footer */
         .footer {
             text-align: center;
-            padding: 30px 0;
+            padding: 40px 0;
             color: #8B949E;
-            border-top: 1px solid rgba(139, 148, 158, 0.2);
+            border-top: 1px solid rgba(139, 148, 158, 0.15);
+            margin-top: 48px;
+        }
+        
+        .footer p {
+            font-size: 0.938rem;
+            line-height: 1.8;
+        }
+        
+        .footer small {
+            font-size: 0.813rem;
+            opacity: 0.8;
         }
         
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .dashboard-container {
-                padding: 15px;
+                padding: 16px;
+            }
+            
+            .header {
+                padding: 32px 24px;
+                margin-bottom: 32px;
             }
             
             .header h1 {
                 font-size: 2rem;
             }
             
+            .header .subtitle {
+                font-size: 1rem;
+            }
+            
             .summary-cards {
                 grid-template-columns: 1fr;
+                gap: 16px;
             }
             
             .charts-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
             
             .chart-container {
                 height: 300px;
+                padding: 20px 16px;
             }
             
             .repositories-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
             }
             
             .repo-header {
                 flex-direction: column;
-                gap: 10px;
+                gap: 12px;
+                align-items: flex-start;
             }
             
             .repo-stats {
                 flex-wrap: wrap;
             }
+            
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 24px;
+            }
+            
+            .timeline-item:hover {
+                margin: 0 -16px;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
         }
         
         @media (max-width: 480px) {
+            .dashboard-container {
+                padding: 12px;
+            }
+            
+            .header {
+                padding: 24px 16px;
+            }
+            
             .header h1 {
-                font-size: 1.5rem;
+                font-size: 1.75rem;
+            }
+            
+            .header .subtitle {
+                font-size: 0.938rem;
             }
             
             .card-value {
-                font-size: 1.8rem;
+                font-size: 2rem;
+            }
+            
+            .card-title {
+                font-size: 0.75rem;
             }
             
             .chart-container {
                 height: 250px;
-                padding: 15px;
+                padding: 16px 12px;
+            }
+            
+            .chart-title {
+                font-size: 1rem;
+            }
+            
+            .summary-card, .repo-card, .chart-container, .activity-timeline {
+                padding: 20px 16px;
+            }
+            
+            .section-title {
+                font-size: 1.375rem;
             }
         }
         
         /* Loading Animation */
         .loading {
             display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(88, 166, 255, 0.3);
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(88, 166, 255, 0.2);
             border-radius: 50%;
             border-top-color: #58A6FF;
-            animation: spin 1s ease-in-out infinite;
+            animation: spin 0.8s linear infinite;
         }
         
         @keyframes spin {
@@ -376,21 +518,26 @@
         
         /* Animations */
         .fade-in {
-            animation: fadeIn 0.5s ease-in;
+            animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
         .slide-in {
-            animation: slideIn 0.6s ease-out;
+            animation: slideIn 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         @keyframes slideIn {
-            from { transform: translateX(-30px); opacity: 0; }
+            from { transform: translateX(-32px); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
+        }
+        
+        /* Smooth transitions for interactive elements */
+        a, button, .summary-card, .repo-card, .chart-container {
+            will-change: transform;
         }
         
     </style>
@@ -456,9 +603,9 @@
                     <i class="fas fa-heart-pulse"></i>
                 </div>
                 <div class="card-title">Health Score</div>
-                <div class="card-value">28.972826086956523%</div>
+                <div class="card-value">29.0%</div>
                 <div class="card-change positive">
-                    Excellent
+                    Good Standing
                 </div>
             </div>
             
@@ -534,9 +681,9 @@
                     </div>
                 </div>
                 <div class="health-score">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                        <span style="font-size: 0.9rem; color: #8B949E;">Health Score</span>
-                        <span style="font-size: 0.9rem; color: #C9D1D9;">69.5%</span>
+                    <div class="health-score-label">
+                        <span>Health Score</span>
+                        <span>69.5%</span>
                     </div>
                     <div class="health-bar">
                         <div class="health-fill" style="width: 69.5%"></div>
@@ -571,9 +718,9 @@
                     </div>
                 </div>
                 <div class="health-score">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                        <span style="font-size: 0.9rem; color: #8B949E;">Health Score</span>
-                        <span style="font-size: 0.9rem; color: #C9D1D9;">48.0%</span>
+                    <div class="health-score-label">
+                        <span>Health Score</span>
+                        <span>48.0%</span>
                     </div>
                     <div class="health-bar">
                         <div class="health-fill" style="width: 48.0%"></div>
@@ -608,9 +755,9 @@
                     </div>
                 </div>
                 <div class="health-score">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                        <span style="font-size: 0.9rem; color: #8B949E;">Health Score</span>
-                        <span style="font-size: 0.9rem; color: #C9D1D9;">24.0%</span>
+                    <div class="health-score-label">
+                        <span>Health Score</span>
+                        <span>24.0%</span>
                     </div>
                     <div class="health-bar">
                         <div class="health-fill" style="width: 24.0%"></div>
@@ -645,9 +792,9 @@
                     </div>
                 </div>
                 <div class="health-score">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                        <span style="font-size: 0.9rem; color: #8B949E;">Health Score</span>
-                        <span style="font-size: 0.9rem; color: #C9D1D9;">22.5%</span>
+                    <div class="health-score-label">
+                        <span>Health Score</span>
+                        <span>22.5%</span>
                     </div>
                     <div class="health-bar">
                         <div class="health-fill" style="width: 22.5%"></div>
@@ -682,9 +829,9 @@
                     </div>
                 </div>
                 <div class="health-score">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                        <span style="font-size: 0.9rem; color: #8B949E;">Health Score</span>
-                        <span style="font-size: 0.9rem; color: #C9D1D9;">22.5%</span>
+                    <div class="health-score-label">
+                        <span>Health Score</span>
+                        <span>22.5%</span>
                     </div>
                     <div class="health-bar">
                         <div class="health-fill" style="width: 22.5%"></div>
@@ -719,9 +866,9 @@
                     </div>
                 </div>
                 <div class="health-score">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                        <span style="font-size: 0.9rem; color: #8B949E;">Health Score</span>
-                        <span style="font-size: 0.9rem; color: #C9D1D9;">21.5%</span>
+                    <div class="health-score-label">
+                        <span>Health Score</span>
+                        <span>21.5%</span>
                     </div>
                     <div class="health-bar">
                         <div class="health-fill" style="width: 21.5%"></div>
@@ -799,7 +946,16 @@
         
         // Chart.js Configuration
         Chart.defaults.color = '#C9D1D9';
-        Chart.defaults.borderColor = 'rgba(139, 148, 158, 0.2)';
+        Chart.defaults.borderColor = 'rgba(139, 148, 158, 0.1)';
+        Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
+        Chart.defaults.font.size = 13;
+        Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(13, 17, 23, 0.95)';
+        Chart.defaults.plugins.tooltip.borderColor = 'rgba(88, 166, 255, 0.3)';
+        Chart.defaults.plugins.tooltip.borderWidth = 1;
+        Chart.defaults.plugins.tooltip.cornerRadius = 8;
+        Chart.defaults.plugins.tooltip.padding = 12;
+        Chart.defaults.plugins.tooltip.titleFont = { size: 14, weight: '600' };
+        Chart.defaults.plugins.tooltip.bodyFont = { size: 13 };
         
         // Language Distribution Chart
         const languageData = [{"name": "HTML", "bytes": 266374, "percentage": 45.24260829392902, "repos": 17}, {"name": "TypeScript", "bytes": 261557, "percentage": 44.42445920973966, "repos": 27}, {"name": "Python", "bytes": 38330, "percentage": 6.51020435893255, "repos": 7}, {"name": "Vue", "bytes": 17716, "percentage": 3.0089950540790262, "repos": 1}, {"name": "CSS", "bytes": 3605, "percentage": 0.6122955051904995, "repos": 1}, {"name": "JavaScript", "bytes": 1154, "percentage": 0.19600250013587697, "repos": 8}, {"name": "Rust", "bytes": 32, "percentage": 0.0054350779933692046, "repos": 1}];
@@ -810,8 +966,24 @@
                 datasets: [{
                     data: languageData.map(lang => lang.percentage),
                     backgroundColor: [
-                        '#58A6FF', '#1F6FEB', '#7C3AED', '#F85149',
-                        '#2EA043', '#FF8E53', '#E3B341', '#8B949E'
+                        'rgba(88, 166, 255, 0.85)', 
+                        'rgba(31, 111, 235, 0.85)', 
+                        'rgba(124, 58, 237, 0.85)', 
+                        'rgba(248, 81, 73, 0.85)',
+                        'rgba(46, 160, 67, 0.85)', 
+                        'rgba(255, 142, 83, 0.85)', 
+                        'rgba(227, 179, 65, 0.85)', 
+                        'rgba(139, 148, 158, 0.85)'
+                    ],
+                    hoverBackgroundColor: [
+                        'rgba(88, 166, 255, 1)', 
+                        'rgba(31, 111, 235, 1)', 
+                        'rgba(124, 58, 237, 1)', 
+                        'rgba(248, 81, 73, 1)',
+                        'rgba(46, 160, 67, 1)', 
+                        'rgba(255, 142, 83, 1)', 
+                        'rgba(227, 179, 65, 1)', 
+                        'rgba(139, 148, 158, 1)'
                     ],
                     borderWidth: 2,
                     borderColor: '#0D1117'
@@ -825,7 +997,18 @@
                         position: 'bottom',
                         labels: {
                             padding: 20,
-                            usePointStyle: true
+                            usePointStyle: true,
+                            font: {
+                                size: 13,
+                                weight: '500'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': ' + context.parsed.toFixed(2) + '%';
+                            }
                         }
                     }
                 }
@@ -841,9 +1024,11 @@
                 datasets: [{
                     label: 'Health Score',
                     data: repoData.slice(0, 8).map(repo => repo.health_score),
-                    backgroundColor: 'rgba(88, 166, 255, 0.6)',
-                    borderColor: '#58A6FF',
-                    borderWidth: 1
+                    backgroundColor: 'rgba(88, 166, 255, 0.75)',
+                    hoverBackgroundColor: 'rgba(88, 166, 255, 0.95)',
+                    borderColor: 'rgba(88, 166, 255, 0.3)',
+                    borderWidth: 0,
+                    borderRadius: 6
                 }]
             },
             options: {
@@ -854,18 +1039,41 @@
                         beginAtZero: true,
                         max: 100,
                         grid: {
-                            color: 'rgba(139, 148, 158, 0.1)'
+                            color: 'rgba(139, 148, 158, 0.08)',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            },
+                            font: {
+                                size: 12,
+                                weight: '500'
+                            }
                         }
                     },
                     x: {
                         grid: {
-                            color: 'rgba(139, 148, 158, 0.1)'
+                            display: false
+                        },
+                        ticks: {
+                            font: {
+                                size: 12,
+                                weight: '500'
+                            }
                         }
                     }
                 },
                 plugins: {
                     legend: {
                         display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return 'Health: ' + context.parsed.y.toFixed(1) + '%';
+                            }
+                        }
                     }
                 }
             }
@@ -885,9 +1093,15 @@
                         activityData.commits_month || 0
                     ],
                     borderColor: '#58A6FF',
-                    backgroundColor: 'rgba(88, 166, 255, 0.1)',
+                    backgroundColor: 'rgba(88, 166, 255, 0.15)',
                     fill: true,
-                    tension: 0.4
+                    tension: 0.4,
+                    borderWidth: 2,
+                    pointBackgroundColor: '#58A6FF',
+                    pointBorderColor: '#0D1117',
+                    pointBorderWidth: 2,
+                    pointRadius: 5,
+                    pointHoverRadius: 7
                 }]
             },
             options: {
@@ -897,12 +1111,36 @@
                     y: {
                         beginAtZero: true,
                         grid: {
-                            color: 'rgba(139, 148, 158, 0.1)'
+                            color: 'rgba(139, 148, 158, 0.08)',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            font: {
+                                size: 12,
+                                weight: '500'
+                            }
                         }
                     },
                     x: {
                         grid: {
-                            color: 'rgba(139, 148, 158, 0.1)'
+                            color: 'rgba(139, 148, 158, 0.08)',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            font: {
+                                size: 12,
+                                weight: '500'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 13,
+                                weight: '500'
+                            }
                         }
                     }
                 }
@@ -919,9 +1157,12 @@
                         x: repo.stars,
                         y: repo.forks
                     })),
-                    backgroundColor: 'rgba(88, 166, 255, 0.6)',
-                    borderColor: '#58A6FF',
-                    borderWidth: 1
+                    backgroundColor: 'rgba(88, 166, 255, 0.7)',
+                    hoverBackgroundColor: 'rgba(88, 166, 255, 0.9)',
+                    borderColor: 'rgba(88, 166, 255, 0.3)',
+                    borderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8
                 }]
             },
             options: {
@@ -931,19 +1172,53 @@
                     x: {
                         title: {
                             display: true,
-                            text: 'Stars'
+                            text: 'Stars',
+                            font: {
+                                size: 13,
+                                weight: '600'
+                            }
                         },
                         grid: {
-                            color: 'rgba(139, 148, 158, 0.1)'
+                            color: 'rgba(139, 148, 158, 0.08)',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            font: {
+                                size: 12,
+                                weight: '500'
+                            }
                         }
                     },
                     y: {
                         title: {
                             display: true,
-                            text: 'Forks'
+                            text: 'Forks',
+                            font: {
+                                size: 13,
+                                weight: '600'
+                            }
                         },
                         grid: {
-                            color: 'rgba(139, 148, 158, 0.1)'
+                            color: 'rgba(139, 148, 158, 0.08)',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            font: {
+                                size: 12,
+                                weight: '500'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return 'Stars: ' + context.parsed.x + ' | Forks: ' + context.parsed.y;
+                            }
                         }
                     }
                 }
