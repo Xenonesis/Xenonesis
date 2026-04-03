@@ -188,7 +188,7 @@ jobs:
     
     - name: 📊 Upload Analytics Data as Artifact
       if: steps.analytics.outputs.analytics_success == 'true'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: analytics-data-${{ github.run_number }}
         path: |
