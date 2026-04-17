@@ -1,303 +1,158 @@
-<!-- Dynamic Hero Section -->
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=280&section=header&text=XENONESIS&fontSize=80&fontColor=fff&animation=twinkling&fontAlignY=35&desc=🛡%20Cybersecurity%20Specialist%20•%20💻%20Full%20Stack%20Developer%20•%20🤖%20AI/ML%20Engineer&descAlignY=55&descAlign=50&descSize=16" width="100%" />
-  
-  <!-- Real-time Typing Animation -->
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=36BCF7&center=true&vCenter=true&width=700&lines=🚀+Welcome+to+my+Digital+Fortress!;🛡+Cybersecurity+%26+Ethical+Hacking+Expert;💻+Full+Stack+Developer+%26+AI+Engineer;🔍+Digital+Forensics+%26+Threat+Analysis;⚡+Building+Secure+Digital+Solutions" alt="Typing SVG" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:06b6d4,100:8B5CF6&height=320&section=header&text=XENONESIS&fontSize=96&fontColor=ffffff&animation=twinkling&fontAlignY=40&desc=%5B%20CYBERSECURITY%20%7C%20FULL%20STACK%20%7C%20AI%2FML%20%5D&descAlignY=60&descAlign=50&descSize=18&descColor=a78bfa" width="100%" />
 
-  <br>
-  
-  <!-- Enhanced Snake Animation -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg">
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg">
-  </picture>
-</div>
-
-<br>
-
-<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
-
-<!-- 👤 ABOUT ME SECTION -->
-<h2 align="center">
-  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28">
-  About Me
-</h2>
+<br/>
 
 <div align="center">
-  <img align="right" width="300" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" alt="Coding GIF" />
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=800&color=8B5CF6&center=true&vCenter=true&width=520&height=42&lines=hack.+defend.+iterate.;building+in+the+intersection+of+security+%26+AI;turning+vulnerabilities+into+knowledge+🔐;open+to+work+%7C+collab+%7C+consult)](https://git.io/typing-svg)
+
 </div>
 
-```yaml
-name: Aditya Kumar Tiwari
-alias: Xenonesis
-location: India 🇮🇳
-current_focus: 
-  - Cybersecurity Research
-  - AI/ML Security Applications
-  - Full Stack Development
+<div align="center">
 
-expertise:
-  security: [Penetration Testing, Digital Forensics, Threat Analysis, VAPT]
-  development: [React, Node.js, Python, TypeScript]
-  ai_ml: [TensorFlow, PyTorch, Computer Vision, NLP]
+<a href="https://github.com/Xenonesis?tab=followers"><img src="https://img.shields.io/github/followers/Xenonesis?style=flat-square&color=8B5CF6&labelColor=0d1117&label=followers&logo=github" /></a>&nbsp;
+<img src="https://komarev.com/ghpvc/?username=Xenonesis&style=flat-square&color=06b6d4&label=views&labelColor=0d1117" />&nbsp;
+<a href="https://github.com/Xenonesis?tab=repositories"><img src="https://img.shields.io/github/stars/Xenonesis?style=flat-square&color=f59e0b&labelColor=0d1117&label=total+stars" /></a>&nbsp;
+<a href="https://iaddy.netlify.app"><img src="https://img.shields.io/badge/portfolio-iaddy.netlify.app-ec4899?style=flat-square&labelColor=0d1117" /></a>
 
-certifications:
-  - Ethical Hacking
-  - Network Security
-  - Cloud Security
+</div>
 
-fun_facts:
-  - 🔐 I break things to make them secure
-  - ☕ Coffee is my debugging fuel
-  - 🎯 CTF enthusiast & problem solver
+<br/>
+
+<!-- ════════════════════════════════════════════ -->
+
+## About
+
+<img align="right" width="220" src="./profile.jpeg" alt="Xenonesis Profile" style="border-radius: 10px; border: 1px solid #8B5CF6;" />
+
+```typescript
+const xenonesis = {
+  alias:     "Aditya Kumar Tiwari",
+  location:  "India 🇮🇳",
+  security:  "Penetration Testing · Digital Forensics · VAPT · Threat Analysis",
+  stack:     "React · Next.js · Node.js · TypeScript · Python",
+  ai_ml:     "TensorFlow · PyTorch · Computer Vision · NLP · LLMs",
+  directive: "break things → understand them → make them unbreakable 🔐",
+  status:    "Active & Building 🚀",
+};
 ```
 
-<br clear="both">
+<br clear="right"/>
 
-<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════════ -->
 
-<!-- 🛠 TECH ARSENAL SECTION -->
-<h2 align="center">🛠 Tech Arsenal</h2>
+## Offensive Arsenal
 
 <div align="center">
-  
-  <!-- Security & Hacking Tools -->
-  <details open>
-    <summary><b>🛡️ Security & Penetration Testing</b></summary>
-    <br>
-    <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white" />
-    <img src="https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burp-suite&logoColor=white" />
-    <img src="https://img.shields.io/badge/Metasploit-2596CD?style=for-the-badge&logo=metasploit&logoColor=white" />
-    <img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" />
-    <img src="https://img.shields.io/badge/Nmap-0E83CD?style=for-the-badge&logo=nmap&logoColor=white" />
-    <img src="https://img.shields.io/badge/OWASP-000000?style=for-the-badge&logo=owasp&logoColor=white" />
-  </details>
 
-  <!-- Programming Languages -->
-  <details open>
-    <summary><b>💻 Programming Languages</b></summary>
-    <br>
-    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
-    <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
-    <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" />
-    <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
-  </details>
+<img src="https://img.shields.io/badge/Kali%20Linux-1793D1?style=for-the-badge&logo=kali-linux&logoColor=white" />
+<img src="https://img.shields.io/badge/Burp%20Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white" />
+<img src="https://img.shields.io/badge/Metasploit-2596CD?style=for-the-badge&logo=metasploit&logoColor=white" />
+<img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" />
+<img src="https://img.shields.io/badge/Nmap-0E83CD?style=for-the-badge&logo=nmap&logoColor=white" />
+<img src="https://img.shields.io/badge/OWASP-000000?style=for-the-badge&logo=owasp&logoColor=white" />
 
-  <!-- Frameworks & Libraries -->
-  <details open>
-    <summary><b>🚀 Frameworks & Libraries</b></summary>
-    <br>
-    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-    <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
-    <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
-    <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
-    <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
-  </details>
-
-  <!-- Cloud & DevOps -->
-  <details>
-    <summary><b>☁️ Cloud & DevOps</b></summary>
-    <br>
-    <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />
-    <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-    <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
-    <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" />
-    <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
-    <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />
-  </details>
-
-  <!-- Databases -->
-  <details>
-    <summary><b>🗄️ Databases</b></summary>
-    <br>
-    <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
-    <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
-    <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
-    <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
-    <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
-  </details>
-  
 </div>
 
-<br>
+<br/>
 
-<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════════ -->
 
-<!-- 📊 GITHUB ANALYTICS & STATISTICS SECTION -->
+## Tech Stack
+
 <div align="center">
-  <h2>📊 GitHub Analytics & Statistics</h2>
-  
-  <!-- Real-time Profile Metrics -->
-  <div align="center">
-    <img src="https://komarev.com/ghpvc/?username=Xenonesis&label=Profile%20Views&color=0e75b6&style=for-the-badge" alt="Profile Views" />
-    <img src="https://img.shields.io/github/followers/Xenonesis?label=Followers&style=for-the-badge&color=blue" alt="GitHub Followers" />
-    <img src="https://img.shields.io/github/stars/Xenonesis?label=Total%20Stars&style=for-the-badge&color=yellow" alt="GitHub Stars" />
-  </div>
-  
-  <br>
-  
-  <!-- Advanced GitHub Stats Cards -->
-  <div align="center">
-    <a href="https://github.com/Xenonesis">
-      <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Xenonesis&show_icons=true&theme=tokyonight&include_all_commits=false&count_private=true&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&border_radius=8&cache_seconds=86400" alt="GitHub Stats" />
-    </a>
-    <a href="https://github.com/Xenonesis">
-      <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xenonesis&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9&border_radius=8&langs_count=8&cache_seconds=86400" alt="Top Languages" />
-    </a>
-  </div>
-  
-  <br>
-  
-  <!-- GitHub Streak Stats -->
-  <div align="center">
-    <a href="https://github.com/Xenonesis">
-      <img src="https://streak-stats.demolab.com/?user=Xenonesis&theme=tokyonight&hide_border=true&background=0D1117&stroke=58A6FF&ring=1F6FEB&fire=FF6B6B&currStreakNum=C9D1D9&sideNums=C9D1D9&currStreakLabel=58A6FF&sideLabels=C9D1D9&dates=8B949E" alt="GitHub Streak" />
-    </a>
-  </div>
-  
-  <br>
-  
-  <!-- Detailed Activity Graph -->
-  <div align="center">
-    <a href="https://github.com/Xenonesis">
-      <img src="https://github-readme-activity-graph.vercel.app/graph?username=Xenonesis&theme=tokyo-night&bg_color=0D1117&color=58A6FF&line=1F6FEB&point=FF6B6B&area=true&hide_border=true&custom_title=Contribution%20Activity%20Graph" alt="Contribution Graph" />
-    </a>
-  </div>
+
+| Layer | Technologies |
+|:---|:---|
+| **Languages** | ![Python](https://skillicons.dev/icons?i=python&theme=dark) ![TypeScript](https://skillicons.dev/icons?i=ts&theme=dark) ![JavaScript](https://skillicons.dev/icons?i=js&theme=dark) ![C++](https://skillicons.dev/icons?i=cpp&theme=dark) ![Go](https://skillicons.dev/icons?i=go&theme=dark) ![Bash](https://skillicons.dev/icons?i=bash&theme=dark) |
+| **Frontend** | ![React](https://skillicons.dev/icons?i=react&theme=dark) ![Next.js](https://skillicons.dev/icons?i=nextjs&theme=dark) ![HTML](https://skillicons.dev/icons?i=html&theme=dark) ![CSS](https://skillicons.dev/icons?i=css&theme=dark) ![Vite](https://skillicons.dev/icons?i=vite&theme=dark) |
+| **Backend & AI** | ![Node.js](https://skillicons.dev/icons?i=nodejs&theme=dark) ![FastAPI](https://skillicons.dev/icons?i=fastapi&theme=dark) ![TensorFlow](https://skillicons.dev/icons?i=tensorflow&theme=dark) ![PyTorch](https://skillicons.dev/icons?i=pytorch&theme=dark) |
+| **Data & Cloud** | ![MongoDB](https://skillicons.dev/icons?i=mongodb&theme=dark) ![PostgreSQL](https://skillicons.dev/icons?i=postgres&theme=dark) ![Redis](https://skillicons.dev/icons?i=redis&theme=dark) ![AWS](https://skillicons.dev/icons?i=aws&theme=dark) ![Docker](https://skillicons.dev/icons?i=docker&theme=dark) ![Linux](https://skillicons.dev/icons?i=linux&theme=dark) |
+
 </div>
 
-<br>
+<br/>
 
-<!-- ⚡ Real-Time Status Section -->
+<!-- ════════════════════════════════════════════ -->
+
+## Featured Artifacts
+
 <div align="center">
-  <h3>⚡ Real-Time Status</h3>
-  
-  <img src="https://img.shields.io/badge/🔴%20STATUS-ONLINE%20&%20MONITORING-00FF00?style=for-the-badge&labelColor=0D1117&logo=statuspage&logoColor=white" alt="Online Status">
-  
-  <br><br>
-  
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2000&pause=1000&color=00FF41&center=true&vCenter=true&width=600&lines=🔴+Currently+Online+and+Coding;🛡+Monitoring+Security+Systems;🔍+Analyzing+Threat+Patterns;💻+Developing+Security+Solutions;🤖+Training+ML+Models;🎯+Participating+in+CTF+Events" alt="Real-time Activity" />
-  
-  <br><br>
-  
-  *Last updated: August 04, 2025 at 02:29 PM UTC*  
-  *🤖 Automatically synced with GitHub API every 6 hours*
-</div>
-
-<br>
-
-<!-- 📊 GitHub Trophies -->
-<div align="center">
-  <h2>🏆 GitHub Trophies</h2>
- 
-  <a href="https://github.com/Xenonesis">
-    <img src="https://github-profile-trophy.vercel.app/?username=Xenonesis&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4&row=1" alt="GitHub Trophies" />
+  <a href="https://github.com/Xenonesis?tab=repositories">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=Downloader&hide_border=true&bg_color=0d1117&title_color=8B5CF6&icon_color=06b6d4&text_color=a78bfa" width="48%" />
+  </a>
+  <a href="https://github.com/Xenonesis?tab=repositories">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Xenonesis&repo=Article-Forge&hide_border=true&bg_color=0d1117&title_color=8B5CF6&icon_color=06b6d4&text_color=a78bfa" width="48%" />
   </a>
 </div>
 
-<br>
+<br/>
 
-<!-- 🌐 Connect With Me -->
+<!-- ════════════════════════════════════════════ -->
+
+## GitHub Stats
+
 <div align="center">
-  <h3>🌐 Connect With Me</h3>
-  
-  <a href="https://linkedin.com/in/aditya-kumar-tiwari" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="https://twitter.com/XenonesisHacks" target="_blank">
-    <img src="https://img.shields.io/badge/Twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter" />
-  </a>
-  <a href="https://iaddy.netlify.app/" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-%23FF7139.svg?&style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Portfolio" />
-  </a>
-  <a href="mailto:contact@xenonesis.dev" target="_blank">
-    <img src="https://img.shields.io/badge/Email-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  
-  <br><br>
-  
-  <h3>📱 Scan to Connect</h3>
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://iaddy.netlify.app/" alt="QR Code" />
+  <img height="175" src="https://github-readme-stats.vercel.app/api?username=Xenonesis&show_icons=true&hide_border=true&bg_color=0d1117&title_color=8B5CF6&icon_color=06b6d4&text_color=a78bfa&ring_color=8B5CF6&include_all_commits=true&count_private=true" />
+  <img height="175" src="https://github-readme-streak-stats.herokuapp.com?user=Xenonesis&hide_border=true&background=0d1117&ring=8B5CF6&fire=f59e0b&currStreakLabel=8B5CF6&sideLabels=a78bfa&currStreakNum=ffffff&sideNums=a78bfa&dates=6e7681" />
 </div>
 
-<br>
-
-<!-- Enhanced Footer Section -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=200&section=footer&text=STAY%20CONNECTED&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=65&desc=Let's%20build%20a%20secure%20digital%20future%20together&descAlignY=85&descAlign=50&descSize=16" width="100%" />
+  <img height="158" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xenonesis&layout=compact&hide_border=true&bg_color=0d1117&title_color=8B5CF6&text_color=a78bfa&langs_count=8&card_width=320" />
+  <img height="158" src="https://github-profile-trophy.vercel.app/?username=Xenonesis&theme=dracula&no-frame=true&no-bg=true&margin-w=4&row=1&column=4" />
+</div>
 
-  <!-- Interactive Terminal Simulation -->
-  <details>
-  <summary>
-    <img src="https://img.shields.io/badge/🖥_TERMINAL_SIMULATOR-Click_to_Execute-000000?style=for-the-badge&logo=windows-terminal&logoColor=00FF41" />
-  </summary>
-  <br>
-  
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=1500&pause=500&color=00FF41&center=true&vCenter=true&multiline=true&width=800&height=200&lines=xenonesis@kali:$+nmap+-sS+-O+target.com;Starting+Nmap+scan...;Host+is+up+(0.045s+latency);PORT++++STATE++SERVICE;22/tcp++open+++ssh;80/tcp++open+++http;443/tcp+open+++https;xenonesis@kali:$+python3+exploit.py;[+]+Vulnerability+detected!;[+]+Exploit+successful;[+]+Access+granted;xenonesis@kali:~$+echo+'Mission+Accomplished'" alt="Terminal Simulation" />
-  </details>
+<br/>
 
-  <br>
+<!-- ════════════════════════════════════════════ -->
 
-  <!-- Enhanced ASCII Art with Animation -->
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=3000&pause=2000&color=00FF41&center=true&vCenter=true&multiline=true&width=600&height=180&lines=;+██╗░░██╗███████╗███╗░░██╗░█████╗░███╗░░██╗███████╗░██████╗██╗░██████╗;+╚██╗██╔╝██╔════╝████╗░██║██╔══██╗████╗░██║██╔════╝██╔════╝██║██╔════╝;+░╚███╔╝░█████╗░░██╔██╗██║██║░░██║██╔██╗██║█████╗░░╚█████╗░██║╚█████╗░;+░██╔██╗░██╔══╝░░██║╚████║██║░░██║██║╚████║██╔══╝░░░╚═══██╗██║░╚═══██╗;+██╔╝╚██╗███████╗██║░╚███║╚█████╔╝██║░╚███║███████╗██████╔╝██║██████╔╝;+╚═╝░░╚═╝╚══════╝╚═╝░░╚══╝░╚════╝░╚═╝░░╚══╝╚══════╝╚═════╝░╚═╝╚═════╝░" alt="ASCII Art" />
+## Activity
 
-  <br>
+<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=Xenonesis&bg_color=0d1117&color=8B5CF6&line=06b6d4&point=8B5CF6&area=true&area_color=8B5CF6&hide_border=true" />
 
-  <!-- Motivational Quote with Typing Effect -->
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=4000&pause=2000&color=FFD700&center=true&vCenter=true&width=800&lines=💡+%22Security+is+not+a+product%2C+but+a+process%22;🛡+%22In+cybersecurity%2C+paranoia+is+a+virtue%22;🚀+%22Code+with+purpose%2C+secure+with+passion%22;🎯+%22Every+vulnerability+is+a+lesson+in+disguise%22" alt="Motivational Quotes" />
+<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake-dark.svg"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg"/>
+  <img alt="contribution snake" src="https://raw.githubusercontent.com/Xenonesis/Xenonesis/output/github-contribution-grid-snake.svg" width="100%"/>
+</picture>
+</div>
 
-  <br>
+<br/>
 
-  <!-- Fun Stats & Achievements -->
-  <table>
-    <tr>
-      <td align="center" width="25%">
-        <img src="https://img.shields.io/badge/☕%20Coffee%20Consumed-∞-8B4513?style=for-the-badge&labelColor=0D1117" /><br>
-        <sub>Fuel for late-night coding</sub>
-      </td>
-      <td align="center" width="25%">
-        <img src="https://img.shields.io/badge/🐛%20Bugs%20Fixed-1000+-32CD32?style=for-the-badge&labelColor=0D1117" /><br>
-        <sub>Debugging champion</sub>
-      </td>
-      <td align="center" width="25%">
-        <img src="https://img.shields.io/badge/🔐%20Systems%20Secured-500+-FF4500?style=for-the-badge&labelColor=0D1117" /><br>
-        <sub>Digital fortress builder</sub>
-      </td>
-      <td align="center" width="25%">
-        <img src="https://img.shields.io/badge/🎯%20CTF%20Challenges-200+-9932CC?style=for-the-badge&labelColor=0D1117" /><br>
-        <sub>Capture The Flag master</sub>
-      </td>
-    </tr>
-  </table>
+<!-- ════════════════════════════════════════════ -->
 
-  <br>
+## Connect
 
-  <!-- Interactive Visitor Counter -->
-  <img src="https://count.getloli.com/get/@:xenonesis?theme=rule34" alt="Visitor Counter" />
-  
-  <br><br>
+<div align="center">
 
-  <!-- Let's Connect & Collaborate -->
-  <h3>🤝 Let's Connect & Collaborate!</h3>
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2000&pause=1000&color=FF69B4&center=true&vCenter=true&width=700&lines=🌟+Open+to+collaboration+on+cybersecurity+projects;💼+Available+for+consulting+and+mentorship;🚀+Always+excited+to+discuss+new+technologies;📧+Drop+me+a+message+anytime!" alt="Call to Action" />
-
-  <br>
-
-  <!-- Signature Badge -->
-  <img src="https://img.shields.io/badge/Made%20with-❤%20%26%20☕-FF69B4?style=for-the-badge&labelColor=0D1117" />
-  <img src="https://img.shields.io/badge/Powered%20by-Curiosity%20%26%20Code-00FF41?style=for-the-badge&labelColor=0D1117" />
-
-  <br><br>
-
-  <!-- Final Footer -->
-  <h4>🌐 [ SECURING THE DIGITAL FRONTIER ] 🌐</h4>
-  
-  <sub>⚡ "In a world of 1s and 0s, be the firewall that protects what matters" ⚡</sub>
+[![Portfolio](https://img.shields.io/badge/Portfolio-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white)](https://iaddy.netlify.app/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/aditya-kumar-tiwari)
+[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://twitter.com/XenonesisHacks)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@xenonesis.dev)
 
 </div>
 
+<br/>
 
+<!-- ════════════════════════════════════════════ -->
+
+<div align="center">
+
+<!-- Enhanced ASCII Art with Animation -->
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=3000&pause=2000&color=8B5CF6&center=true&vCenter=true&multiline=true&width=600&height=180&lines=;+██╗░░██╗███████╗███╗░░██╗░█████╗░███╗░░██╗███████╗░██████╗██╗░██████╗;+╚██╗██╔╝██╔════╝████╗░██║██╔══██╗████╗░██║██╔════╝██╔════╝██║██╔════╝;+░╚███╔╝░█████╗░░██╔██╗██║██║░░██║██╔██╗██║█████╗░░╚█████╗░██║╚█████╗░;+░██╔██╗░██╔══╝░░██║╚████║██║░░██║██║╚████║██╔══╝░░░╚═══██╗██║░╚═══██╗;+██╔╝╚██╗███████╗██║░╚███║╚█████╔╝██║░╚███║███████╗██████╔╝██║██████╔╝;+╚═╝░░╚═╝╚══════╝╚═╝░░╚══╝░╚════╝░╚═╝░░╚══╝╚══════╝╚═════╝░╚═╝╚═════╝░" alt="ASCII Art" />
+
+<br/><br/>
+
+<sub><code>🌟 "In a world of 1s and 0s — be the firewall that protects what matters." 🌟</code></sub>
+
+<br/><br/>
+
+<!-- Interactive Visitor Counter -->
+<img src="https://count.getloli.com/get/@:xenonesis?theme=rule34" alt="Visitor Counter" />
+
+</div>
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:06b6d4,100:8B5CF6&height=120&section=footer" width="100%" />
