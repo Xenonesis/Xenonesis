@@ -95,7 +95,7 @@ const XENONESIS = {
 [![Portfolio](https://img.shields.io/badge/Portfolio-C9184A?style=for-the-badge&logo=vercel&logoColor=white)](https://itisportfolio-ebon.vercel.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/itisaddy)
 [![X / Twitter](https://img.shields.io/badge/X%20%2F%20Twitter-000000?style=for-the-badge&logo=x&logoColor=white)](https://twitter.com/XenonesisHacks)
-[![Email](https://img.shields.io/badge/Email-C9184A?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@xenonesis.dev)
+[![Email](https://img.shields.io/badge/Email-C9184A?style=for-the-badge&logo=gmail&logoColor=white)](mailto:itisaddy7@gmail.com)
 
 </div>
 
