@@ -11,7 +11,7 @@
 <a href="https://github.com/Xenonesis?tab=followers"><img src="https://img.shields.io/github/followers/Xenonesis?style=flat-square&color=C9184A&labelColor=0d1117&label=followers&logo=github&logoColor=white" /></a>&nbsp;
 <img src="https://komarev.com/ghpvc/?username=Xenonesis&style=flat-square&color=ff6b6b&label=views&labelColor=0d1117" />&nbsp;
 <a href="https://github.com/Xenonesis?tab=repositories"><img src="https://img.shields.io/github/stars/Xenonesis?style=flat-square&color=fcc419&labelColor=0d1117&label=stars" /></a>&nbsp;
-<a href="https://itisportfolio-ebon.vercel.app"><img src="https://img.shields.io/badge/portfolio-itisportfolio-ebon.vercel.app-C9184A?style=flat-square&labelColor=0d1117" /></a>
+<a href="https://itisportfolio-ebon.vercel.app"><img src="https://img.shields.io/badge/portfolio-itisportfolio--ebon.vercel.app-C9184A?style=flat-square&labelColor=0d1117" /></a>
 
 </div>
 
