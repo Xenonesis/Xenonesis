@@ -21,7 +21,9 @@
 
 ## About
 
-<img align="right" width="230" src="./profile.jpeg" alt="Xenonesis" style="border-radius:8px;border:2px solid #C9184A;" />
+<a href="./avi-ascii.svg" title="Click to view Terminal ASCII Portrait">
+  <img align="right" width="230" src="./profile.jpeg" alt="Xenonesis (Click for ASCII Portrait)" style="border-radius:8px;border:2px solid #C9184A;" />
+</a>
 
 ```typescript
 const XENONESIS = {
@@ -36,6 +38,14 @@ const XENONESIS = {
 ```
 
 <br clear="right"/>
+<details>
+  <summary><b>View Terminal ASCII Portrait (<code>./portrait.sh</code>)</b></summary>
+  <br/>
+  <div align="center">
+    <img src="./avi-ascii.svg" width="100%" alt="ASCII Portrait" />
+  </div>
+</details>
+
 
 ---
 
@@ -82,22 +92,11 @@ const XENONESIS = {
 
 ---
 
-## GitHub Stats
+## Contribution Graph
 
 <div align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=Xenonesis&show_icons=true&hide_border=true&bg_color=0d1117&title_color=C9184A&icon_color=ff6b6b&text_color=e5e5e5&ring_color=C9184A&include_all_commits=true&count_private=true" />
-  <img height="170" src="https://github-readme-streak-stats.herokuapp.com?user=Xenonesis&hide_border=true&background=0d1117&ring=C9184A&fire=ff6b6b&currStreakLabel=C9184A&sideLabels=888&currStreakNum=ffffff&sideNums=e5e5e5&dates=555" />
+  <img src="./contrib-heatmap.svg" width="100%" alt="GitHub Contributions Graph" />
 </div>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xenonesis&layout=compact&hide_border=true&bg_color=0d1117&title_color=C9184A&text_color=e5e5e5&langs_count=8&card_width=380" />
-</div>
-
----
-
-## Activity
-
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=Xenonesis&bg_color=0d1117&color=C9184A&line=ff6b6b&point=C9184A&area=true&area_color=1a0008&hide_border=true" />
 
 ---
 
