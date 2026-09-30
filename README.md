@@ -67,6 +67,19 @@ const XENONESIS = {
 
 </div>
 
+## Featured Projects
+
+<div align="center">
+
+| Project | Description | Stack | Links |
+| :--- | :--- | :--- | :---: |
+| **Code Guardian Report** | Enterprise-grade AI-powered security analysis platform for automated vulnerability detection and code auditing. | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![AI](https://img.shields.io/badge/AI_Security-C9184A?style=flat-square) ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white) | [![Stars](https://img.shields.io/github/stars/Xenonesis/code-guardian-report?style=flat-square&color=fcc419&labelColor=0d1117)](https://github.com/Xenonesis/code-guardian-report)<br/>[Repo](https://github.com/Xenonesis/code-guardian-report) • [Demo](https://code-guardian-report.vercel.app) |
+| **Juris.AI** | Next-generation legal intelligence platform delivering AI-driven document analysis and automated research workflows. | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white) ![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) | [![Stars](https://img.shields.io/github/stars/Xenonesis/Juris.AI?style=flat-square&color=fcc419&labelColor=0d1117)](https://github.com/Xenonesis/Juris.AI)<br/>[Repo](https://github.com/Xenonesis/Juris.AI) • [Demo](https://juris-ai-roan.vercel.app) |
+| **WebSage** | Intelligent browser extension featuring AI-powered fake news detection, content verification, and dark mode security tooling. | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) ![Extension](https://img.shields.io/badge/Chrome_Extension-4285F4?style=flat-square&logo=google-chrome&logoColor=white) | [![Stars](https://img.shields.io/github/stars/Xenonesis/WebSage?style=flat-square&color=fcc419&labelColor=0d1117)](https://github.com/Xenonesis/WebSage)<br/>[Repo](https://github.com/Xenonesis/WebSage) |
+| **Download-Anything** | Powerful multi-platform media extraction engine supporting batch downloads, pause/resume, and media processing. | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![FFmpeg](https://img.shields.io/badge/FFmpeg-007808?style=flat-square&logo=ffmpeg&logoColor=white) | [![Stars](https://img.shields.io/github/stars/Xenonesis/Download-Anything?style=flat-square&color=fcc419&labelColor=0d1117)](https://github.com/Xenonesis/Download-Anything)<br/>[Repo](https://github.com/Xenonesis/Download-Anything) |
+
+</div>
+
 ---
 
 ## GitHub Stats
