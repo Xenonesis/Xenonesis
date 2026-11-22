@@ -1,21 +1,21 @@
 {
   "username": "Xenonesis",
-  "generated_at": "2026-11-21T10:55:06Z",
+  "generated_at": "2026-11-22T11:13:01Z",
   "range": {
-    "start": "2025-11-16",
-    "end": "2026-11-21"
+    "start": "2025-11-23",
+    "end": "2026-11-22"
   },
-  "total_contributions": 9136,
-  "active_days": 349,
+  "total_contributions": 8995,
+  "active_days": 343,
   "avg_per_active_day": 26.2,
   "current_streak": {
-    "length": 11,
+    "length": 12,
     "start": "2026-11-11",
-    "end": "2026-11-21"
+    "end": "2026-11-22"
   },
   "longest_streak": {
-    "length": 99,
-    "start": "2025-11-16",
+    "length": 92,
+    "start": "2025-11-23",
     "end": "2026-02-22"
   },
   "best_day": {
@@ -25,7 +25,7 @@
   "monthly": [
     {
       "month": "2025-11",
-      "total": 293
+      "total": 151
     },
     {
       "month": "2025-12",
@@ -73,38 +73,10 @@
     },
     {
       "month": "2026-11",
-      "total": 203
+      "total": 204
     }
   ],
   "days": [
-    {
-      "date": "2025-11-16",
-      "count": 8
-    },
-    {
-      "date": "2025-11-17",
-      "count": 19
-    },
-    {
-      "date": "2025-11-18",
-      "count": 36
-    },
-    {
-      "date": "2025-11-19",
-      "count": 17
-    },
-    {
-      "date": "2025-11-20",
-      "count": 26
-    },
-    {
-      "date": "2025-11-21",
-      "count": 28
-    },
-    {
-      "date": "2025-11-22",
-      "count": 8
-    },
     {
       "date": "2025-11-23",
       "count": 27
@@ -1560,6 +1532,10 @@
     {
       "date": "2026-11-21",
       "count": 3
+    },
+    {
+      "date": "2026-11-22",
+      "count": 1
     }
   ]
 }
